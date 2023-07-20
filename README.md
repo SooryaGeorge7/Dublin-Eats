@@ -41,3 +41,35 @@ This is my fourth portfolio project for [Code Institute](https://codeinstitute.n
 7. [Credits](#credits)
 8. [Acknowledgements](#acknowledgements)
 
+## **UX**
+
+## **The Strategy Plane**
+
+Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover new restaurants in Dublin which are top rated. Users will be able to search restaurants according to categories and rate/review the ones they have been to. They should be able to create their own profile page where they can also pin the restaurants they would like to visit in the future.
+
+### **The Ideal User**
+
+- User who enjoys food and would like to discover new restaurants or cuizines.
+- User resides in Dublin and would share the app to their socials to generate traffic.
+- User who will create a list of restaurants that they still want to visit(pin the restaurants)
+- User who would rate and review restaurants that they have been to.
+- User who has customized their page to showcase their interests in any aspects of food.
+
+### **Site Goals**
+
+- To provide users with all the restaurants and discover new ones.
+- To provide users with the ability to review/rate restaurants.
+- To provide users with the ability to create their own Profile.
+- To provide users with the ability to view other users reviews/ratings.
+- To provide users with the ability to pin / favourite the restaurants they want to go to.
+
+### **Agile Planning**
+
+1.	User stories are implemented which identifies the necessary features and functions of the website.
+2.	Prioritzie User stories from high importance to least important. This is done using labels such as “must-haves”, “should-haves”, “could-haves”
+3.	Categorize user stories further my having labels such as documentations for README and TESTING user stories.
+4.	Break userstories into smaller tasks .
+
+The must-have user stories were prioritized first. Certain other user stories were implemented based on time and complexity. Kanan board for the project can be viewed here
+
+### **Userstories**
