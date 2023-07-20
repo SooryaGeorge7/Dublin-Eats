@@ -1,39 +1,43 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **Dublin Eats**
 
-Welcome,
+## **Overview**
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Dublin Eats is a website designed to allow a user to find and review Restaurants in Dublin. The site features a search function that allows users to search for any Restaurant in Dublin. The restaurants can be viewed according to cuizines. Users will be able to view Restaurant details such as location, price range, etc. Users will also be able to review Restaurants and pin some restaurants page onto their own customizable profile page. Each user needs to sign up to be able to review and search for restaurants. Each user will have a profile page that they would be able to edit once logged in.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+## **Project Goals**
 
-## Codeanywhere Reminders
+This is my fourth portfolio project for [Code Institute](https://codeinstitute.net/). In this project i aim to demonstrate my goal of showcasing my skills in django , bootstrap etc.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## **Contents**
 
-`python3 -m http.server`
+1. [Overview](#overview)
+2. [Project Goals](#project-goals)
+3. [UX](#ux)
+   - [The Strategy Plane](#the-strategy-plane)
+     - [The Ideal User](#the-ideal-user)
+     - [Site Goals](#site-goals)
+   - [Agile Planning](#agile-planning)
+     - [Epics](#epics)
+     - [User Stories](#user-stories)
+   - [The Skeleton Plane](#the-skeleton-plane)
+     - [Wireframes](#wireframes)
+     - [Database Schema](#database-schema)
+     - [Security](#security)
+   - [The Scope Plane](#the-scope-plane)
+   - [The Structure Plane](#the-structure-plane)
+     - [Features](#features)
+     - [Future Features](#future-features)
+   - [The Surface Plane](#the-surface-plane)
+     - [Design](#future-features)
+       - [Colour Scheme](#colour-scheme)
+       - [Typography](#typography)
+       - [Imagery](#Imagery)
+4. [Technologies Used](#technologies-used)
+   - [Languages Used](#languages-used)
+   - [Frameworks and Tools Used](#frameworks-and-tools-used)
+   - [Libraries Used](#libraries-used)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
+8. [Acknowledgements](#acknowledgements)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
