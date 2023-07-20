@@ -95,3 +95,73 @@ The must-have user stories were prioritized first. Certain other user stories we
 #### **Typography**
 
 #### **Imagery**
+
+## **Technologies Used**
+
+### **Languages Used**
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
+
+### **Frameworks and Tools Used**
+
+1. [Django](https://www.djangoproject.com/)
+2. [Bootstrap5](https://blog.getbootstrap.co#) 
+3. [ElephantSQL](https://www.elephantsql.com/)
+4. [Cloudinary](https://cloudinary.com/)
+5. [GitHub:](https://github.com/)
+6. [Balsamiq](https://balsa#)
+7. [Stackoverflow](https://stackoverflow.com/)
+7. [CI Python Linter](https://pep8ci.herokuapp.com/)
+8. [Birme](https://www.birme.net/)
+9. [Real Favicon Generator](https://realfavicongenerator.net/)
+10. [FreePik](http://www.freepik.com/)
+
+## ### **Libraries Used**
+
+## **Deployment**
+
+### **GitHub**
+
+This project was developed by forking a specialized [Code Institute template](https://github.com/Code-Institute-Org/python-essentials-template) which simulates a terminal in the web browser.
+
+1. Click Use this template
+2. Name the repository
+3. Launch using the Gitpod web extension
+4. Pin project in Gitpod workspaces
+
+### **Version Control**
+
+For version control the following steps were made:
+
+For version control the following steps were made:
+
+1. Changes made to files in Gitpod
+2. Files made ready for commit with command - git add "filename", or git add . to add all files
+3. For the commits the following command was run along with commit description - git commit -m "This is my commit etc"
+4. To move the changes to Github the following command was run - git push
+5. Alternatively files can be made ready for commit using the Source Control staging area in Gitpod
+6. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
+
+### **Cloning the GitHub Repository**
+
+Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
+
+1. Navigating to
+2. Clicking on the arrow on the green code button at the top of the list of files
+3. Select Local then HTTPS copy the URL it provides to the clipboard
+4. Navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
+5. Type 'git clone' and paste the HTTPS link you copied from GitHub
+6. Press enter and git will clone the repository to your local machine
+
+### **Forking the GitHub Repository**
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the repository
+2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### **Final Deployment with Heroku**
