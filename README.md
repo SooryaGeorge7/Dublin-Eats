@@ -73,3 +73,25 @@ Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover
 The must-have user stories were prioritized first. Certain other user stories were implemented based on time and complexity. Kanan board for the project can be viewed here
 
 ### **Userstories**
+
+
+## **The Scope Plane**
+
+-	User should be able to create , read, update and delete their profiles, ratings and reviews.
+-	The website should be responsive to devices from 320px and up.
+-	Navbar menu should be shown in a hamburger toggler in smaller devices.
+-	The user should be able to access the websites features once they are logged in.
+-	User should have a clear understanding of site from home page.
+-	Other functionalities available to user- pinning restaurants to their profile, clicking on each restaurant.
+
+## **The Surface Plane**
+
+### **Design**
+
+#### **Colour Scheme**
+
+- ![Dublin Eats color palette](/documentation/color-scheme/restaurant-color-palette.png)
+
+#### **Typography**
+
+#### **Imagery**
