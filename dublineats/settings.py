@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com','8000-sooryageorge-dubl
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-    'home',
 ]
 
 MIDDLEWARE = [
