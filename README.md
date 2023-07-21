@@ -74,6 +74,52 @@ The must-have user stories were prioritized first. Certain other user stories we
 
 ### **Userstories**
 
+## **The Skeleton Plane**
+
+#### **Wireframes**
+
+<details><summary>Desktop</summary>
+
+- ![Desktop page 1](/documentation/wireframes/desktop/desktop-homepage.png)
+- ![Desktop page 2](/documentation/wireframes/desktop/desktop-restaurants-page.png)
+- ![Desktop page 3](/documentation/wireframes/desktop/desktop-restaurant-details.png)
+- ![Desktop page 4](/documentation/wireframes/desktop/desktop-userprofile.png)
+- ![Desktop page 5](/documentation/wireframes/desktop/desktop-loginpage.png)
+- ![Desktop page 6](/documentation/wireframes/desktop/desktop-signup-page.png)
+
+</details>
+
+<details><summary>Tablet</summary>
+
+- ![Tablet page 1](/documentation/wireframes/tablet/tablet-homepage.png)
+- ![Tablet page 2](/documentation/wireframes/tablet/tablet-restaurant-page.png)
+- ![Tablet page 3](/documentation/wireframes/tablet/tablet-restaurant-detail.png)
+- ![Tablet page 4](/documentation/wireframes/tablet/tablet-userprofile.png)
+- ![Tablet page 5](/documentation/wireframes/tablet/tablet-login-page.png)
+- ![Tablet page 6](/documentation/wireframes/tablet/tablet-signuppage.png)
+
+</details>
+
+<details><summary>Mobile</summary>
+
+- ![Mobile page 1](/documentation/wireframes/mobile/mobile-homepage.png)
+- ![Mobile page 2](/documentation/wireframes/mobile/mobile-restaurantpage.png)
+- ![Mobile page 3](/documentation/wireframes/mobile/mobile-restaurant-detail.png)
+- ![Mobile page 4](/documentation/wireframes/mobile/mobile-user-profile.png)
+- ![Mobile page 5](/documentation/wireframes/mobile/mobile-loginpage.png)
+- ![Mobile page 6](/documentation/wireframes/mobile/mobile-signup-page.png)
+
+</details>
+
+#### *Flow Chart logic
+
+- ![Flow chart of logic](/documentation/flow-diagram/flow-chart-dublineats.jpg)
+
+#### **Database Scheme**
+
+- ![Entity relationships](/documentation/entity-relationship/entity-relationship.png)
+
+#### **Security**
 
 ## **The Scope Plane**
 
