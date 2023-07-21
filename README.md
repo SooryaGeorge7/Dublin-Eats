@@ -165,8 +165,9 @@ The must-have user stories were prioritized first. Certain other user stories we
 9. [Real Favicon Generator](https://realfavicongenerator.net/)
 10. [FreePik](http://www.freepik.com/)
 
-## ### **Libraries Used**
+### **Libraries Used**
 
+## **Testing**
 ## **Deployment**
 
 ### **GitHub**
@@ -211,3 +212,13 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 3. You should now have a copy of the original repository in your GitHub account.
 
 ### **Final Deployment with Heroku**
+
+## **Credits**
+
+### **Code Used**
+
+### **Content**
+
+### **Media**
+
+## **Acknowledgements**
