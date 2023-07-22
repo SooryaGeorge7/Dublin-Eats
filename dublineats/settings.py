@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com','8000-sooryageorge-dubl
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'users.apps.UsersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
