@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <h1>Sign up</h1>
+            <p> Already Have An Account? <a href="#">Sign In</a></p>
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                    {{ form }}
+                </div>
+                <button class="btn btn-outline-info button-dbneats" type="submit"> Sign Up </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}
