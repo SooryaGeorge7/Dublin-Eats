@@ -12,7 +12,7 @@ def signup(request):
             messages.success(
                 request, f'Signup Succesful {username}!You May Now Log In!')
             form.save()
-            return redirect('dublineats-home')
+            return redirect('userlogin')
     else:
         form = UserSignupForm()
     return render(request, 'users/signup.html', {'form': form})
