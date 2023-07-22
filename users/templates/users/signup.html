@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
@@ -8,7 +9,7 @@
             <form method="POST">
                 {% csrf_token %}
                 <div>
-                    {{ form }}
+                    {{ form|crispy }}
                 </div>
                 <button class="btn btn-outline-info button-dbneats" type="submit"> Sign Up </button>
             </form>
