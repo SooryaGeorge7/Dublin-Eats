@@ -19,7 +19,7 @@ def signup(request):
         form = UserSignupForm()
     return render(request, 'users/signup.html', {'form': form})
 
-
+@login_required
 def profile(request):
     """
     Renders the users profile, checks that the user matches profile user
@@ -34,7 +34,7 @@ def profile(request):
 
     return render(request, "users/profile.html", context)
 
-
+@login_required
 def edit_profile(request, username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user=request.user)
