@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 from .forms import UserSignupForm, UserUpdateForm, ProfileUpdateForm
-
+from django.contrib.auth import logout
 
 def signup(request):
     if request.method == 'POST':
@@ -62,3 +62,18 @@ def edit_profile(request, username):
     }
 
     return render(request, 'users/edit_profile.html', context)
+
+@login_required()
+def delete_profile(request, username):
+    
+    user = get_object_or_404(User, username=username)
+    if request.method == "POST":
+        logout(request)
+        user.delete()
+        messages.success(
+            request, f"Your account has been deleted { user.username }"
+        )
+        return redirect("dublineats-home")
+
+    context = {"username": username}
+    return render(request, "users/edit_profile.html", context)
