@@ -2,7 +2,7 @@
 import os
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 import requests
-
+from .models import Restaurant
 
 
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
@@ -70,7 +70,17 @@ def restaurants(request, category):
             else:
                 website_url = ""
 
-
+            try:
+                restaurant_details = Restaurant.objects.get(RestaurantId=place_id)
+            except Restaurant.DoesNotExist:
+                restaurant_details = Restaurant(
+                    name = result["name"],
+                    website = website_url,
+                    address = result["formatted_address"],
+                    RestaurantId = place_id,
+                )            
+                print(restaurant_details)
+                restaurant_details.save()
             
             restaurants.append({
                 "name": result["name"],
