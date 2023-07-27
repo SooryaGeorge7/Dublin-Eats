@@ -39,6 +39,7 @@ ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com','8000-sooryageorge-dubl
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
+    'restaurants.apps.RestaurantsConfig',
     'crispy_forms',
     'crispy_bootstrap5',
     'django.contrib.admin',
