@@ -11,7 +11,7 @@ def get_place_details(place_id):
     details_url = "https://maps.googleapis.com/maps/api/place/details/json"
     params = {
         "place_id": place_id,
-        "fields": "photos",
+        "fields": "website,photos",
         "key": GOOGLE_PLACES_API_KEY,
     }
     response = requests.get(details_url, params=params)
@@ -55,7 +55,7 @@ def restaurants(request, category):
             place_id = result.get("place_id")
             if place_id:
                 details_data = get_place_details(place_id)
-                
+                website_url = details_data.get("website", "")
                 photos = details_data.get("photos", "")
                 image_urls = []
                 if photos:
@@ -66,8 +66,9 @@ def restaurants(request, category):
                             image_urls.append(image_url)
                 else:
                     image_urls.append("https://res.cloudinary.com/dif9bjzee/image/upload/v1688163762/backgroud_hwsqzo.webp")
-            
-                
+
+            else:
+                website_url = ""
 
 
             
@@ -75,6 +76,7 @@ def restaurants(request, category):
                 "name": result["name"],
                 "address": result["formatted_address"],
                 "image_urls" : image_urls,
+                "website_url": website_url,
                 "place_id": place_id,
             })
 
