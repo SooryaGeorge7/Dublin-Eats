@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
     'restaurants.apps.RestaurantsConfig',
+    'review.apps.ReviewConfig',
     'crispy_forms',
     'crispy_bootstrap5',
     'django.contrib.admin',
