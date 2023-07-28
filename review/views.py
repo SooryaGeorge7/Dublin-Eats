@@ -15,8 +15,6 @@ def review(request, restaurant_id):
     ratings = Review.objects.filter(restaurant=restaurant)
     user = request.user
     
-    
-            
     if request.method == "POST":
         rating_form = RatingForm(request.POST)
         if rating_form.is_valid() :
