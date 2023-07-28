@@ -65,3 +65,8 @@
     outline-color: var(--secondary-color);
     border-color: var(--secondary-color);
 }
+
+/** star rates **/
+.checked {
+    color:var(--secondary-color);
+}
