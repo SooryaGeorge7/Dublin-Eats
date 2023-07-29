@@ -41,3 +41,13 @@ def review(request, restaurant_id):
         'rating_form': rating_form,
     }
     return render(request, 'review/review_page.html', context)
+
+@login_required()
+def allreviews(request, restaurant_id):
+    restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
+    reviews = Review.objects.filter(restaurant=restaurant)
+    context = {
+        "reviews": reviews,
+    }
+
+    return render(request, "review/allreviews.html", context)
