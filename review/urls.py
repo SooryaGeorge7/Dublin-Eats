@@ -7,4 +7,9 @@ urlpatterns = [
         views.review,
         name="review",
     ),
+    path(
+        "allreviews/<str:restaurant_id>/",
+        views.allreviews,
+        name="allreviews",
+    ),
 ]
