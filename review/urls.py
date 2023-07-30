@@ -17,4 +17,5 @@ urlpatterns = [
         views.edit_review,
         name="edit_review",
     ),
+    
 ]

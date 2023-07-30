@@ -93,3 +93,5 @@ def restaurants(request, category):
     return render(request, 'restaurants/categories.html', {
         "restaurants":restaurants,
         })
+
+    
