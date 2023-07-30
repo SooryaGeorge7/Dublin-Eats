@@ -17,5 +17,9 @@ urlpatterns = [
         views.edit_review,
         name="edit_review",
     ),
-    
+    path(
+        "profile_reviews/<str:restaurant_id>/",
+        views.profile_reviews,
+        name="profile_reviews",
+    ),
 ]

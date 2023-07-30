@@ -23,7 +23,7 @@
                 aria-label="View {{ restaurant.name }} details">{{ restaurant.name }}</a>
                 {% if request.user == profile.user %}
                                     -
-                <span><a href="#"
+                <span><a href="{% url 'profile_reviews' restaurant.RestaurantId %}"
                 aria-label="Change {{ restaurant.name }} review">Open</a></span>
                 {% endif %}
             </p>
