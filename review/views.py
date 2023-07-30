@@ -4,7 +4,7 @@ from .forms import RatingForm
 from .models import Review
 from restaurants.models import Restaurant
 from django.contrib.auth.models import User
-
+from users.models import Profile
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -14,13 +14,14 @@ def review(request, restaurant_id):
     restaurant = Restaurant.objects.get(RestaurantId= restaurant_id)
     ratings = Review.objects.filter(restaurant=restaurant)
     user = request.user
+    profile = get_object_or_404(Profile, user= user)
     
     if request.method == "POST":
         rating_form = RatingForm(request.POST)
         if rating_form.is_valid() :
             restaurant_rating = rating_form.save(commit=False)
             restaurant_rating.restaurant = restaurant
-            
+            profile.reviewed.add(restaurant)
             restaurant_rating.user = user
             restaurant_rating.save()
             messages.success(
