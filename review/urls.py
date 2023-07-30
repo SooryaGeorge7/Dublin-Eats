@@ -12,4 +12,9 @@ urlpatterns = [
         views.allreviews,
         name="allreviews",
     ),
+    path(
+        "edit_review/<str:restaurant_id>/<int:review_id>/",
+        views.edit_review,
+        name="edit_review",
+    ),
 ]
