@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from restaurants.models import Restaurant
 
 # Create your models here.
 
@@ -38,7 +39,9 @@ class Profile(models.Model):
         blank=True,
         default="What's your favourite cuizine?",
     )
-    
+    reviewed = models.ManyToManyField(
+        Restaurant, related_name="reviewed", blank=True
+    )
     
 
     def __str__(self):
