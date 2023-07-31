@@ -103,3 +103,24 @@ def profile_reviews(request, restaurant_id):
     if review:
         if restaurant in profile.reviewed.all():
             return redirect(reverse("edit_review", args=[restaurant_id, review.id]))
+
+@login_required()
+def delete_review(request, restaurant_id, review_id):
+    restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
+    review = get_object_or_404(Review, id=review_id)
+    user = request.user
+
+    if review.user != user:
+        messages.error(
+            request, "You are not authorized to delete this review."
+        )
+        return redirect("profile")
+
+    profile = Profile.objects.get(user=user)
+    if review.restaurant in profile.reviewed.all():
+        profile.reviewed.remove(review.restaurant)
+
+    review.delete()
+    messages.success(request, f"Your review has been deleted {user.username} ")
+
+    return redirect("profile")

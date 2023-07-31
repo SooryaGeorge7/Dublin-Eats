@@ -22,4 +22,5 @@ urlpatterns = [
         views.profile_reviews,
         name="profile_reviews",
     ),
+    
 ]
