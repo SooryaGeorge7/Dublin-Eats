@@ -22,5 +22,9 @@ urlpatterns = [
         views.profile_reviews,
         name="profile_reviews",
     ),
-    
+    path(
+        "delete_review/<str:restaurant_id>/<int:review_id>/",
+        views.delete_review,
+        name="delete_review",
+    ),
 ]
