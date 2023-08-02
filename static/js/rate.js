@@ -32,6 +32,10 @@ var handleRatings = (choice, criteria) => {
             }
             break;
     }
+
+    var val_num = getNumValue(choice);
+    form[criteria].value = val_num;
+
 };
 
 var getNumValue = (stringValue) => {
@@ -60,9 +64,25 @@ criterias.forEach(criteria => {
     stars.forEach(star => {
         star.addEventListener('click', (event) => {
             handleRatings(event.target.id, criteria);
-            var val = event.target.id;
-            var val_num = getNumValue(val);
-            form[criteria].value = val_num;
+            
         });
     });
 });
+
+var updateStarRatings = (criteria) => {
+    var stars = document.querySelectorAll(`.${criteria} .btn i`);
+    var value = form[criteria].value;
+  
+    stars.forEach((star, index) => {
+      if (index < value) {
+        star.classList.add('checked');
+      } else {
+        star.classList.remove('checked');
+      }
+    });
+  };
+  
+  
+  criterias.forEach(criteria => {
+    updateStarRatings(criteria);
+  });
