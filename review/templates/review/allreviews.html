@@ -20,7 +20,7 @@
                                     <p class="text-end">{{ review.created_on }}</p>
                                     <p class="text-end"><span>Review by:
                                         </span>
-                                        <a href="#"
+                                        <a href="{% url 'profile' review.user.username %}"
                                         aria-label="{{review.user.profile.user.username }} Profile Page"
                                         class="text-dark">{{ review.user.username }}</a>
                                     </p>
