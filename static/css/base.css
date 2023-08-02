@@ -70,3 +70,10 @@
 .checked {
     color:var(--secondary-color);
 }
+
+/**Carousal controls **/
+.carousel-control-prev,
+.carousel-control-next {
+    height: 80%;
+    top:20%;
+}
