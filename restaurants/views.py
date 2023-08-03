@@ -76,6 +76,7 @@ def restaurants(request, category):
                 restaurant_details = Restaurant(
                     name = result["name"],
                     website = website_url,
+                    category = category,
                     address = result["formatted_address"],
                     RestaurantId = place_id,
                 )            
@@ -84,6 +85,7 @@ def restaurants(request, category):
             
             restaurants.append({
                 "name": result["name"],
+                "category": category,
                 "address": result["formatted_address"],
                 "image_urls" : image_urls,
                 "website_url": website_url,
