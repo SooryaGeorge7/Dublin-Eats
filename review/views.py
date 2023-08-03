@@ -65,7 +65,7 @@ def edit_review(request, restaurant_id, review_id):
         user_reviewed = True
     else:
         user_reviewed = False
-        
+
     if review.user != user:
         messages.error(request, "You are not authorized to edit this review.")
         return redirect(reverse("allreviews"))
@@ -92,7 +92,7 @@ def edit_review(request, restaurant_id, review_id):
         "rating_form": rating_form,
         "review":review,
         "restaurant": restaurant,
-        
+        "user_reviewed": user_reviewed,
     }
 
     return render(request, "review/review_page.html", context)
