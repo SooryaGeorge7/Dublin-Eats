@@ -55,11 +55,17 @@ def allreviews(request, restaurant_id):
 
 @login_required()
 def edit_review(request, restaurant_id, review_id):
+    user = request.user
     # restaurant = Restaurant.objects.get(RestaurantId=restaurant_id)
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     review = get_object_or_404(Review, id=review_id)
-    user = request.user
-
+    user_review = Review.objects.filter(restaurant=restaurant, user=user)
+    
+    if user_review.exists():
+        user_reviewed = True
+    else:
+        user_reviewed = False
+        
     if review.user != user:
         messages.error(request, "You are not authorized to edit this review.")
         return redirect(reverse("allreviews"))
