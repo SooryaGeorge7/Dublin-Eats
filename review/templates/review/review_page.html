@@ -77,7 +77,7 @@
         <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a>
         {% else %}
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a type="button" href="#" class="btn btn-primary">Exit</a>
+        <a type="button" href="{% url restaurant.category %}" class="btn btn-primary">Exit</a>
         {% endif %}
 
     </form>
