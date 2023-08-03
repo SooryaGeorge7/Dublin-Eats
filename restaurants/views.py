@@ -3,7 +3,7 @@ import os
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 import requests
 from .models import Restaurant
-
+from review.models import Restaurant, Review
 
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
@@ -50,7 +50,8 @@ def restaurants(request, category):
     response = requests.get(url)
     restaurant_data = response.json()
     results = restaurant_data.get("results", [])
-    
+    user = request.user
+
     for result in results:
             place_id = result.get("place_id")
             if place_id:
@@ -83,11 +84,19 @@ def restaurants(request, category):
                 print(restaurant_details)
                 restaurant_details.save()
             
+            user_review = Review.objects.filter(restaurant=restaurant_details, user=user)
+
+            if user_review.exists():
+                user_reviewed = True
+            else:
+                user_reviewed = False
+
             restaurants.append({
                 "name": result["name"],
                 "category": category,
                 "address": result["formatted_address"],
                 "image_urls" : image_urls,
+                "user_reviewed": user_reviewed,
                 "website_url": website_url,
                 "place_id": place_id,
             })
