@@ -77,3 +77,10 @@
     height: 80%;
     top:20%;
 }
+
+/** rated color change **/
+.user-done {
+    color: var(--light-color);
+    background-color: var(--secondary-color);
+    pointer-events: none;
+}
