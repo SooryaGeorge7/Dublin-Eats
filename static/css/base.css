@@ -42,7 +42,7 @@
 
 /**Footer**/
 .footer {
-    background-color: var(--primary-color);
+    background-color: var(--bg-color);
     width: 100%;
     min-height: 15vh;
     display: flex;
@@ -55,6 +55,14 @@
     margin-bottom: 0;
 }
 
+.socials i {
+    color: var(--primary-color);
+
+}
+
+.socials i:hover {
+    color:rgba(44,62,80,0.8);
+}
 /**hero image**/
 .hero-image {
     width: 100%;
@@ -91,6 +99,7 @@
     
     border-color: var(--light-color)!important;
 }
+
 
 /** star rates **/
 .checked {
