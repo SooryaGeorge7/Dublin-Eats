@@ -52,6 +52,14 @@
     margin-bottom: 0;
 }
 
+/**hero image**/
+.hero-image {
+    width: 100%;
+    object-fit: cover;
+    
+    
+}
+
 /** for buttons **/
 .button-dbneats {
     color: var(--secondary-color);
