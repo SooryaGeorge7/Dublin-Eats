@@ -119,3 +119,17 @@
     background-color: var(--secondary-color);
     pointer-events: none;
 }
+
+/**Forms**/
+
+.form-heading {
+    color: var(--primary-color);
+}
+
+.dublineat-links {
+    color: var(--primary-color);
+}
+
+.forms {
+    padding: 0.5rem;
+}
