@@ -28,10 +28,13 @@
     justify-content: left;
     font-size: 2rem;
     padding-bottom: 0rem;
-    width: 20rem;
+    padding-left: 3rem;
     /* Adjust the width and height according to your image size */
-    height: 5rem;
-    
+    height: 3rem;
+    background-image: url('../logo/logoimage.webp');
+   
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 
