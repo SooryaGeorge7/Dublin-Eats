@@ -76,6 +76,7 @@
 /** for buttons **/
 .button-dbneats {
     color: var(--secondary-color);
+    
     outline-color: var(--secondary-color);
     border-color: var(--secondary-color);
 }
