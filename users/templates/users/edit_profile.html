@@ -16,31 +16,43 @@
                 {{ profile_form|crispy }}
             </div>
             <button class="btn btn-outline-info button-dbneats" type="submit"> Update </button>
-            <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">
+            <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                data-bs-target="#deleteProfileModal">
                 Delete Profile
-              </button>
+            </button>
         </form>
     </div>
 </div>
 <div class="container">
     <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
-    aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            {% if user.is_authenticated and user == profile.user %}
-            <form method="POST" class="reviewform text-center" action="{% url 'deleteprofile' user.username %}"
-                 role="form">
-                {% csrf_token %}
-                <h2 class="mb-3 text-dark"><span>Delete</span> Profile</h2>
-                <p><i>
-                    <span>{{ profile.user }}</span> Are you sure you want to delete your profile?
-                </i></p>
-                <p>Once deleted, you will have to sign up again</p>
-                <button type="submit" name="action" value="delete" class="site-btn">Delete</button>
-            </form>
-            {% else %}
-            <h3>You are not authorized to delete this profile.</h3>
-            {% endif %}
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ">
+                {% if user.is_authenticated and user == profile.user %}
+                <form method="POST" class="reviewform text-center" action="{% url 'deleteprofile' user.username %}"
+                    role="form">
+                    {% csrf_token %}
+                    <div class="modal-header">
+                        <h2 class="modal-title fw-bold form-heading text-center">
+                            <span>Delete</span> Profile
+                        </h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><i>
+                                <span>{{ profile.user }}</span> Are you sure you want to delete your profile?
+                            </i></p>
+                        <p>Once deleted, you will have to sign up again</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" name="action" value="delete" class="btn btn-primary main-button">Delete</button>
+                    </div>
+                </form>
+                {% else %}
+                <div class="modal-body">
+                    <h3>You are not authorized to delete this profile.</h3>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
