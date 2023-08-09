@@ -48,6 +48,7 @@ def allreviews(request, restaurant_id):
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     reviews = Review.objects.filter(restaurant=restaurant)
     context = {
+        "restaurant":restaurant,
         "reviews": reviews,
     }
 
