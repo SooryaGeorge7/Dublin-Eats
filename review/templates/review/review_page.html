@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section class="d-flex justify-content-center align-items-center">
+<section class="d-flex justify-content-center align-items-center dbneats-background">
     <form method="POST" class="reviewform text-center" enctype="multipart/form-data">
         {% csrf_token %}
 
         <!-- Rating Form -->
-        <div class="card mb-3">
+        <div class="card shadow p-2  bg-body-tertiary rounded mb-3">
             <div class="card-body">
-                <h3 class="card-title">Rate {{ restaurant.name }}</h3>
+                <h2 class="card-title form-heading fw-bold">{{ restaurant.name }}</h2>
+                <p> Rate each criteria out of 5 stars!</p>
                 <!-- Taste Rating -->
                 <div class="rating taste">{{rating_form.taste}}
                     <!-- Taste Rating -->
@@ -57,29 +58,32 @@
 
                 </div>
             </div>
-        </div>
-        <!-- Comment Form -->
-        <div class="card mb-3">
+
+            <!-- Comment Form -->
+
             <div class="card-body">
                 <h5 class="card-title">Leave a Review!</h5>
                 <div class="form-group">
                     {{ rating_form.comment_text }}
                 </div>
             </div>
+            <div>
+            {% if user_reviewed == True %}
+            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                data-bs-target="#deleteProfileModal">
+                Delete
+            </button>
+            <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a>
+            {% else %}
+            <button type="submit" class="btn btn-primary button-dbneats">Submit</button>
+            <a type="button" href="{% url restaurant.category %}" class="btn btn-primary button-dbneats">Exit</a>
+            {% endif %}
+            </div>
         </div>
 
         <!-- Submit Button -->
-        {% if user_reviewed == True %}
-        <button type="submit" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
-            data-bs-target="#deleteProfileModal">
-            Delete
-        </button>
-        <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a>
-        {% else %}
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <a type="button" href="{% url restaurant.category %}" class="btn btn-primary">Exit</a>
-        {% endif %}
+
 
     </form>
     {% block extra_js %}
@@ -112,13 +116,13 @@
                         <div class="modal-footer">
                             <button type="submit" name="action" value="delete"
                                 class="btn btn-primary main-button">Delete</button>
-                            
+
                         </div>
                     </form>
                     {% else %}
                     <div class="modal-body text-center">
                         <h3>You are not authorized to delete this review.</h3>
-                    </div >
+                    </div>
                     {% endif %}
                 </div>
             </div>

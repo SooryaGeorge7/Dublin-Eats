@@ -111,6 +111,10 @@
     color:var(--secondary-color);
 }
 
+.bi bi-star-fill {
+    color:#F2F2F2;
+    border-color: #2C3E50;
+}
 /**Carousal controls **/
 .carousel-control-prev,
 .carousel-control-next {
