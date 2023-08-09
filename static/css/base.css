@@ -123,6 +123,7 @@
     color: var(--light-color);
     background-color: var(--secondary-color);
     pointer-events: none;
+    border-radius: 1rem;
 }
 
 /**Forms**/
