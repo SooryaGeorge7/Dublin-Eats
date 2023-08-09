@@ -54,7 +54,7 @@
                     <button type="button" class="btn"><i class="bi bi-star" id="third"></i></button>
                     <button type="button" class="btn"><i class="bi bi-star" id="fourth"></i></button>
                     <button type="button" class="btn"><i class="bi bi-star" id="fifth"></i></button>
-                    
+
                 </div>
             </div>
         </div>
@@ -62,16 +62,17 @@
         <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title">Leave a Review!</h5>
-                 <div class="form-group"> 
+                <div class="form-group">
                     {{ rating_form.comment_text }}
-                </div> 
-            </div> 
-        </div>  
+                </div>
+            </div>
+        </div>
 
         <!-- Submit Button -->
         {% if user_reviewed == True %}
         <button type="submit" class="btn btn-primary">Update</button>
-        <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal" data-bs-target="#deleteProfileModal">
+        <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+            data-bs-target="#deleteProfileModal">
             Delete
         </button>
         <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a>
@@ -82,31 +83,42 @@
 
     </form>
     {% block extra_js %}
-            <!-- Customizible JS -->
-        <script src="{% static 'js/rate.js' %}"></script>
+    <!-- Customizible JS -->
+    <script src="{% static 'js/rate.js' %}"></script>
     {% endblock extra_js %}
 
 </section>
 <section class="d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
-        aria-hidden="true">
-            <div class="modal-dialog">
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     {% if user.is_authenticated and user == review.user %}
-                    <form method="POST" class="reviewform text-center" action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}"
-                        role="form">
+                    <form method="POST" class="reviewform text-center"
+                        action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}" role="form">
                         {% csrf_token %}
-                        <h2 class="mb-3 text-dark"><span>Delete</span> Review
-                        </h2>
-                        <p><i>
-                            <span>{{ review.user }}</span> Are you sure you want to delete your review and ratings?
-                        </i></p>
-                        <p>Once deleted, you will not be able to recover your review.</p>
-                        <button type="submit" name="action" value="delete" class="site-btn">Delete</button>
+                        <div class="modal-header">
+                            <h2 class="modal-title fw-bold form-heading text-center" id="deleteProfileModalLabel">
+                                Delete Review
+                            </h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><i><span>{{ review.user }}</span> Are you sure you want to delete your review and
+                                    ratings?</i></p>
+                            <p>Once deleted, you will not be able to recover your review.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" name="action" value="delete"
+                                class="btn btn-primary main-button">Delete</button>
+                            
+                        </div>
                     </form>
                     {% else %}
-                    <h3>You are not authorized to delete this review.</h3>
+                    <div>
+                        <h3>You are not authorized to delete this review.</h3>
+                    </div class="modal-body text-center">
                     {% endif %}
                 </div>
             </div>
