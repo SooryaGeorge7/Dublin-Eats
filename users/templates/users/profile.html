@@ -44,6 +44,9 @@
                             <a href="{% url 'profile_reviews' restaurant.RestaurantId %}"
                                 aria-label="Change {{ restaurant.name }} review"
                                 class="btn btn-sm btn-primary button-dbneats">Open</a></span>
+                            {% else %}
+                            <a href="{% url 'allreviews' restaurant.RestaurantId %}" aria-label="Allreviews of restaurant"
+                             class="btn btn-sm btn-primary button-dbneats">See reviews</a>
                             {% endif %}
                         </div>
                         {% endfor %}

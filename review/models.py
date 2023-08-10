@@ -27,5 +27,10 @@ class Review(models.Model):
         blank=False,
         default="Type in a review here...",)
 
+    class Meta:
+
+        ordering = ["-created_on"]
+
+
     def __str__(self):
         return f"{self.user.username}'s review of {self.restaurant.name}"
