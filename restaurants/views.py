@@ -8,6 +8,7 @@ from users.models import Profile
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
@@ -56,7 +57,11 @@ def restaurants(request, category):
     results = restaurant_data.get("results", [])
     user = request.user
 
-    for result in results:
+    paginator = Paginator(results, 8)  
+    page_number = request.GET.get("page")
+    page_object = paginator.get_page(page_number)
+
+    for result in page_object:
             place_id = result.get("place_id")
             if place_id:
                 details_data = get_place_details(place_id)
