@@ -190,3 +190,21 @@
     background-color: var(--secondary-color);
     border-color: var(--light-color);
 }
+
+/** Remove button **/
+
+.remove-button {
+    color: var(--light-color);
+    background-color: #E74c3c;
+    border-color: var(--light-color);
+    border-radius: 1rem;
+}
+
+.remove-button:hover {
+    color: #E74c3c !important; 
+    background-color: var(--light-color);
+    outline-color: #E74c3c;
+    border-color: #E74c3c;
+    border-radius: 1rem;
+
+}
