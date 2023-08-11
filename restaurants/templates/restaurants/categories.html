@@ -78,7 +78,37 @@
         </div>
 
     </div>
-
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <nav aria-label="Restaurants pagination">
+                    <ul class="pagination justify-content-center">
+                        {% if page_object.has_previous %}
+                        <li class="page-item ">
+                            <a class="page-link " href="?page={{ page_object.previous_page_number }}"><i class="bi bi-arrow-left-circle-fill"></i></a>
+                        </li>
+                        {% endif %}
+                        {% for num in page_object.paginator.page_range %}
+                        {% if num == page_object.number %}
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">{{ num }}</span>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                        {% if page_object.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_object.next_page_number }}"><i class="bi bi-arrow-right-circle-fill"></i></a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 
 
 </section>
