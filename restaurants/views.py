@@ -125,6 +125,7 @@ def restaurants(request, category):
     return render(request, 'restaurants/categories.html', {
         "restaurants":restaurants,
         "page_object":page_object,
+        "restaurant_details":restaurant_details,
         })
 
 @login_required
