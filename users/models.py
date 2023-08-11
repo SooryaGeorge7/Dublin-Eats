@@ -39,6 +39,9 @@ class Profile(models.Model):
         blank=True,
         default="What's your favourite cuizine?",
     )
+    pinned_restaurants = models.ManyToManyField(
+        Restaurant, related_name="to_visit", blank=True
+    )
     reviewed = models.ManyToManyField(
         Restaurant, related_name="reviewed", blank=True
     )

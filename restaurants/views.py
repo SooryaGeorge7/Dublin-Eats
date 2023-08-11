@@ -4,6 +4,10 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 import requests
 from .models import Restaurant
 from review.models import Restaurant, Review
+from users.models import Profile
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
@@ -105,4 +109,40 @@ def restaurants(request, category):
         "restaurants":restaurants,
         })
 
+@login_required
+def to_visit(request, restaurant_id):
+    restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
+    user = request.user
+    profile = Profile.objects.get(user=user)
+
+    if restaurant in profile.pinned_restaurants.all():
+        profile.pinned_restaurants.remove(restaurant)
+        messages.success(
+            request,
+            f"{user.username} you have removed {restaurant} from your profile",
+        )
+    else:
+        profile.pinned_restaurants.add(restaurant)
+        messages.success(
+            request,
+            f"{user.username} you have pinned {restaurant} to your profile",
+        )
+
+    category_url = reverse('{}'.format(restaurant.category))
+    return redirect(category_url)
     
+@login_required
+def remove_pin(request, restaurant_id):
+    restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
+    
+    user = request.user
+    profile = Profile.objects.get(user=user)
+
+    if restaurant in profile.pinned_restaurants.all():
+        profile.pinned_restaurants.remove(restaurant)
+        messages.success(
+            request,
+            f"{user.username} you have removed {restaurant} from your profile",
+        )
+
+    return redirect("profile", username=user.username)
