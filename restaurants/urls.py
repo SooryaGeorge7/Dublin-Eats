@@ -33,6 +33,15 @@ urlpatterns = [
         {"category": "american"},
         name="american",
     ),
-
+    path(
+        "to_visit/<str:restaurant_id>/",
+        views.to_visit,
+        name="to_visit",
+    ),
+    path(
+        "remove_pin/<str:restaurant_id>/",
+        views.remove_pin,
+        name="remove_pin",
+    ),
 
 ]
