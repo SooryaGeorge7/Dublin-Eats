@@ -88,12 +88,23 @@ def restaurants(request, category):
                 print(restaurant_details)
                 restaurant_details.save()
             
-            user_review = Review.objects.filter(restaurant=restaurant_details, user=user)
+            # user_review = Review.objects.filter(restaurant=restaurant_details, user=user)
 
-            if user_review.exists():
-                user_reviewed = True
-            else:
-                user_reviewed = False
+            # if user_review.exists():
+            #     user_reviewed = True
+            # else:
+            #     user_reviewed = False
+
+            pinned = False
+            user_reviewed = False
+            if request.user.is_authenticated:
+                 
+                user_review = Review.objects.filter(restaurant=restaurant_details, user=user)
+                profile = Profile.objects.get(user=user)
+                if user_review.exists():
+                    user_reviewed = True
+                if profile.pinned_restaurants.filter(RestaurantId=place_id).exists():
+                    pinned = True
 
             restaurants.append({
                 "name": result["name"],
@@ -101,6 +112,7 @@ def restaurants(request, category):
                 "address": result["formatted_address"],
                 "image_urls" : image_urls,
                 "user_reviewed": user_reviewed,
+                "pinned":pinned,
                 "website_url": website_url,
                 "place_id": place_id,
             })
