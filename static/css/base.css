@@ -116,11 +116,11 @@
     border-color: #2C3E50;
 }
 /**Carousal controls **/
-.carousel-control-prev,
+/* .carousel-control-prev,
 .carousel-control-next {
     height: 80%;
     top:20%;
-}
+} */
 
 /** rated color change **/
 .user-done {
@@ -154,4 +154,24 @@
 
 .login-forms {
     margin: 5rem;
+}
+
+/*pinn css*/
+
+.pinned {
+    color: #E74c3c;
+    
+}
+.pinned:hover {
+    color: rgba(231, 76, 60, 0.5);
+}
+.to-visit {
+    color: rgba(44,62,80,0.6);
+}
+.to-visit:hover {
+    color: #E74c3c;
+}
+.card-heading {
+    color: var(--primary-color);
+    height:3rem;
 }
