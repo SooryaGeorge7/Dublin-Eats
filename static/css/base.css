@@ -149,7 +149,21 @@
     background-size: contain; /* Adjust the image sizing */
     
 }
+/**rating **/
+.rating {
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    margin:0.5rem;
 
+}
+.rating a {
+    
+    color:var(--light-color)
+}
+
+.rating a:hover {
+    color:var(--light-color)
+}
 
 /**Forms**/
 
