@@ -74,10 +74,14 @@
                 data-bs-target="#deleteProfileModal">
                 Delete
             </button>
-            <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a>
+            <!-- <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a> -->
+            <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                data-bs-target="#exitProfileModal"> Exit </button>
             {% else %}
             <button type="submit" class="btn btn-primary button-dbneats">Submit</button>
-            <a type="button" href="{% url restaurant.category %}" class="btn btn-primary button-dbneats">Exit</a>
+            <!-- <a type="button" href="{% url restaurant.category %}" class="btn btn-primary button-dbneats">Exit</a> -->
+            <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                data-bs-target="#exitReviewModal"> Exit </button>
             {% endif %}
             </div>
         </div>
@@ -124,6 +128,67 @@
                         <h3>You are not authorized to delete this review.</h3>
                     </div>
                     {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="d-flex justify-content-center align-items-center dbneats-background">
+    <div class="container">
+        <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    
+                    <form method="POST" class="reviewform text-center"
+                        action="{% url 'allreviews' restaurant.RestaurantId %}" role="form">
+                        {% csrf_token %}
+                        <div class="modal-header">
+                            <h2 class="modal-title fw-bold form-heading text-center" id="exitProfileModalLabel">
+                                Exit
+                            </h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="fw-bold"><i><span>{{ review.user }}</span> Are you sure you want to exit?</i></p>
+                            <p>Any changes made will not be saved.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a type="button" href="{% url 'profile' review.user.username %}" class="btn btn-primary">Exit</a>
+
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="d-flex justify-content-center align-items-center dbneats-background">
+    <div class="container">
+        <div class="modal fade" id="exitReviewModal" tabindex="-1" aria-labelledby="exitReviewModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    
+                        <div class="modal-header">
+                            <h2 class="modal-title fw-bold form-heading text-center" id="exitReviewModalLabel">
+                                Exit Review
+                            </h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="fw-bold"><i><span>{{ review.user }}</span> Are you sure you want to exit?</i></p>
+                            <p>Any changes made will not be saved.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a type="button" href="{% url restaurant.category %}" class="btn btn-primary button-dbneats">Exit</a>
+
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>

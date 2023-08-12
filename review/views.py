@@ -31,7 +31,7 @@ def review(request, restaurant_id):
         else:
             messages.error(
                 request,
-                "something went wrong.",
+                "Please fill in all fields before submitting.",
             )
     else:
         rating_form = RatingForm()

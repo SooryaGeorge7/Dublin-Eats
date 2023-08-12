@@ -6,7 +6,7 @@
 <section class="allreviews d-flex justify-content-center align-items-center dbneats-background min-vh-100">
     <div class="container ">
         <div class="col-md-8 mx-auto">
-            <h2 class="form-heading text-center fw-bold">All reviews for {{ restaurant.name }}</h2>
+            <h2 class="text-dark text-center fw-bold">All reviews for {{ restaurant.name }}</h2>
         </div>
         <div class="row justify-content-center">
             {% if reviews %}
@@ -44,7 +44,7 @@
                                 {% if user.is_authenticated and user == review.user %}
                                 <a class="btn btn-primary button-dbneats"
                                     href="{% url 'edit_review'  review.restaurant.RestaurantId review.id %}">Edit
-                                    Review</a>
+                                    <i class="bi bi-pencil"></i></a>
                                 {% endif %}
                                 
                             </div>
