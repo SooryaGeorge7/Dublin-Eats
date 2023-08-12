@@ -31,7 +31,7 @@ def review(request, restaurant_id):
         else:
             messages.error(
                 request,
-                "Please fill in all fields before submitting.",
+                "Please fill in all fields before.",
             )
     else:
         rating_form = RatingForm()
@@ -39,6 +39,7 @@ def review(request, restaurant_id):
     context = {
         'restaurant': restaurant,
         'ratings': ratings,
+        'user':user,
         'rating_form': rating_form,
     }
     return render(request, 'review/review_page.html', context)

@@ -235,3 +235,7 @@
     border-radius: 1rem;
 
 }
+
+.message-alert {
+    z-index: 2;
+}
