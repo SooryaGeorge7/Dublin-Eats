@@ -77,8 +77,7 @@ def restaurants(request, category):
                 else:
                     image_urls.append("https://res.cloudinary.com/dif9bjzee/image/upload/v1688163762/backgroud_hwsqzo.webp")
 
-            else:
-                website_url = ""
+                
 
             try:
                 restaurant_details = Restaurant.objects.get(RestaurantId=place_id)

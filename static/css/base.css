@@ -105,6 +105,8 @@
     border-radius: 1rem;
 }
 
+
+
 /**buttons**/
 .main-button {
     margin-left: 0.5rem !important;
@@ -267,4 +269,13 @@
    height:1.5rem;
     
     
+}
+
+.disabled-btn {
+    opacity: 0.6;
+    pointer-events: none;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 1rem;
+    border-color: var(--light-color);
 }

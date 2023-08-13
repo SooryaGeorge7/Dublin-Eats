@@ -83,7 +83,7 @@ def edit_review(request, restaurant_id, review_id):
 
             return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
         else:
-            messages.success(
+            messages.error(
                 request,
                 "something went wrong.",
             )
