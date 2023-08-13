@@ -29,11 +29,11 @@
     font-size: 2rem;
     padding-bottom: 0rem;
     padding-left: 4rem;
-    
+
     /* Adjust the width and height according to your image size */
     height: 3.5rem;
     background-image: url('../logo/logoimage.webp');
-   
+
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -50,7 +50,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position:relative;
+    position: relative;
     bottom: 0;
 }
 
@@ -64,33 +64,35 @@
 }
 
 .socials i:hover {
-    color:rgba(44,62,80,0.8);
+    color: rgba(44, 62, 80, 0.8);
 }
+
 /**Home page**/
 .home-page {
-    
-    min-height: 85vh; 
-    
+
+    min-height: 85vh;
+
 }
 
 /**hero image**/
 .hero-image {
     width: 100%;
     object-fit: cover;
-    top:0;
-    position:absolute;
-    
+    top: 0;
+    position: absolute;
+
 }
+
 /** nav container **/
 .nav-container {
-    z-index:2;
+    z-index: 2;
 }
 
 /** for buttons **/
 .button-dbneats {
     color: var(--light-color);
     background-color: var(--primary-color);
-    
+
     border-color: var(--light-color);
     border-radius: 1rem;
 }
@@ -112,22 +114,23 @@
 }
 
 .main-button:hover {
-    color: var(--light-color) !important; 
+    color: var(--light-color) !important;
     background-color: rgba(249, 191, 59, 0.8) !important;
-    
-    border-color: var(--light-color)!important;
+
+    border-color: var(--light-color) !important;
 }
 
 
 /** star rates **/
 .checked {
-    color:var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .bi bi-star-fill {
-    color:#F2F2F2;
+    color: #F2F2F2;
     border-color: #2C3E50;
 }
+
 /**Carousal controls **/
 /* .carousel-control-prev,
 .carousel-control-next {
@@ -145,24 +148,27 @@
 
 .dbneats-background {
     /* background-color: var(--bg-color); */
-    background-image: url(https://res.cloudinary.com/dif9bjzee/image/upload/v1688163762/backgroud_hwsqzo.png); 
-    background-size: contain; /* Adjust the image sizing */
-    
+    background-image: url(https://res.cloudinary.com/dif9bjzee/image/upload/v1688163762/backgroud_hwsqzo.png);
+    background-size: contain;
+    /* Adjust the image sizing */
+
 }
+
 /**rating **/
 .rating {
     background-color: var(--primary-color);
     border-radius: 0.5rem;
-    margin:0.5rem;
+    margin: 0.5rem;
 
 }
+
 .rating a {
-    
-    color:var(--light-color)
+
+    color: var(--light-color)
 }
 
 .rating a:hover {
-    color:var(--light-color)
+    color: var(--light-color)
 }
 
 /**Forms**/
@@ -187,20 +193,24 @@
 
 .pinned {
     color: #E74c3c;
-    
+
 }
+
 .pinned:hover {
     color: rgba(231, 76, 60, 0.5);
 }
+
 .to-visit {
-    color: rgba(44,62,80,0.6);
+    color: rgba(44, 62, 80, 0.6);
 }
+
 .to-visit:hover {
     color: #E74c3c;
 }
+
 .card-heading {
     color: var(--primary-color);
-    height:3rem;
+    height: 3rem;
 }
 
 /**Pagination buttons **/
@@ -228,7 +238,7 @@
 }
 
 .remove-button:hover {
-    color: #E74c3c !important; 
+    color: #E74c3c !important;
     background-color: var(--light-color);
     outline-color: #E74c3c;
     border-color: #E74c3c;
@@ -238,4 +248,23 @@
 
 .message-alert {
     z-index: 2;
+    position: absolute;
+    top: 15%;
+    width: 80%;
+    
+    
+    border: 2px solid var(--light-color);
+    left: 50%; 
+    transform: translateX(-50%); 
+    color:var(--primary-color);
+    font-weight: bold;
+    
+
+}
+
+.logo-image {
+   width:1.5rem;
+   height:1.5rem;
+    
+    
 }

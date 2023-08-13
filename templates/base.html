@@ -77,12 +77,22 @@
 
     <main>
         {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} message-alert">
-            {{ message }}
-        </div>
         
-        {% endfor %}
+            <div class="container">
+                <div class="row">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} message-alert alert-dismissible fade show " id="msg" role="alert">
+                    <div class="col-12 mx-auto d-flex justify-content-center">
+                        <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                    class="logo-image" alt="message logo"> {{ message }}
+                       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    </div>
+        
+                    {% endfor %}
+                </div>
+            </div>
+        
         {% endif %}
         {% block content %}{% endblock %}
         
