@@ -105,7 +105,13 @@
     border-radius: 1rem;
 }
 
-
+.button-dbneats:focus {
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    
+    border-radius: 1rem;
+    
+}
 
 /**buttons**/
 .main-button {
