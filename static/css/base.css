@@ -285,3 +285,12 @@
     border-radius: 1rem;
     border-color: var(--light-color);
 }
+
+.search-container {
+    z-index: 3;
+    color: var(--light-color);
+}
+.search-container p {
+    font-size: 1.5rem;
+    font-weight:bold;
+}
