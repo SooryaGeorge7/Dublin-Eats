@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-6">
-            <h1>You have been logged out</h1>
-            <a href="{% url 'userlogin' %}">Log In Again</a></p>
+<section class="d-flex justify-content-center align-items-center dbneats-background min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class=" card shadow bg-body-tertiary rounded col-lg-5 col-md-7 login-forms p-5 bg-light text-center">
+                <h3 class="form-heading">You have been logged out</h3>
+                <a class="dublineat-links" href="{% url 'userlogin' %}">Log In Again</a></p>
 
+            </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock content %}
