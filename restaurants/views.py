@@ -145,7 +145,7 @@ def to_visit(request, restaurant_id):
             request,
             f"{user.username} you have pinned {restaurant} to your profile",
         )
-
+    
     category_url = reverse('{}'.format(restaurant.category))
     return redirect(category_url)
     
