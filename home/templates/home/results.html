@@ -7,7 +7,8 @@
             <h3 class="form-heading fw-bold">Results:"{{ restaurant_details.category }}" restaurants in Dublin. </h3>
         </div>
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 pb-5">
-            {% for restaurant in restaurants %}
+            {% if restaurant_results %}
+            {% for restaurant in restaurant_results %}
 
             <div class="col">
                 <div class="card h-100 shadow p-2  bg-body-tertiary rounded">
@@ -83,6 +84,7 @@
             </div>
 
             {% endfor %}
+            {% endif %}
         </div>
 
     </div>
