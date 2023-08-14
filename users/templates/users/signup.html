@@ -1,21 +1,24 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-4 forms">
-            <h1 class="text-center form-heading">Sign up</h1>
-            <p class="text-center"> Already Have An Account? <a href="{% url 'userlogin' %}" class="dublineat-links">Login In</a></p>
-            <form method="POST">
-                {% csrf_token %}
-                <div>
-                    {{ form|crispy }}
-                </div>
-                <div class="text-center">
-                     <button class="btn btn-outline-info main-button" type="submit"> Sign Up </button>
-                </div>
-            </form>
+<section class="d-flex justify-content-center align-items-center dbneats-background min-vh-100">
+    <div class="container ">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 forms">
+                <h1 class="text-center form-heading">Sign up</h1>
+                <p class="text-center"> Already Have An Account? <a href="{% url 'userlogin' %}"
+                        class="dublineat-links">Login In</a></p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div>
+                        {{ form|crispy }}
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-outline-info main-button" type="submit"> Sign Up </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock content %}
