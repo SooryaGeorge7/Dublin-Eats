@@ -9,6 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+from django.urls import NoReverseMatch
 
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
@@ -145,8 +146,11 @@ def to_visit(request, restaurant_id):
             request,
             f"{user.username} you have pinned {restaurant} to your profile",
         )
-    
-    category_url = reverse('{}'.format(restaurant.category))
+    try:
+        category_url = reverse(restaurant.category)
+    except NoReverseMatch:
+        return redirect('searchresults', restaurant.category)
+    # category_url = reverse('{}'.format(restaurant.category))
     return redirect(category_url)
     
 @login_required
