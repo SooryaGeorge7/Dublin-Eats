@@ -8,7 +8,7 @@
                     class="img-fluid w-100 vh-100 hero-image" alt="DublinEats Hero Image">
                 <div class="position-absolute top-50 start-50 translate-middle search-container" >
                     <p>Looking for good restaurants in Dublin? Search here.</p>
-                    <form class="d-flex" action="#" method="GET">
+                    <form class="d-flex" action="{% url 'searchresults' %}" method="GET">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query"
                         value="{{ request.GET.query }}" >
                         <button class="btn btn-outline-success main-button" type="submit"><i class="bi bi-search"></i></button>
