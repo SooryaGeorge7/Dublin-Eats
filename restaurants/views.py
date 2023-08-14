@@ -149,7 +149,7 @@ def to_visit(request, restaurant_id):
     try:
         category_url = reverse(restaurant.category)
     except NoReverseMatch:
-        return redirect('searchresults', restaurant.category)
+        return redirect(request.META.get('HTTP_REFERER'))
     # category_url = reverse('{}'.format(restaurant.category))
     return redirect(category_url)
     
