@@ -10,11 +10,7 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
-def search(request):
-    category = request.GET.get("query")
-    if category:
-        return redirect("searchresults", category=category)
-    print(category)
+
 
 def get_details(place_id):
     detail_url = "https://maps.googleapis.com/maps/api/place/details/json"
@@ -27,9 +23,11 @@ def get_details(place_id):
     detail_data = response.json()
     return detail_data.get("result", {})
 
-def searchresults(request, category):
+def searchresults(request):
+
+    query = request.GET.get("query")
     url = ( 
-        f"https://maps.googleapis.com/maps/api/place/textsearch/json?query={category}&type=restaurant&location=53.350140,-6.266155&key={GOOGLE_PLACES_API_KEY}"
+        f"https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&type=restaurant&location=53.350140,-6.266155&key={GOOGLE_PLACES_API_KEY}"
     )
     user = request.user
     restaurant_results = []
@@ -67,7 +65,6 @@ def searchresults(request, category):
                 restaurant_details = Restaurant(
                     name = result["name"],
                     website = website_url,
-                    category = category,
                     address = result["formatted_address"],
                     RestaurantId = place_id,
                 )            
@@ -93,7 +90,7 @@ def searchresults(request, category):
 
             restaurant_results.append({
                 "name": result["name"],
-                "category": category,
+                
                 "address": result["formatted_address"],
                 "image_urls" : image_urls,
                 "pinned": pinned,
