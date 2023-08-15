@@ -40,7 +40,16 @@
 
 
 
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.55);
+    background-color: rgba(44, 62, 80, 0.8);
+    font-weight: bold;
+}
 
+.dropdown-menu {
+    background-color: rgba(44, 62, 80, 0.9);
+    border-left: 0.25rem solid var(--secondary-color);
+}
 /**Footer**/
 .footer {
     background-color: var(--bg-color);
@@ -85,7 +94,7 @@
 
 /** nav container **/
 .nav-container {
-    z-index: 2;
+    z-index: 4;
 }
 
 /** for buttons **/
@@ -293,4 +302,14 @@
 .search-container p {
     font-size: 1.5rem;
     font-weight:bold;
+}
+
+@media screen and (min-width: 576px) {
+
+    .navbar-dark .navbar-nav .nav-link {
+        
+        background-color:transparent;
+        font-weight: normal;
+    }
+
 }

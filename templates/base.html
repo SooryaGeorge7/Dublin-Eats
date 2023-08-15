@@ -37,36 +37,36 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                        <li class="nav-item text-center">
                             <a class="nav-link active" aria-current="page" href="{% url 'dublineats-home' %}">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item text-center dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Restaurants
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="{% url 'asian' %}">Asian</a></li>
-                                <li><a class="dropdown-item" href="{% url 'european' %}">European</a></li>
-                                <li><a class="dropdown-item" href="{% url 'african' %}">African</a></li>
-                                <li><a class="dropdown-item" href="{% url 'irish' %}">Irish/English</a></li>
-                                <li><a class="dropdown-item" href="{% url 'american' %}">American</a></li>
+                                <li><a class="dropdown-item text-light" href="{% url 'asian' %}">Asian</a></li>
+                                <li><a class="dropdown-item text-light" href="{% url 'european' %}">European</a></li>
+                                <li><a class="dropdown-item text-light" href="{% url 'african' %}">African</a></li>
+                                <li><a class="dropdown-item text-light" href="{% url 'irish' %}">Irish/English</a></li>
+                                <li><a class="dropdown-item text-light" href="{% url 'american' %}">American</a></li>
                             </ul>
                         </li>
                         
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
+                        <li class="nav-item text-center">
                             <a class="nav-link" href="{% url 'profile' user.username %}">Profile</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item text-center">
                             <a class="nav-link" href="{% url 'userlogout' %}">Logout</a>
                         </li>
                         {% else %}
-                        <li class="nav-item">
+                        <li class="nav-item text-center">
                             <a class="nav-link" href="{% url 'userlogin' %}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-primary main-button" href="{% url 'signup' %}">Sign up</a>
+                            <a class="nav-link btn  main-button" href="{% url 'signup' %}">Sign up</a>
                         </li>
                         {% endif %}
                     </ul>
