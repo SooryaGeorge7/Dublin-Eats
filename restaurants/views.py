@@ -151,6 +151,7 @@ def to_visit(request, restaurant_id):
     except NoReverseMatch:
         return redirect(request.META.get('HTTP_REFERER'))
     # category_url = reverse('{}'.format(restaurant.category))
+    
     return redirect(category_url)
     
 @login_required
