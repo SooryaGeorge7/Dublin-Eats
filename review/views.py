@@ -27,7 +27,7 @@ def review(request, restaurant_id):
             messages.success(
                 request, f"{user.username} you have reviewed {restaurant}"
             )
-            return redirect("dublineats-home")
+            return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
         else:
             messages.error(
                 request,
