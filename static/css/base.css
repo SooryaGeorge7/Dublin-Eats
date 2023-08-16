@@ -191,6 +191,10 @@
     color: var(--light-color)
 }
 
+.allreviews h1 {
+    font-size: 1.5rem;
+    background-color: rgba(242, 242, 242, 0.7);
+}
 /**Forms**/
 
 .form-heading {
@@ -315,6 +319,19 @@
         
         background-color:transparent;
         font-weight: normal;
+    }
+
+    .allreviews h1 {
+        font-size: 2rem;
+        
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .allreviews h1 {
+        font-size: 2.5rem;
+        
     }
 
 }
