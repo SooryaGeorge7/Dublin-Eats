@@ -70,7 +70,7 @@
             <div>
                 {% if user_reviewed == True %}
                 <button type="submit" class="btn btn-primary main-button">Update</button>
-                <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                <button type="button" class="btn btn-outline-info remove-button" data-bs-toggle="modal"
                     data-bs-target="#deleteProfileModal">
                     Delete
                 </button>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="submit" name="action" value="delete"
-                                class="btn btn-primary main-button">Delete</button>
+                                class="btn btn-primary remove-button">Delete</button>
 
                         </div>
                     </form>
@@ -154,7 +154,7 @@
                         <p>Any changes made will not be saved.</p>
                     </div>
                     <div class="modal-footer">
-                        <a type="button" href="{% url 'profile' user.username %}" class="btn btn-primary">Exit</a>
+                        <a type="button" href="{% url 'profile' user.username %}" class="btn btn-primary button-dbneats">Exit</a>
 
                     </div>
                     </form>

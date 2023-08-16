@@ -47,7 +47,7 @@
 }
 
 .dropdown-menu {
-    background-color: rgba(242, 242, 242, 0.8);
+    background-color: rgba(242, 242, 242, 0.9);
     border-left: 0.25rem solid var(--secondary-color);
 }
 
@@ -130,6 +130,7 @@
     color: var(--light-color) !important;
     background-color: var(--secondary-color);
     border-color: var(--light-color) !important;
+    border-radius: 1rem;
 }
 
 .main-button:hover {
