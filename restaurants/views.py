@@ -128,7 +128,7 @@ def restaurants(request, category):
         "restaurant_details":restaurant_details,
         })
 
-@login_required
+@login_required()
 def to_visit(request, restaurant_id):
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     user = request.user
@@ -154,7 +154,7 @@ def to_visit(request, restaurant_id):
     
     return redirect(category_url)
     
-@login_required
+@login_required()
 def remove_pin(request, restaurant_id):
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     

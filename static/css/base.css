@@ -18,7 +18,11 @@
 .nav-colour {
     background-color: #2C3E50;
 }
-
+.navbar{
+    position:fixed;
+    width:100%;
+    z-index: 2;
+}
 
 
 .navbar-brand {
@@ -81,7 +85,7 @@
 /**Home page**/
 .home-page {
 
-    min-height: 85vh;
+    min-height: 65vh;
 
 }
 
@@ -90,7 +94,7 @@
     width: 100%;
     object-fit: cover;
     top: 0;
-    position: absolute;
+    position: relative;
     filter: blur(0.062rem);
 }
 
@@ -128,7 +132,7 @@
 .main-button {
     margin-left: 0.5rem !important;
     color: var(--light-color) !important;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color)!important;
     border-color: var(--light-color) !important;
     border-radius: 1rem;
 }
@@ -200,7 +204,10 @@
 .form-heading {
     color: var(--primary-color);
 }
-
+.results-heading {
+    color: var(--primary-color);
+    margin-top: 6rem;
+}
 .dublineat-links {
     color: var(--primary-color);
 }
@@ -311,7 +318,9 @@
     font-weight:bold;
 }
 
-
+.profile-container {
+    padding:5rem;
+}
 
 @media screen and (min-width: 576px) {
 
