@@ -16,7 +16,7 @@
 }
 
 .nav-colour {
-    background-color: #2C3E50;
+    background-color: rgba(44, 62, 80, 0.7);
 }
 .navbar{
     position:fixed;
@@ -46,7 +46,7 @@
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255,255,255,.55);
-    background-color: rgba(44, 62, 80, 0.8);
+    background-color: rgba(44, 62, 80, 0.6);
     font-weight: bold;
 }
 
@@ -84,8 +84,7 @@
 
 /**Home page**/
 .home-page {
-
-    min-height: 65vh;
+    min-height: 85vh;
 
 }
 
@@ -98,10 +97,7 @@
     filter: blur(0.062rem);
 }
 
-/** nav container **/
-.nav-container {
-    z-index: 4;
-}
+
 
 /** for buttons **/
 .button-dbneats {
@@ -149,6 +145,9 @@
 .checked {
     color: var(--secondary-color);
 }
+
+
+
 
 .bi bi-star-fill {
     color: #F2F2F2;
@@ -320,6 +319,8 @@
 
 .profile-container {
     padding:5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 @media screen and (min-width: 576px) {
