@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com','8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu102.gitpod.io',
-'8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu103.gitpod.io','localhost']
+'8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu103.gitpod.io','8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu104.gitpod.io','localhost']
 
 
 # Application definition
@@ -52,7 +52,13 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
+
+SITE_ID =1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,7 +155,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-LOGIN_REDIRECT_URL = 'dublineats-home'
+# LOGIN_REDIRECT_URL = 'dublineats-home'
 LOGIN_URL = 'userlogin'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL ='/'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -59,14 +59,14 @@
                             <a class="nav-link" href="{% url 'profile' user.username %}">Profile</a>
                         </li>
                         <li class="nav-item text-center">
-                            <a class="nav-link" href="{% url 'userlogout' %}">Logout</a>
+                            <a class="nav-link" href="#">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item text-center">
-                            <a class="nav-link" href="{% url 'userlogin' %}">Login</a>
+                            <a class="nav-link" href="#">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn  main-button" href="{% url 'signup' %}">Sign up</a>
+                            <a class="nav-link btn  main-button" href="#">Sign up</a>
                         </li>
                         {% endif %}
                     </ul>
