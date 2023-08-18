@@ -6,9 +6,9 @@
         {% csrf_token %}
 
         <!-- Rating Form -->
-        <div class="card shadow p-2  bg-body-tertiary rounded mb-3">
+        <div class="card shadow p-1 bg-body-tertiary rounded mb-3">
             <div class="card-body">
-                <h2 class="card-title form-heading fw-bold">{{ restaurant.name }}</h2>
+                <h2 class="card-title  fw-bold">{{ restaurant.name }}</h2>
                 <p> Rate each criteria out of 5 stars!</p>
                 <!-- Taste Rating -->
                 <div class="rating taste">{{rating_form.taste}}
@@ -103,7 +103,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     {% if user.is_authenticated and user == review.user %}
-                    <form method="POST" class="reviewform text-center"
+                    <form method="POST" class=" text-center"
                         action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}" role="form">
                         {% csrf_token %}
                         <div class="modal-header">

@@ -151,6 +151,9 @@
     pointer-events: none;
 }
 
+.reviewform {
+    margin-top: 5rem;
+}
 
 .bi bi-star-fill {
     color: #F2F2F2;
@@ -197,10 +200,10 @@
     color: var(--light-color)
 }
 
-.allreviews h1 {
+/* .allreviews h1 {
     font-size: 1.5rem;
     background-color: rgba(242, 242, 242, 0.7);
-}
+} */
 /**Forms**/
 
 .form-heading {
@@ -209,6 +212,8 @@
 .results-heading {
     color: var(--primary-color);
     margin-top: 6rem;
+    font-size: 1.5rem;
+    background-color: rgba(242, 242, 242, 0.7);
 }
 .dublineat-links {
     color: var(--primary-color);
