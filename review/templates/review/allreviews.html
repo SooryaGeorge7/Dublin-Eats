@@ -19,8 +19,8 @@
 
                         <div class="col justify-content-end">
                             <div class=" flex-column">
-                                <p class="text-end">{{ review.created_on }}</p>
-                                <p class="text-end"><span class="fw-bold">Review by:
+                                <p class="text-start">{{ review.created_on }}</p>
+                                <p class="text-start"><span class="fw-bold">Review by:
                                     </span>
                                     <a href="{% url 'profile' review.user.username %}"
                                         aria-label="{{review.user.profile.user.username }} Profile Page"
@@ -32,42 +32,42 @@
                     <div class="row">
                         <div class="col-12 justify-content-center text-center">
                             <p><span class="fw-bold">Taste: </span></p>
-                            <a type="button" class="btn {% if review.taste >= 1 %}checked{% endif %}"><i class="bi bi-star-fill" id="first"></i></a>
-                            <a type="button" class="btn {% if review.taste >= 2 %}checked{% endif %}"><i class="bi bi-star-fill" id="second"></i></a>
-                            <a type="button" class="btn {% if review.taste >= 3 %}checked{% endif %}"><i class="bi bi-star-fill" id="third"></i></a>
-                            <a type="button" class="btn {% if review.taste >= 4 %}checked{% endif %}"><i class="bi bi-star-fill" id="fourth"></i></a>
-                            <a type="button" class="btn {% if review.taste >= 5 %}checked{% endif %}"><i class="bi bi-star-fill" id="fifth"></i></a>
+                            <a type="button" class="btn {% if review.taste >= 1 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="first"></i></a>
+                            <a type="button" class="btn {% if review.taste >= 2 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="second"></i></a>
+                            <a type="button" class="btn {% if review.taste >= 3 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="third"></i></a>
+                            <a type="button" class="btn {% if review.taste >= 4 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fourth"></i></a>
+                            <a type="button" class="btn {% if review.taste >= 5 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fifth"></i></a>
                             <p><span class="fw-bold">Ambience: </span></p>
-                            <a type="button" class="btn {% if review.ambience >= 1 %}checked{% endif %}"><i class="bi bi-star-fill" id="first"></i></a>
-                            <a type="button" class="btn {% if review.ambience >= 2 %}checked{% endif %}"><i class="bi bi-star-fill" id="second"></i></a>
-                            <a type="button" class="btn {% if review.ambience >= 3 %}checked{% endif %}"><i class="bi bi-star-fill" id="third"></i></a>
-                            <a type="button" class="btn {% if review.ambience >= 4 %}checked{% endif %}"><i class="bi bi-star-fill" id="fourth"></i></a>
-                            <a type="button" class="btn {% if review.ambience >= 5 %}checked{% endif %}"><i class="bi bi-star-fill" id="fifth"></i></a>
+                            <a type="button" class="btn {% if review.ambience >= 1 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="first"></i></a>
+                            <a type="button" class="btn {% if review.ambience >= 2 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="second"></i></a>
+                            <a type="button" class="btn {% if review.ambience >= 3 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="third"></i></a>
+                            <a type="button" class="btn {% if review.ambience >= 4 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fourth"></i></a>
+                            <a type="button" class="btn {% if review.ambience >= 5 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fifth"></i></a>
                             <p><span class="fw-bold">Location: </span></p>
-                            <a type="button" class="btn {% if review.location >= 1 %}checked{% endif %}"><i class="bi bi-star-fill" id="first"></i></a>
-                            <a type="button" class="btn {% if review.location >= 2 %}checked{% endif %}"><i class="bi bi-star-fill" id="second"></i></a>
-                            <a type="button" class="btn {% if review.location >= 3 %}checked{% endif %}"><i class="bi bi-star-fill" id="third"></i></a>
-                            <a type="button" class="btn {% if review.location >= 4 %}checked{% endif %}"><i class="bi bi-star-fill" id="fourth"></i></a>
-                            <a type="button" class="btn {% if review.location >= 5 %}checked{% endif %}"><i class="bi bi-star-fill" id="fifth"></i></a>
+                            <a type="button" class="btn {% if review.location >= 1 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="first"></i></a>
+                            <a type="button" class="btn {% if review.location >= 2 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="second"></i></a>
+                            <a type="button" class="btn {% if review.location >= 3 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="third"></i></a>
+                            <a type="button" class="btn {% if review.location >= 4 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fourth"></i></a>
+                            <a type="button" class="btn {% if review.location >= 5 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fifth"></i></a>
                             <p><span class="fw-bold">Customer Service: </span></p>
-                            <a type="button" class="btn {% if review.customer_service >= 1 %}checked{% endif %}"><i class="bi bi-star-fill" id="first"></i></a>
-                            <a type="button" class="btn {% if review.customer_service >= 2 %}checked{% endif %}"><i class="bi bi-star-fill" id="second"></i></a>
-                            <a type="button" class="btn {% if review.customer_service >= 3 %}checked{% endif %}"><i class="bi bi-star-fill" id="third"></i></a>
-                            <a type="button" class="btn {% if review.customer_service >= 4 %}checked{% endif %}"><i class="bi bi-star-fill" id="fourth"></i></a>
-                            <a type="button" class="btn {% if review.customer_service >= 5 %}checked{% endif %}"><i class="bi bi-star-fill" id="fifth"></i></a>
+                            <a type="button" class="btn {% if review.customer_service >= 1 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="first"></i></a>
+                            <a type="button" class="btn {% if review.customer_service >= 2 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="second"></i></a>
+                            <a type="button" class="btn {% if review.customer_service >= 3 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="third"></i></a>
+                            <a type="button" class="btn {% if review.customer_service >= 4 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fourth"></i></a>
+                            <a type="button" class="btn {% if review.customer_service >= 5 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fifth"></i></a>
                             <p><span class="fw-bold">Value For Money: </span></p>
-                            <a type="button" class="btn {% if review.value_for_money >= 1 %}checked{% endif %}"><i class="bi bi-star-fill" id="first"></i></a>
-                            <a type="button" class="btn {% if review.value_for_money >= 2 %}checked{% endif %}"><i class="bi bi-star-fill" id="second"></i></a>
-                            <a type="button" class="btn {% if review.value_for_money >= 3 %}checked{% endif %}"><i class="bi bi-star-fill" id="third"></i></a>
-                            <a type="button" class="btn {% if review.value_for_money >= 4 %}checked{% endif %}"><i class="bi bi-star-fill" id="fourth"></i></a>
-                            <a type="button" class="btn {% if review.value_for_money >= 5 %}checked{% endif %}"><i class="bi bi-star-fill" id="fifth"></i></a>
-                            <p><span class="fw-bold">Comment: </span>{{ review.comment_text }}</p>
+                            <a type="button" class="btn {% if review.value_for_money >= 1 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="first"></i></a>
+                            <a type="button" class="btn {% if review.value_for_money >= 2 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="second"></i></a>
+                            <a type="button" class="btn {% if review.value_for_money >= 3 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="third"></i></a>
+                            <a type="button" class="btn {% if review.value_for_money >= 4 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fourth"></i></a>
+                            <a type="button" class="btn {% if review.value_for_money >= 5 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fifth"></i></a>
+                            <p class="p-3"><span class="fw-bold">Comment: </span>{{ review.comment_text }}</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 my-2 d-flex flex-wrap  ">
+                        <div class="text-end position-absolute top-0 end-0 ">
                             {% if user.is_authenticated and user == review.user %}
-                            <a class="btn btn-primary button-dbneats"
+                            <a class="btn btn-primary main-button mt-3 mb-3"
                                 href="{% url 'edit_review'  review.restaurant.RestaurantId review.id %}">Edit
                                 <i class="bi bi-pencil"></i></a>
                             {% endif %}
