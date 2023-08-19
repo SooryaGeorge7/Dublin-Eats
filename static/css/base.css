@@ -21,7 +21,7 @@
 .navbar{
     position:fixed;
     width:100%;
-    z-index: 2;
+    z-index: 4;
 }
 
 
@@ -319,6 +319,7 @@
 .search-container {
     z-index: 3;
     color: var(--light-color);
+    min-width: 70%;
 }
 .search-container p {
     font-size: 1.75rem;
@@ -351,5 +352,7 @@
         font-size: 2.5rem;
         
     }
-
+    .search-container {
+        min-width: 40%;
+    }
 }
