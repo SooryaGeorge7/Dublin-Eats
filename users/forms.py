@@ -40,5 +40,8 @@ class ProfileUpdateForm(forms.ModelForm):
             "profile_image",
             "fav_food",
         ]
-        
+        help_texts = {
+            'about': 'Maximum 250 characters',
+            'fav_food': 'Maximum 100 charectors',
+        }
         

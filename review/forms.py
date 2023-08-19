@@ -13,4 +13,6 @@ class RatingForm(forms.ModelForm):
             'customer_service': HiddenInput(),   
             'value_for_money': HiddenInput(),    
         }
-        
+        help_texts = {
+            'comment_text': 'Maximum 500 characters',
+        }
