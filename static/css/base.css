@@ -46,7 +46,7 @@
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255,255,255,.55);
-    background-color: rgba(44, 62, 80, 0.6);
+    /* background-color: rgba(44, 62, 80, 0.6); */
     font-weight: bold;
 }
 
@@ -354,5 +354,11 @@
     }
     .search-container {
         min-width: 40%;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        color: rgba(255,255,255,.55);
+        /* background-color: rgba(44, 62, 80, 0.6); */
+        font-weight: bold;
     }
 }
