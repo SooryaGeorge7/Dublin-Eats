@@ -10,7 +10,7 @@
                     <p>Looking for good restaurants in Dublin? Search here.</p>
                     <form class="d-flex" action="{% url 'searchresults'   %}" method="GET">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query"
-                        value="{{ request.GET.query }}" >
+                        value="{{ request.GET.query }}" required>
                         <button class="btn btn-outline-success main-button" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
