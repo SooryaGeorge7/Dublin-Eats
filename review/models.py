@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from restaurants.models import Restaurant
+from django.core.validators import MaxLengthValidator
+
 
 # Create your models here.
 class Review(models.Model):
@@ -25,7 +27,9 @@ class Review(models.Model):
     value_for_money = models.IntegerField(choices=Rating, default=0)
     comment_text = models.TextField(null=False,
         blank=False,
-        default="Type in a review here...",)
+        default="Type in a review here...",
+        validators=[MaxLengthValidator(500)],
+        )
 
     class Meta:
 

@@ -40,3 +40,5 @@ class ProfileUpdateForm(forms.ModelForm):
             "profile_image",
             "fav_food",
         ]
+        
+        

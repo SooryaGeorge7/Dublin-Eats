@@ -65,7 +65,9 @@
                 <h5 class="card-title">Leave a Review!</h5>
                 <div class="form-group">
                     {{ rating_form.comment_text }}
+                    
                 </div>
+                <small class="form-text text-muted">{{ rating_form.comment_text.help_text }}</small>
             </div>
             <div>
                 {% if user_reviewed == True %}

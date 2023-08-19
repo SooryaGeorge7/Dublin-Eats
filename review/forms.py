@@ -13,3 +13,4 @@ class RatingForm(forms.ModelForm):
             'customer_service': HiddenInput(),   
             'value_for_money': HiddenInput(),    
         }
+        
