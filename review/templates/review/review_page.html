@@ -188,7 +188,7 @@
                     {% if category_url %}
                     <a type="button" href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit</a>
                     {% else %}
-                    <a type="button" href="{% url 'dublineats-home' %}" class="btn btn-primary button-dbneats">Exit</a>
+                    <a type="button" href="{{ request.META.HTTP_REFERER|default:'/' }}" class="btn btn-primary button-dbneats">Exit</a>
                     {% endif %}
 
 
