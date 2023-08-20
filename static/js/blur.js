@@ -5,3 +5,4 @@ function onFocus() {
 function onFocusOut() {
     document.querySelector('.hero-image').classList.remove('blury');
   }
+

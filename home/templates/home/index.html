@@ -10,9 +10,11 @@
                 <div class=" top-50 start-50 translate-middle search-container" >
                     <p>Looking for good restaurants in Dublin? Search here.</p>
                     <form class="d-flex" action="{% url 'searchresults'   %}" method="GET">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query"
-                        value="{{ request.GET.query }}" onfocus="onFocus()" onfocusout="onFocusOut()" required >
-                        <button class="btn btn-outline-success main-button" type="submit"><i class="bi bi-search"></i></button>
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query"
+                        value="{{ request.GET.query }}" onfocus="onFocus()" onfocusout="onFocusOut()" pattern="^(?!\s*$)[a-zA-Z ]*$" 
+                        title="Please enter a valid search query" required >
+                        <button class="btn btn-outline-success main-button" id="searchbtn" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Search" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
             </div>
