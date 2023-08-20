@@ -326,6 +326,7 @@
     color: var(--light-color);
     min-width: 70%;
     position:fixed;
+    top:45%;
 }
 .search-container p {
     font-size: 1.75rem;
