@@ -84,8 +84,14 @@
             </div>
             {% endif %}
             <div class="col-md-8 mx-auto position-fixed top-50 start-0">
+            {% url restaurant.category as category_url %}
+            {% if category_url %}
             <a type="button" href="{% url restaurant.category %}" class="btn btn-primary button-dbneats"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>
+            {% else %}
+            <a type="button" href="{{ request.META.HTTP_REFERER|default:'/' }}" class="btn btn-primary button-dbneats"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>
+            {% endif %}
             </div>
         </div>
         
