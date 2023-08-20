@@ -54,7 +54,11 @@
     background-color: rgba(242, 242, 242, 0.9);
     border-left: 0.25rem solid var(--secondary-color);
 }
-
+.dropdown-item:focus{
+    color: var(--light-color);
+    background-color: var(--secondary-color);
+    
+}
 
 /**Footer**/
 .footer {
