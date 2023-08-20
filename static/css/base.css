@@ -328,7 +328,7 @@
 .search-container p {
     font-size: 1.75rem;
     font-weight:bold;
-    
+    text-shadow: 0.25rem 0.25rem 0.5rem rgb(44, 62, 80);
 }
 
 .profile-container {
