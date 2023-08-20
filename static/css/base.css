@@ -97,6 +97,10 @@
     filter: blur(0.062rem);
 }
 
+.blury {
+    filter: blur(0.5rem);
+    transition: filter 0.3s ease-in-out;
+  }
 
 
 /** for buttons **/
@@ -324,6 +328,7 @@
 .search-container p {
     font-size: 1.75rem;
     font-weight:bold;
+    
 }
 
 .profile-container {
