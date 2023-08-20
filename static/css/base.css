@@ -324,6 +324,7 @@
     z-index: 3;
     color: var(--light-color);
     min-width: 70%;
+    position:fixed;
 }
 .search-container p {
     font-size: 1.75rem;
