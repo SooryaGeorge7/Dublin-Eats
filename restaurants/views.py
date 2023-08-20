@@ -76,7 +76,7 @@ def restaurants(request, category):
                             image_url = f"https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={photo_reference}&key={GOOGLE_PLACES_API_KEY}"
                             image_urls.append(image_url)
                 else:
-                    image_urls.append("https://res.cloudinary.com/dif9bjzee/image/upload/v1688163762/backgroud_hwsqzo.webp")
+                    image_urls.append("https://res.cloudinary.com/dif9bjzee/image/upload/v1692544795/default-image_kyuezj.webp")
 
                 
 
