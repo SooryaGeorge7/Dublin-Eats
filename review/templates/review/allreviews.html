@@ -61,7 +61,11 @@
                             <a type="button" class="btn {% if review.value_for_money >= 3 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="third"></i></a>
                             <a type="button" class="btn {% if review.value_for_money >= 4 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fourth"></i></a>
                             <a type="button" class="btn {% if review.value_for_money >= 5 %}checked{% endif %} rated"><i class="bi bi-star-fill" id="fifth"></i></a>
+                            {% if review.comment_text %}
                             <p class="p-3"><span class="fw-bold">Comment: </span>{{ review.comment_text }}</p>
+                            {% else %}
+                            <p class="p-3"><span class="fw-bold"></p>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="row">
