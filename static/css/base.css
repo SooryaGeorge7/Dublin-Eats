@@ -294,7 +294,7 @@
 }
 
 .message-alert {
-    z-index: 2;
+    z-index: 5;
     position: absolute;
     top: 15%;
     width: 80%;
@@ -373,4 +373,13 @@
         /* background-color: rgba(44, 62, 80, 0.6); */
         font-weight: bold;
     }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .goup-btn {
+        display:none;
+    }
+
+
 }
