@@ -25,9 +25,8 @@ class Review(models.Model):
     customer_service = models.IntegerField(choices=Rating, default=0)
     location = models.IntegerField(choices=Rating, default=0)
     value_for_money = models.IntegerField(choices=Rating, default=0)
-    comment_text = models.TextField(null=False,
-        blank=False,
-        default="Type in a review here...",
+    comment_text = models.TextField(null=True,
+        blank=True,
         validators=[MaxLengthValidator(500)],
         )
 
