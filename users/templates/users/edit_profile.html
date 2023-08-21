@@ -1,64 +1,100 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<section class=" dbneats-background min-vh-100 d-flex flex-column align-items-center justify-content-center">
+    <div class="profile-form mx-2 card shadow p-4 bg-body-tertiary rounded mb-3">
+        <div class="card-body">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img"
+                    alt="{{ profile.user.username }} Profile Image">
+            </div>
+        </div>
 
-<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
-    <div class="col-lg-4 col-md-4">
-        <div class="d-flex justify-content-center">
-        <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img"
-            alt="{{ profile.user.username }} Profile Image">
+        <div class="text-center fw-bold">
+            <h2 class="form-heading fw-bold">Edit Profile</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    {{ user_form|crispy }}
+                    {{ profile_form|crispy }}
+                </div>
+                <button class="btn btn-outline-info main-button" type="submit"> Update <i
+                        class="bi bi-arrow-clockwise"></i> </button>
+                <button type="button" class="btn btn-outline-info remove-button" data-bs-toggle="modal"
+                    data-bs-target="#deleteProfileModal">
+                    Delete <i class="bi bi-trash3"></i>
+                </button>
+                <!-- <a type="button" href="{% url 'profile' user.username %}"
+                    class="btn btn-outline-info button-dbneats">Exit <i class="bi bi-escape"></i></a> -->
+                <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                    data-bs-target="#exitProfileModal"> Exit </button>
+            </form>
         </div>
     </div>
-    
-    <div class="text-center fw-bold">
-        <h2 class="form-heading fw-bold">Edit Profile</h2>
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div>
-                {{ user_form|crispy }}
-                {{ profile_form|crispy }}
+    <div class="container">
+        <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content ">
+                    {% if user.is_authenticated and user == profile.user %}
+                    <form method="POST" class="form-heading text-center" action="{% url 'deleteprofile' user.username %}"
+                        role="form">
+                        {% csrf_token %}
+                        <div class="modal-header">
+                            <h2 class="modal-title fw-bold form-heading text-center">
+                                <span>Delete</span> Profile
+                            </h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><i>
+                                    <span>{{ profile.user }}</span> Are you sure you want to delete your profile?
+                                </i></p>
+                            <p>Once deleted, you will have to sign up again</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" name="action" value="delete"
+                                class="btn btn-primary remove-button">Delete <i class="bi bi-trash3"></i></button>
+                        </div>
+                    </form>
+                    {% else %}
+                    <div class="modal-body">
+                        <h3>You are not authorized to delete this profile.</h3>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
-            <button class="btn btn-outline-info button-dbneats" type="submit"> Update </button>
-            <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
-                data-bs-target="#deleteProfileModal">
-                Delete Profile
-            </button>
-            <a type="button" href="{% url 'profile' user.username %}" class="btn btn-outline-info button-dbneats">Exit</a>
-        </form>
+        </div>
     </div>
-</div>
-<div class="container">
-    <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content ">
-                {% if user.is_authenticated and user == profile.user %}
-                <form method="POST" class="reviewform text-center" action="{% url 'deleteprofile' user.username %}"
-                    role="form">
-                    {% csrf_token %}
+
+    <div class="container">
+        <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+
                     <div class="modal-header">
-                        <h2 class="modal-title fw-bold form-heading text-center">
-                            <span>Delete</span> Profile
+                        <h2 class="modal-title fw-bold form-heading text-center" id="exitProfileModalLabel">
+                            Exit
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p><i>
-                                <span>{{ profile.user }}</span> Are you sure you want to delete your profile?
-                            </i></p>
-                        <p>Once deleted, you will have to sign up again</p>
+                        <p class="fw-bold"><i><span>{{ user.username }}</span> Are you sure you want to exit?</i></p>
+                        <p>Any changes made will not be saved.</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" name="action" value="delete" class="btn btn-primary main-button">Delete</button>
+                        <a type="button" href="{% url 'profile' user.username %}"
+                    class="btn btn-outline-info button-dbneats">Exit <i class="bi bi-escape"></i></a>
+
                     </div>
-                </form>
-                {% else %}
-                <div class="modal-body">
-                    <h3>You are not authorized to delete this profile.</h3>
+                    </form>
+
                 </div>
-                {% endif %}
             </div>
         </div>
     </div>
-</div>
+
+</section>
 {% endblock content %}

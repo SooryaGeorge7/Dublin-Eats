@@ -349,6 +349,9 @@
     z-index:3;
 }
 
+.profile-form {
+    margin-top: 5rem;
+}
 @media screen and (min-width: 576px) {
 
     .navbar-dark .navbar-nav .nav-link {

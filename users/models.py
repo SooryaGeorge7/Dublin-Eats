@@ -6,7 +6,7 @@ from restaurants.models import Restaurant
 from django.core.validators import MaxLengthValidator
 # Create your models here.
 
-placeholder= (f"https://res.cloudinary.com/dif9bjzee/image/upload/c_scale,h_50,w_50/v1689590568/profile-gda8c660e4_640_z54qoi.webp")
+placeholder= (f"https://res.cloudinary.com/dif9bjzee/image/upload/ar_1:1,b_rgb:262c35,bo_5px_solid_rgb:2c3e50,c_fill,g_auto,r_max,w_200/v1689590568/profile-gda8c660e4_640_z54qoi.webp")
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
