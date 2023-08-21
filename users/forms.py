@@ -40,6 +40,12 @@ class ProfileUpdateForm(forms.ModelForm):
             "profile_image",
             "fav_food",
         ]
+        widgets = {
+            'firstname': forms.TextInput(attrs={'placeholder': 'Please type in your Firstname here'}), 
+            'surname': forms.TextInput(attrs={'placeholder': 'Please type in your Surname here'}),
+            'about': forms.Textarea(attrs={'placeholder': 'Tell us more about you!'}),
+            'fav_food': forms.Textarea(attrs={'placeholder': 'What is your favourite cuizine?'}),
+        }
         help_texts = {
             'about': 'Maximum 250 characters',
             'fav_food': 'Maximum 100 charectors',

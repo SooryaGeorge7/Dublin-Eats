@@ -11,15 +11,14 @@ placeholder= (f"https://res.cloudinary.com/dif9bjzee/image/upload/c_scale,h_50,w
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(
-        max_length=50, null=True, blank=True, default="Firstname"
+        max_length=50, null=True, blank=True, 
     )
     surname = models.CharField(
-        max_length=50, null=True, blank=True, default="Surname"
+        max_length=50, null=True, blank=True, 
     )
     about = models.TextField(null=True,
         blank=True,
         max_length=200,
-        default="Foodie in and out..!",
         validators=[MaxLengthValidator(250)],
     )
     
@@ -39,7 +38,6 @@ class Profile(models.Model):
         max_length=50,
         null=True,
         blank=True,
-        default="What's your favourite cuizine?",
         validators=[MaxLengthValidator(100)],
     )
     pinned_restaurants = models.ManyToManyField(
