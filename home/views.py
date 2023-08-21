@@ -105,6 +105,7 @@ def searchresults(request):
         "restaurant_results":restaurant_results,
         "page_object": page_object,
         "restaurant_details": restaurant_details,
+        "query": query,
         })
 
 

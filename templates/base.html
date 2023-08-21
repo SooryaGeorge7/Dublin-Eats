@@ -81,7 +81,7 @@
             <div class="container">
                 <div class="row">
                     {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }} message-alert alert-dismissible fade show " id="msg" role="alert">
+                    <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}  message-alert alert-dismissible fade show " id="msg" role="alert">
                     <div class="col-12 mx-auto d-flex justify-content-center">
                         <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
                     class="logo-image" alt="message logo"> {{ message }}
