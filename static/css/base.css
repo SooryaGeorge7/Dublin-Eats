@@ -344,6 +344,11 @@
     padding-right: 1rem;
 }
 
+.profile-name {
+    position:absolute;
+    z-index:3;
+}
+
 @media screen and (min-width: 576px) {
 
     .navbar-dark .navbar-nav .nav-link {

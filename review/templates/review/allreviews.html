@@ -12,7 +12,7 @@
             {% if reviews %}
             {% for review in reviews %}
 
-            <div class="col-md-8 ">
+            <div class="col-md-8 mb-2">
                 <div class="card shadow p-2  bg-body-tertiary rounded ">
 
                     <div class="row">
@@ -24,7 +24,9 @@
                                     </span>
                                     <a href="{% url 'profile' review.user.username %}"
                                         aria-label="{{review.user.profile.user.username }} Profile Page"
-                                        class="text-dark">{{ review.user.username }}</a>
+                                        class="profile-name text-dark"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Go To Profile"
+                                        >{{ review.user.username }}</a>
                                 </p>
                             </div>
                         </div>
@@ -97,8 +99,12 @@
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>
             {% endif %}
             </div>
+            
         </div>
-        
+        <div class="col mx-auto position-fixed top-50 end-0">
+            <a type="button" href="" class="btn btn-primary button-dbneats"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Go Up"><i class="bi bi-chevron-double-up"></i></a>
+        </div>
     </div>
 </section>
 
