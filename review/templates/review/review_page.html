@@ -63,27 +63,28 @@
 
             <div class="card-body">
                 <h5 class="card-title">Leave a Review!</h5>
-                <div class="form-group" >
+                <div class="form-group">
                     {{ rating_form.comment_text }}
-                    
+
                 </div>
-                <small class="form-text text-muted" >{{ rating_form.comment_text.help_text }}</small>
+                <small class="form-text text-muted">{{ rating_form.comment_text.help_text }}</small>
             </div>
             <div>
                 {% if user_reviewed == True %}
-                <button type="submit" class="btn btn-primary main-button">Update</button>
+                <button type="submit" class="btn btn-primary main-button">Update <i
+                    class="bi bi-arrow-clockwise"></i></button>
                 <button type="button" class="btn btn-outline-info remove-button" data-bs-toggle="modal"
                     data-bs-target="#deleteProfileModal">
-                    Delete
+                    Delete <i class="bi bi-trash3"></i>
                 </button>
                 <!-- <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a> -->
                 <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
-                    data-bs-target="#exitProfileModal"> Exit </button>
+                    data-bs-target="#exitProfileModal"> Exit <i class="bi bi-escape"></i></button>
                 {% else %}
                 <button type="submit" class="btn btn-primary button-dbneats">Submit</button>
 
                 <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
-                    data-bs-target="#exitReviewModal"> Exit </button>
+                    data-bs-target="#exitReviewModal"> Exit <i class="bi bi-escape"></i></button>
                 {% endif %}
             </div>
         </div>
@@ -122,7 +123,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="submit" name="action" value="delete"
-                                class="btn btn-primary remove-button">Delete</button>
+                                class="btn btn-primary remove-button">Delete <i class="bi bi-trash3"></i></button>
 
                         </div>
                     </form>
@@ -151,12 +152,13 @@
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body text-center">
                         <p class="fw-bold"><i><span>{{ user.username }}</span> Are you sure you want to exit?</i></p>
                         <p>Any changes made will not be saved.</p>
                     </div>
                     <div class="modal-footer">
-                        <a type="button" href="{% url 'allreviews' restaurant.RestaurantId  %}" class="btn btn-primary button-dbneats">Exit</a>
+                        <a type="button" href="{% url 'allreviews' restaurant.RestaurantId  %}"
+                            class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
 
                     </div>
                     </form>
@@ -180,16 +182,19 @@
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body text-center">
                         <p class="fw-bold"><i><span>{{ user.username }}</span> Are you sure you want to exit?</i></p>
                         <p>Any changes made will not be saved.</p>
                     </div>
-                    {% url restaurant.category as category_url %}
-                    {% if category_url %}
-                    <a type="button" href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit</a>
-                    {% else %}
-                    <a type="button" href="{{ request.META.HTTP_REFERER|default:'/' }}" class="btn btn-primary button-dbneats">Exit</a>
-                    {% endif %}
+                    <div class="modal-footer">
+                        {% url restaurant.category as category_url %}
+                        {% if category_url %}
+                        <a type="button" href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
+                        {% else %}
+                        <a type="button" href="{{ request.META.HTTP_REFERER|default:'/' }}"
+                            class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
+                        {% endif %}
+                    </div>
 
 
                 </div>

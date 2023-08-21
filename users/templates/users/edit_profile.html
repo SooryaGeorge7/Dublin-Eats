@@ -27,7 +27,7 @@
                 <!-- <a type="button" href="{% url 'profile' user.username %}"
                     class="btn btn-outline-info button-dbneats">Exit <i class="bi bi-escape"></i></a> -->
                 <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
-                    data-bs-target="#exitProfileModal"> Exit </button>
+                    data-bs-target="#exitProfileModal"> Exit<i class="bi bi-escape"></i></button>
             </form>
         </div>
     </div>
@@ -80,7 +80,7 @@
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body text-center">
                         <p class="fw-bold"><i><span>{{ user.username }}</span> Are you sure you want to exit?</i></p>
                         <p>Any changes made will not be saved.</p>
                     </div>
