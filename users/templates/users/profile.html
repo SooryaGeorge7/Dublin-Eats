@@ -43,13 +43,19 @@
                     <div class="list-group">
                     {% for restaurant in profile.pinned_restaurants.all %}
                     <div class="d-flex justify-content-between align-items-center ">
+                        {% if restaurant.website %}
                         <a class="flex-grow-1 dublineat-links" href="{{ restaurant.website }}" target="_blank"
-                        aria-label="View {{ restaurant.name }} details">
+                        aria-label="View {{ restaurant.name }} details" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Visit Website">
                         {{ restaurant.name }}</a>
+                        {% else %}
+                        <a href="{{ restaurant.website }}" class="flex-grow-1 dublineat-links disabled-btn " >
+                        {{ restaurant.name }}(link N/A)</a>
+                        {% endif %}
                         {% if request.user == profile.user %} 
                         <a href="{% url 'remove_pin' restaurant.RestaurantId %}" 
                         aria-label="Remove {{ restaurant.name }} from pinned restaurants." 
-                        class="btn btn-sm btn-primary remove-button">Remove X</a>
+                        class="btn btn-sm btn-primary remove-button">Remove <i class="bi bi-eraser"></i></a>
                         {% endif %}
                     
                     </div>
@@ -74,12 +80,19 @@
                     <div class="list-group">
                         {% for restaurant in profile.reviewed.all %}
                         <div class="d-flex justify-content-between align-items-center">
-                            <a class="flex-grow-1 dublineat-links" href="{{restaurant.website_url }}" target="_blank"
-                                aria-label="View {{ restaurant.name }} details">{{ restaurant.name }}</a>
+                            {% if restaurant.website %}
+                            <a class="flex-grow-1 dublineat-links" href="{{ restaurant.website }}" target="_blank"
+                            aria-label="View {{ restaurant.name }} details" data-bs-toggle="tooltip"
+                            data-bs-placement="top" title="Visit Website">
+                            {{ restaurant.name }}</a>
+                            {% else %}
+                            <a href="{{ restaurant.website }}" class="flex-grow-1 dublineat-links disabled-btn " >
+                            {{ restaurant.name }}(link N/A)</a>
+                            {% endif %}
                             {% if request.user == profile.user %}
                             <a href="{% url 'profile_reviews' restaurant.RestaurantId %}"
                                 aria-label="Change {{ restaurant.name }} review"
-                                class="btn btn-sm btn-primary button-dbneats">Open</a></span>
+                                class="btn btn-sm btn-primary button-dbneats">Open <i class="bi bi-envelope-open"></i></a></span>
                             {% else %}
                             <a href="{% url 'allreviews' restaurant.RestaurantId %}" aria-label="Allreviews of restaurant"
                              class="btn btn-sm btn-primary button-dbneats">See reviews</a>
