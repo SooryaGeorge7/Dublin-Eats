@@ -38,7 +38,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item text-center">
-                            <a class="nav-link active" aria-current="page" href="{% url 'dublineats-home' %}">Home</a>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'dublineats-home' %}active{% endif %}" aria-current="page" href="{% url 'dublineats-home' %}">Home</a>
                         </li>
                         <li class="nav-item text-center dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -56,17 +56,17 @@
                         
                         {% if user.is_authenticated %}
                         <li class="nav-item text-center">
-                            <a class="nav-link" href="{% url 'profile' user.username %}">Profile</a>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}"  href="{% url 'profile' user.username %}">Profile</a>
                         </li>
                         <li class="nav-item text-center">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'account_logout' %}active{% endif %}" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item text-center">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn  main-button" href="{% url 'account_signup' %}">Sign up</a>
+                            <a class="nav-link btn  main-button {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}">Sign up</a>
                         </li>
                         {% endif %}
                     </ul>
