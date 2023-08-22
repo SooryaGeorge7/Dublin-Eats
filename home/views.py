@@ -35,7 +35,7 @@ def searchresults(request):
     restaurant_data = response.json()
     results = restaurant_data.get("results", [])
     # print(results)    
-    paginator = Paginator(results, 8)  
+    paginator = Paginator(results[:10], 8)  
     page_number = request.GET.get("page")
     page_object = paginator.get_page(page_number)
     
