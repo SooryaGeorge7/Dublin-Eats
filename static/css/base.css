@@ -228,6 +228,9 @@
     color: var(--primary-color);
 }
 
+.dublineat-links:hover {
+    color: var(--secondary-color);
+}
 .forms {
     padding: 0.5rem;
 }
