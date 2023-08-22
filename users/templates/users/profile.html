@@ -4,12 +4,12 @@
 <section class=" dbneats-background min-vh-100">
     <div class="container profile-container">
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-4 d-flex justify-content-center flex-column align-items-center bg-white">
+            <div class="col-lg-4 col-md-6 d-flex justify-content-center flex-column align-items-center bg-white">
                 <h2 class="text-center form-heading fw-bold ">Profile</h2>
                 <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img"
                     alt="{{ profile.user.username }} Profile Image">
             </div>
-            <div class="col-lg-4 col-md-4 bg-white">
+            <div class="col-lg-4 col-md-6 bg-white">
                 <div class="card-body position-relative">
                     <p><span class="fw-bold">Username<br></span>{{ profile.user.username }}</p>
                     <p><span class="fw-bold">Email<br></span>{{ profile.user.email }}</p>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class=" card col-lg-4 col-md-4 text-center">
+            <div class=" card col-lg-4 col-md-6 text-center">
                 <div class="card-header">
                     {% if request.user == profile.user %}
                     <h3 class="form-heading">My Pinned Restaurants</h3>
@@ -67,7 +67,7 @@
                 {% endif %}
                 </div>
             </div>
-            <div class="card col-lg-4 col-md-4 text-center">
+            <div class="card col-lg-4 col-md-6 text-center">
                 <div class="card-header">
                     {% if request.user == profile.user %} 
                         <h3 class="form-heading">My Reviews</h3>
