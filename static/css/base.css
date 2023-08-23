@@ -339,6 +339,7 @@
     font-size: 1.75rem;
     font-weight:bold;
     text-shadow: 0.25rem 0.25rem 0.5rem rgb(44, 62, 80);
+    margin-bottom: 0rem;
 }
 
 .profile-container {
@@ -392,5 +393,10 @@
         display:none;
     }
 
+    .search-container p {
+        font-size: 2.5rem;
+        font-weight:bolder;
+        
+    }
 
 }
