@@ -9,7 +9,8 @@
     <div class="container ">
         <div class="row mx-2 justify-content-center text-center">
             <div class=" card shadow bg-body-tertiary rounded col-lg-5 col-md-7 login-forms p-5 bg-light">
-                <h1>{% trans "Sign Up" %}</h1>
+                <h1 class="form-heading"><img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                    class="auth-image" alt="message logo"> {% trans "Sign Up" %}</h1>
                 <p>{% blocktrans %}Already have an account?<a href="{{ login_url }}" class="dublineat-links">Log in</a>.{% endblocktrans %}</p>
                 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                     {% csrf_token %}

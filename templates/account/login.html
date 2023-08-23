@@ -11,7 +11,9 @@
     <div class="container ">
         <div class="row mx-2 justify-content-center ">
             <div class=" card shadow bg-body-tertiary rounded col-lg-5 col-md-7 login-forms p-5 bg-light">
-                <h1 class="text-center form-heading">{% trans "Log In" %}</h1>
+                
+                <h1 class="text-center form-heading"><img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                    class="auth-image" alt="message logo"> {% trans "Log In" %}</h1>
                 <p class="text-center ">{% blocktrans %}Need An Account? 
                 <a href="{{ signup_url }}" class="dublineat-links">Sign Up</a> first.{% endblocktrans %}</p>
                 <form class="login" method="POST" action="{% url 'account_login' %}">

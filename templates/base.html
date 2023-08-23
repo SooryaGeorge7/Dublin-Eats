@@ -41,11 +41,13 @@
                             <a class="nav-link {% if request.resolver_match.url_name == 'dublineats-home' %}active{% endif %}" aria-current="page" href="{% url 'dublineats-home' %}">Home</a>
                         </li>
                         <li class="nav-item text-center dropdown">
-                            <a class="nav-link {% if request.resolver_match.url_name == 'asian' %}active{% endif %}
+                            <a class="nav-link 
+                            {% if request.resolver_match.url_name == 'asian' %}active{% endif %}
                             {% if request.resolver_match.url_name == 'european' %}active{% endif %}
                             {% if request.resolver_match.url_name == 'african' %}active{% endif %}
                             {% if request.resolver_match.url_name == 'irish' %}active{% endif %}
-                            {% if request.resolver_match.url_name == 'american' %}active{% endif %} dropdown-toggle" 
+                            {% if request.resolver_match.url_name == 'american' %}active{% endif %} 
+                            dropdown-toggle" 
                             href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Restaurants

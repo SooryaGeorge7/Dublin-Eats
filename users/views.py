@@ -46,7 +46,7 @@ def edit_profile(request, username):
             user_form.save()
             profile_form.save()
             messages.success(
-                request, f'Your account has been updated!')
+                request, f'Your Profile has been updated!')
         
             return redirect("profile", username=user.username)
 
