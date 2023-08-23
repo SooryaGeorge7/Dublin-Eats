@@ -41,11 +41,16 @@
                             <a class="nav-link {% if request.resolver_match.url_name == 'dublineats-home' %}active{% endif %}" aria-current="page" href="{% url 'dublineats-home' %}">Home</a>
                         </li>
                         <li class="nav-item text-center dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            <a class="nav-link {% if request.resolver_match.url_name == 'asian' %}active{% endif %}
+                            {% if request.resolver_match.url_name == 'european' %}active{% endif %}
+                            {% if request.resolver_match.url_name == 'african' %}active{% endif %}
+                            {% if request.resolver_match.url_name == 'irish' %}active{% endif %}
+                            {% if request.resolver_match.url_name == 'american' %}active{% endif %} dropdown-toggle" 
+                            href="#" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Restaurants
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item" href="{% url 'asian' %}">Asian</a></li>
                                 <li><a class="dropdown-item" href="{% url 'european' %}">European</a></li>
                                 <li><a class="dropdown-item" href="{% url 'african' %}">African</a></li>
@@ -65,8 +70,8 @@
                         <li class="nav-item text-center">
                             <a class="nav-link {% if request.resolver_match.url_name == 'account_login' %}active{% endif %}" href="{% url 'account_login' %}">Login</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn  main-button {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}">Sign up</a>
+                        <li class="nav-item text-center">
+                            <a class="nav-link  {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}" href="{% url 'account_signup' %}">Sign up</a>
                         </li>
                         {% endif %}
                     </ul>

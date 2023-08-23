@@ -50,9 +50,24 @@
     font-weight: bold;
 }
 
+.nav-link.active {
+    border-bottom: 0.125rem solid var(--secondary-color);
+    
+    
+}
+
 .dropdown-menu {
     background-color: rgba(242, 242, 242, 0.9);
     border-left: 0.25rem solid var(--secondary-color);
+}
+
+
+.dropdown-item{
+    color: var(--primary-color);
+}
+.dropdown-item:hover{
+    background-color: rgba(249, 191, 59, 0.8) ;
+    color: var(--light-color);
 }
 .dropdown-item:focus{
     color: var(--light-color);
