@@ -11,7 +11,7 @@
                     <p>Discover Dublin's Culinary Options.</p>
                     <p>Start your search here!</p>
                     <form class="d-flex" action="{% url 'searchresults'   %}" method="GET">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query" id="query"
+                        <input class="form-control me-2" type="search" placeholder="What are you craving for?" aria-label="Search" name="query" id="query"
                         value="{{ request.GET.query }}" onfocus="onFocus()" onfocusout="onFocusOut()" pattern="^(?!\s*$)[a-zA-Z ]*$" 
                         title="Please enter a valid search query" required >
                         <button class="btn btn-outline-success main-button" id="searchbtn" data-bs-toggle="tooltip"

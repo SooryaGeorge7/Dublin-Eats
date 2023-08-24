@@ -233,6 +233,12 @@
 .form-heading {
     color: var(--primary-color);
 }
+
+.form-control {
+    font-size: 0.75rem;
+
+}
+
 .results-heading {
     color: var(--primary-color);
     margin-top: 6rem;
@@ -387,6 +393,11 @@
     .allreviews h1 {
         font-size: 2rem;
         
+    }
+
+    .form-control {
+        font-size: 1rem;
+    
     }
 }
 
