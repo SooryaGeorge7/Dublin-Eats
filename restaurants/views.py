@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.urls import NoReverseMatch
 
+
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 def get_place_details(place_id):
@@ -146,11 +147,13 @@ def to_visit(request, restaurant_id):
             request,
             f"{user.username} you have pinned {restaurant} to your profile",
         )
+    
+    
     try:
         category_url = reverse(restaurant.category)
     except NoReverseMatch:
-        return redirect(request.META.get('HTTP_REFERER'))
-    # category_url = reverse('{}'.format(restaurant.category))
+        return redirect("searchresults", restaurant.category)
+   
     
     return redirect(category_url)
     

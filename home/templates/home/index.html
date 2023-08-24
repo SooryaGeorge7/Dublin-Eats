@@ -10,7 +10,7 @@
                 <div class=" start-50 translate-middle search-container" >
                     <p>Discover Dublin's Culinary Options.</p>
                     <p>Start your search here!</p>
-                    <form class="d-flex" action="{% url 'searchresults'   %}" method="GET">
+                    <form class="d-flex" action="{% url 'search'   %}" method="GET">
                         <input class="form-control me-2" type="search" placeholder="What are you craving for?" aria-label="Search" name="query" id="query"
                         value="{{ request.GET.query }}" onfocus="onFocus()" onfocusout="onFocusOut()" pattern="^(?!\s*$)[a-zA-Z ]*$" 
                         title="Please enter a valid search query" required >

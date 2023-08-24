@@ -12,6 +12,7 @@ GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 
 
+
 def get_details(place_id):
     detail_url = "https://maps.googleapis.com/maps/api/place/details/json"
     params = {
@@ -23,9 +24,19 @@ def get_details(place_id):
     detail_data = response.json()
     return detail_data.get("result", {})
 
-def searchresults(request):
-
+def search(request):
+    """
+    Takes the users query from the search bar and makes a call to the TMDB API
+    and renders the data in the search results page
+    """
     query = request.GET.get("query")
+
+    if query:
+        return redirect("searchresults", query=query)
+
+def searchresults(request, query):
+
+    # query = request.GET.get("query")
     url = ( 
         f"https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&type=restaurant&location=53.350140,-6.266155&key={GOOGLE_PLACES_API_KEY}"
     )
@@ -61,10 +72,13 @@ def searchresults(request):
             
             try:
                 restaurant_details = Restaurant.objects.get(RestaurantId=place_id)
+                restaurant_details.category = query
+                restaurant_details.save()
             except Restaurant.DoesNotExist:
                 restaurant_details = Restaurant(
                     name = result["name"],
                     website = website_url,
+                    category = query,
                     address = result["formatted_address"],
                     RestaurantId = place_id,
                 )            

@@ -190,10 +190,10 @@
                         {% url restaurant.category as category_url %}
                         {% if category_url %}
                         <a type="button" href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
-                        {% else %}
-                        <a type="button" href="{{ request.META.HTTP_REFERER|default:'/' }}"
+                        <!-- {% else %}
+                        <a type="button" href="{% url 'searchresults' restaurant.category %}"
                             class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
-                        {% endif %}
+                        {% endif %} -->
                     </div>
 
 

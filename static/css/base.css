@@ -36,8 +36,7 @@
 
     /* Adjust the width and height according to your image size */
     height: 3.5rem;
-    background-image: url('../logo/logoimage.webp');
-
+    background-image:url("https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp");
     background-repeat: no-repeat;
     background-size: contain;
 }
