@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<section class="home-page">
+<div class="home-page">
     <div class="container-fluid p-0">
         <div class="row ">
             <div class="col" >
@@ -12,7 +12,7 @@
                     <p>Start your search here!</p>
                     <form class="d-flex" action="{% url 'search'   %}" method="GET">
                         <input class="form-control me-2" type="search" placeholder="What are you craving for?" aria-label="Search" name="query" id="query"
-                        value="{{ request.GET.query }}" onfocus="onFocus()" onfocusout="onFocusOut()" pattern="^(?!\s*$)[a-zA-Z ]*$" 
+                        value="{{ request.GET.query }}"  pattern="^(?!\s*$)[a-zA-Z ]*$" 
                         title="Please enter a valid search query" required >
                         <button class="btn btn-outline-success main-button" id="searchbtn" data-bs-toggle="tooltip"
                         data-bs-placement="top" title="Search" type="submit"><i class="bi bi-search"></i></button>
@@ -25,5 +25,5 @@
     <!-- Customizible JS -->
     <script src="{% static 'js/blur.js' %}"></script>
     {% endblock extra_js %}
-</section>
+</div>
 {% endblock content %}
