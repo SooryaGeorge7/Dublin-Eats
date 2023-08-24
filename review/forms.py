@@ -14,6 +14,14 @@ class RatingForm(forms.ModelForm):
             'value_for_money': HiddenInput(),
             'comment_text': forms.Textarea(attrs={'placeholder': 'Type in a review here...'}),  
         }
+        labels = {
+            'taste': 'Taste',
+            'ambience': 'Ambience',
+            'location': 'Location',
+            'customer_service': 'Customer Service',
+            'value_for_money': 'Value for Money',
+            'comment_text': 'Review Comment',
+        }
         help_texts = {
             'comment_text': 'Maximum 500 characters',
         }

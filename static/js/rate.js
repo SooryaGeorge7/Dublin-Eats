@@ -6,27 +6,27 @@ var handleRatings = (choice, criteria) => {
     stars.forEach(star => star.classList.remove('checked'));
 
     switch (choice) {
-        case 'first':
+        case `${criteria}-first`:
             for (var i = 0; i < 1; i++) {
                 stars[i].classList.add('checked');
             }
             break;
-        case 'second':
+        case `${criteria}-second`:
             for (var i = 0; i < 2; i++) {
                 stars[i].classList.add('checked');
             }
             break;
-        case 'third':
+        case `${criteria}-third`:
             for (var i = 0; i < 3; i++) {
                 stars[i].classList.add('checked');
             }
             break;
-        case 'fourth':
+        case `${criteria}-fourth`:
             for (var i = 0; i < 4; i++) {
                 stars[i].classList.add('checked');
             }
             break;
-        case 'fifth':
+        case `${criteria}-fifth`:
             for (var i = 0; i < 5; i++) {
                 stars[i].classList.add('checked');
             }
@@ -40,15 +40,15 @@ var handleRatings = (choice, criteria) => {
 
 var getNumValue = (stringValue) => {
     let numValue;
-    if (stringValue === 'first') {
+    if (stringValue.endsWith('-first')) {
         numValue = 1;
-    } else if (stringValue === 'second') {
+    } else if (stringValue.endsWith('-second')) {
         numValue = 2;
-    } else if (stringValue === 'third') {
+    } else if (stringValue.endsWith('-third')) {
         numValue = 3;
-    } else if (stringValue === 'fourth') {
+    } else if (stringValue.endsWith('-fourth')) {
         numValue = 4;
-    } else if (stringValue === 'fifth') {
+    } else if (stringValue.endsWith('-fifth')) {
         numValue = 5;
     } else {
         numValue = 0;
@@ -86,3 +86,6 @@ var updateStarRatings = (criteria) => {
   criterias.forEach(criteria => {
     updateStarRatings(criteria);
   });
+
+
+
