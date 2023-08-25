@@ -109,7 +109,7 @@
                 <div class="modal-content">
                     {% if user.is_authenticated and user == review.user %}
                     <form method="POST" class=" text-center"
-                        action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}" role="form">
+                        action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}" >
                         {% csrf_token %}
                         <div class="modal-header">
                             <h2 class="modal-title fw-bold form-heading text-center" id="deleteProfileModalLabel">

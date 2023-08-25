@@ -32,13 +32,12 @@
         </div>
     </div>
     <div class="container">
-        <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
+        <div class="modal fade" id="deleteProfileModal" tabindex="-1" 
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content ">
                     {% if user.is_authenticated and user == profile.user %}
-                    <form method="POST" class="form-heading text-center" action="{% url 'deleteprofile' user.username %}"
-                        role="form">
+                    <form method="POST" class="form-heading text-center" action="{% url 'deleteprofile' user.username %}">
                         {% csrf_token %}
                         <div class="modal-header">
                             <h2 class="modal-title fw-bold form-heading text-center">
