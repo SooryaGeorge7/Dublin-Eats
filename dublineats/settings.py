@@ -15,7 +15,7 @@ import os
 import dj_database_url
 
 if os.path.isfile("env.py"):
-   import env
+    import env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,8 +34,11 @@ DEBUG = True
 
 # X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com','8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu102.gitpod.io',
-'8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu103.gitpod.io','8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu104.gitpod.io','localhost']
+ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com',
+                 '8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu102.gitpod.io',
+                 '8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu103.gitpod.io',
+                 '8000-sooryageorge-dublineats-aulnazm1c9r.ws-eu104.gitpod.io',
+                 'localhost']
 
 
 # Application definition
@@ -61,7 +64,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 ]
 
-SITE_ID =1
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -113,16 +116,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 
@@ -145,7 +152,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = (
+    'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+)
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
@@ -162,7 +171,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 LOGIN_URL = '/accounts/login/'
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

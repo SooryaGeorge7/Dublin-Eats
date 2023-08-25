@@ -5,29 +5,30 @@ var handleRatings = (choice, criteria) => {
 
     stars.forEach(star => star.classList.remove('checked'));
 
+    var i;
     switch (choice) {
         case `${criteria}-first`:
-            for (var i = 0; i < 1; i++) {
+            for ( i = 0; i < 1; i++) {
                 stars[i].classList.add('checked');
             }
             break;
         case `${criteria}-second`:
-            for (var i = 0; i < 2; i++) {
+            for ( i = 0; i < 2; i++) {
                 stars[i].classList.add('checked');
             }
             break;
         case `${criteria}-third`:
-            for (var i = 0; i < 3; i++) {
+            for ( i = 0; i < 3; i++) {
                 stars[i].classList.add('checked');
             }
             break;
         case `${criteria}-fourth`:
-            for (var i = 0; i < 4; i++) {
+            for ( i = 0; i < 4; i++) {
                 stars[i].classList.add('checked');
             }
             break;
         case `${criteria}-fifth`:
-            for (var i = 0; i < 5; i++) {
+            for ( i = 0; i < 5; i++) {
                 stars[i].classList.add('checked');
             }
             break;
