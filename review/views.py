@@ -63,14 +63,14 @@ def edit_review(request, restaurant_id, review_id):
     review = get_object_or_404(Review, id=review_id)
     user_review = Review.objects.filter(restaurant=restaurant, user=user)
     
-    if user_review.exists():
+    if user_review.exists() or user.is_superuser:
         user_reviewed = True
     else:
         user_reviewed = False
 
-    if review.user != user:
+    if review.user != user and not user.is_superuser:
         messages.error(request, "You are not authorized to edit this review.")
-        return redirect(reverse("allreviews"))
+        return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
 
     if request.method == "POST":
         rating_form = RatingForm(request.POST, instance=review)
