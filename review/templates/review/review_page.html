@@ -72,8 +72,10 @@
             </div>
             <div>
                 {% if user_reviewed == True %}
+                {% if review.user == user %}
                 <button type="submit" class="btn btn-primary main-button">Update <i
                         class="bi bi-arrow-clockwise"></i></button>
+                {% endif %}
                 <button type="button" class="btn btn-outline-info remove-button" data-bs-toggle="modal"
                     data-bs-target="#deleteProfileModal">
                     Delete <i class="bi bi-trash3"></i>
@@ -107,7 +109,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    {% if user.is_authenticated and user == review.user %}
+                    {% if review.user or user.is_superuser %}
                     <form method="POST" class=" text-center"
                         action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}" >
                         {% csrf_token %}
@@ -118,9 +120,13 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p class="fw-bold"><i><span>{{ review.user }}</span> Are you sure you want to delete your
-                                    review and
-                                    ratings?</i></p>
+                            <p class="fw-bold"><i>
+                                {% if user.is_superuser and user != review.user %}
+                                <span>{{ request.user }}</span> Are you sure you want to delete {{ review.user}}'s review and ratings?
+                                {% else %}
+                                <span>{{ review.user }}</span> Are you sure you want to delete your review and ratings?
+                                {% endif %}
+                            </i></p>
                             <p>Once deleted, you will not be able to recover your review.</p>
                         </div>
                         <div class="modal-footer">
