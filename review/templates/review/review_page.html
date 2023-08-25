@@ -100,6 +100,7 @@
     {% endblock extra_js %}
 
 </section>
+{% if user_reviewed == True %}
 <section class="d-flex justify-content-center align-items-center dbneats-background">
     <div class="container">
         <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
@@ -138,7 +139,7 @@
         </div>
     </div>
 </section>
-
+{% endif %}
 <section class="d-flex justify-content-center align-items-center dbneats-background">
     <div class="container">
         <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
@@ -162,7 +163,7 @@
                             class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
 
                     </div>
-                    </form>
+                    
 
                 </div>
             </div>
