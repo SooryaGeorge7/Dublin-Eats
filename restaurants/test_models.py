@@ -8,6 +8,7 @@ class TestRestaurantModel(TestCase):
             name="Test Restaurant",
             website="dublineatstest@info.com",
             address="07 Tester, Dublin",
+            category="indian",
             RestaurantId="test17",
             
         )
@@ -17,4 +18,6 @@ class TestRestaurantModel(TestCase):
         self.assertEqual(restaurant.name, "Test Restaurant")
         self.assertEqual(restaurant.website, "dublineatstest@info.com")
         self.assertEqual(restaurant.address, "07 Tester, Dublin")
+        self.assertEqual(restaurant.category, "indian")
         self.assertEqual(restaurant.RestaurantId, "test17")
+        
