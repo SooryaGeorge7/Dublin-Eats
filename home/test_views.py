@@ -11,7 +11,6 @@ GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 
 class TestSearchResultsViews(TestCase):
-
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(
@@ -31,3 +30,16 @@ class TestSearchResultsViews(TestCase):
         self.profile.pinned_restaurants.add(self.restaurant)
         self.profile.reviewed.add(self.restaurant)
 
+    def test_search_and_search_results_page(self):
+        self.client.login(username="testuser", password="test123")
+        query = "thai"
+        response = self.client.get(reverse("search") + "?query=" + query)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(
+            response, reverse("searchresults", kwargs={"query": query})
+        )
+        response = self.client.get(
+            reverse("searchresults", kwargs={"query": query})
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "home/results.html")
