@@ -124,7 +124,7 @@ def delete_review(request, restaurant_id, review_id):
         )
         return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
 
-    profile = Profile.objects.get(user=user)
+    profile = Profile.objects.get(user=review.user)
     if review.restaurant in profile.reviewed.all():
         profile.reviewed.remove(review.restaurant)
 

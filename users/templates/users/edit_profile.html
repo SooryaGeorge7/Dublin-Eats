@@ -18,8 +18,10 @@
                     {{ user_form|crispy }}
                     {{ profile_form|crispy }}
                 </div>
+                {% if user == profile.user %}
                 <button class="btn btn-outline-info main-button" type="submit"> Update <i
                         class="bi bi-arrow-clockwise"></i> </button>
+                {% endif %}
                 <button type="button" class="btn btn-outline-info remove-button" data-bs-toggle="modal"
                     data-bs-target="#deleteProfileModal">
                     Delete <i class="bi bi-trash3"></i>
@@ -36,8 +38,8 @@
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content ">
-                    {% if user.is_authenticated and user == profile.user %}
-                    <form method="POST" class="form-heading text-center" action="{% url 'deleteprofile' user.username %}">
+                    {% if user.is_authenticated and user == profile.user or user.is_superuser %}
+                    <form method="POST" class="form-heading text-center" action="{% url 'deleteprofile' profile.user.username %}">
                         {% csrf_token %}
                         <div class="modal-header">
                             <h2 class="modal-title fw-bold form-heading text-center">
@@ -47,9 +49,14 @@
                         </div>
                         <div class="modal-body">
                             <p><i>
-                                    <span>{{ profile.user }}</span> Are you sure you want to delete your profile?
-                                </i></p>
-                            <p>Once deleted, you will have to sign up again</p>
+                                {% if user.is_superuser and user != profile.user%}
+                                <span>{{ request.user }}</span> Are you sure you want to delete {{ profile.user.username}}'s profile and account?
+                                {% else %}
+                                <span>{{ profile.user.username }}</span> Are you sure you want to delete your profile?
+                                <p>Once deleted, you will have to sign up again</p>
+                                {% endif %}
+                            </i></p>
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="submit" name="action" value="delete"

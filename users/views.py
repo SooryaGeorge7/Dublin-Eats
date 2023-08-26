@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
@@ -36,9 +36,16 @@ def profile(request, username):
 
 @login_required
 def edit_profile(request, username):
-    user = User.objects.get(username=username)
-    profile = Profile.objects.get(user=request.user)
+    user = request.user
+    # user = User.objects.get(username=username)
+    profile_user = get_object_or_404(User, username=username)
+    profile = Profile.objects.get(user=profile_user)
     
+    if profile.user != user and not user.is_superuser:
+        messages.error(request, "You are not authorized to edit this profile.")
+        return redirect(reverse("profile" , kwargs={'username': username}))
+
+
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -51,8 +58,8 @@ def edit_profile(request, username):
             return redirect("profile", username=user.username)
 
     else:
-        user_form = UserUpdateForm(instance=request.user)
-        profile_form = ProfileUpdateForm(instance=request.user.profile)
+        user_form = UserUpdateForm(instance=profile_user)
+        profile_form = ProfileUpdateForm(instance=profile_user.profile)
 
     context = {
         'user_form': user_form,
@@ -66,13 +73,31 @@ def edit_profile(request, username):
 @login_required()
 def delete_profile(request, username):
     
-    user = get_object_or_404(User, username=username)
-    if request.method == "POST":
-        logout(request)
-        user.delete()
-        messages.success(
-            request, f"Your account has been deleted { user.username }"
+    user = request.user
+    
+    profile_user = get_object_or_404(User, username=username)
+    profile = Profile.objects.get(user=profile_user)
+    # user = get_object_or_404(User, username=username)
+    if not user.is_superuser and profile.user != user:
+        messages.error(
+            request, "You are not authorized to delete this review."
         )
+        return redirect(reverse(f'{restaurant.category}'))
+
+
+    if request.method == "POST":
+        if not user.is_superuser:
+            logout(request)
+        profile_user.delete()
+
+        if user.is_superuser:
+            messages.success(
+                request, f"account has been deleted "
+            )
+        else:
+            messages.success(
+                request, f"Your account has been deleted { user.username }"
+            )
         return redirect("dublineats-home")
 
     context = {"username": username}
