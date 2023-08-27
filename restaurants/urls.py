@@ -13,7 +13,6 @@ urlpatterns = [
         views.restaurants,
         {"category": "european"},
         name="european",
-        
     ),
     path(
         "african/",
