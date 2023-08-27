@@ -3,21 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
 from django.contrib.auth.decorators import login_required
-from .forms import  UserUpdateForm, ProfileUpdateForm
+from .forms import UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth import logout
 
-# def signup(request):
-#     if request.method == 'POST':
-#         form = UserSignupForm(request.POST)
-#         if form.is_valid():
-#             username = form.cleaned_data.get('username')
-#             messages.success(
-#                 request, f'Signup Succesful {username}!You May Now Log In!')
-#             form.save()
-#             return redirect('userlogin')
-#     else:
-#         form = UserSignupForm()
-#     return render(request, 'users/signup.html', {'form': form})
 
 @login_required
 def profile(request, username):
@@ -34,27 +22,37 @@ def profile(request, username):
 
     return render(request, "users/profile.html", context)
 
+
 @login_required
 def edit_profile(request, username):
     user = request.user
     # user = User.objects.get(username=username)
     profile_user = get_object_or_404(User, username=username)
     profile = Profile.objects.get(user=profile_user)
-    
-    if profile.user != user and not user.is_superuser:
-        messages.error(request, "You are not authorized to edit this profile.")
-        return redirect(reverse("profile" , kwargs={'username': username}))
 
+    if profile.user != user and not user.is_superuser:
+        messages.error(
+            request, "You are not authorized to edit this profile."
+        )
+        return redirect(reverse(
+            "profile", kwargs={'username': username})
+        )
 
     if request.method == 'POST':
-        user_form = UserUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        user_form = UserUpdateForm(
+            request.POST,
+            instance=request.user
+        )
+        profile_form = ProfileUpdateForm(
+            request.POST, request.FILES,
+            instance=request.user.profile
+        )
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
             messages.success(
-                request, f'Your Profile has been updated!')
-        
+                request, f'Your Profile has been updated!'
+            )
             return redirect("profile", username=user.username)
 
     else:
@@ -65,16 +63,15 @@ def edit_profile(request, username):
         'user_form': user_form,
         'profile_form': profile_form,
         'profile': profile,
-        'user':user,
+        'user': user,
     }
 
     return render(request, 'users/edit_profile.html', context)
 
+
 @login_required()
 def delete_profile(request, username):
-    
     user = request.user
-    
     profile_user = get_object_or_404(User, username=username)
     profile = Profile.objects.get(user=profile_user)
     # user = get_object_or_404(User, username=username)
@@ -83,7 +80,6 @@ def delete_profile(request, username):
             request, "You are not authorized to delete this review."
         )
         return redirect(reverse(f'{restaurant.category}'))
-
 
     if request.method == "POST":
         if not user.is_superuser:
@@ -96,7 +92,8 @@ def delete_profile(request, username):
             )
         else:
             messages.success(
-                request, f"Your account has been deleted { user.username }"
+                request,
+                f"Your account has been deleted { user.username }"
             )
         return redirect("dublineats-home")
 

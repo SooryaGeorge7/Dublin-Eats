@@ -7,7 +7,7 @@ from .models import Profile, placeholder
 class TestProfileModel(TestCase):
 
     def setUp(self):
-        
+
         self.restaurant = Restaurant.objects.create(
             name="testRestaurant",
             website="testingwebsite@info.com",
@@ -21,7 +21,7 @@ class TestProfileModel(TestCase):
         self.profile.firstname = "Soorya"
         self.profile.surname = "George"
         self.profile.about = "Foodie till i die!"
-        self.profile.profile_image =  placeholder
+        self.profile.profile_image = placeholder
         self.profile.fav_food = "Indian"
         self.profile.pinned_restaurants.add(self.restaurant)
         self.profile.reviewed.add(self.restaurant)
@@ -29,16 +29,14 @@ class TestProfileModel(TestCase):
         self.profile.reviewed.remove(self.restaurant)
 
     def test_profile_model(self):
-        
         self.assertEqual(self.profile.user.username, "testuser")
         self.assertEqual(self.profile.firstname, "Soorya")
         self.assertEqual(self.profile.surname, "George")
         self.assertEqual(self.profile.about, "Foodie till i die!")
         self.assertEqual(self.profile.profile_image, placeholder)
         self.assertEqual(self.profile.fav_food, "Indian")
-        
+
     def test_pinned_restaurants_and_reviewed_relationships(self):
-        
         restaurant1 = Restaurant.objects.create(
             name="Restaurant1",
             website="Restaurant1website@info.com",
@@ -55,10 +53,12 @@ class TestProfileModel(TestCase):
         )
 
         profile = self.profile
-
         profile.pinned_restaurants.add(restaurant1)
         profile.pinned_restaurants.add(restaurant2)
 
-        
-        self.assertTrue(profile.pinned_restaurants.filter(name="Restaurant1").exists())
-        self.assertTrue(profile.pinned_restaurants.filter(name="Restaurant2").exists())
+        self.assertTrue(
+            profile.pinned_restaurants.filter(name="Restaurant1").exists()
+        )
+        self.assertTrue(
+            profile.pinned_restaurants.filter(name="Restaurant2").exists()
+        )

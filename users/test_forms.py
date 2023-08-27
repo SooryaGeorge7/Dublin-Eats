@@ -1,7 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from .forms import  UserUpdateForm, ProfileUpdateForm
-
+from .forms import UserUpdateForm, ProfileUpdateForm
 
 
 class UserUpdateFormTest(TestCase):
@@ -10,7 +9,7 @@ class UserUpdateFormTest(TestCase):
         form_data = {
             "username": "testuser",
             "email": "test@example.com",
-            
+
         }
         form = UserUpdateForm(data=form_data)
         self.assertTrue(form.is_valid())
@@ -24,7 +23,9 @@ class UserUpdateFormTest(TestCase):
         form = UserUpdateForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn("email", form.errors.keys())
-        self.assertEqual(form.errors["email"][0], "Enter a valid email address.")
+        self.assertEqual(
+            form.errors["email"][0], "Enter a valid email address."
+        )
 
     def test_userupdateform_missing_fields(self):
         # Test when required fields are missing
@@ -35,7 +36,10 @@ class UserUpdateFormTest(TestCase):
         form = UserUpdateForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn("username", form.errors.keys())
-        self.assertEqual(form.errors["username"][0], "This field is required.")
+        self.assertEqual(
+            form.errors["username"][0], "This field is required."
+        )
+
 
 class TestProfileForm(TestCase):
     def test_ifprofileform_valid(self):
@@ -46,12 +50,11 @@ class TestProfileForm(TestCase):
                 "profile_image": "image.jpg",
                 "fav_food": "indian",
         }
-        
+
         form = ProfileUpdateForm(data=form_data)
         self.assertTrue(form.is_valid())
 
     def test_ifprofileform_invalid(self):
-        
         form = ProfileUpdateForm(
             {
                 "firstname": str("a" * 51),
@@ -80,5 +83,5 @@ class TestProfileForm(TestCase):
             form.errors["fav_food"][0],
             'Ensure this value has at most 50 characters (it has 51).',
         )
-        
+
         self.assertFalse(form.is_valid())

@@ -6,33 +6,39 @@ from restaurants.models import Restaurant
 from django.core.validators import MaxLengthValidator
 # Create your models here.
 
-placeholder= (f"https://res.cloudinary.com/dif9bjzee/image/upload/ar_1:1,b_rgb:262c35,bo_5px_solid_rgb:2c3e50,c_fill,g_auto,r_max,w_200/v1689590568/profile-gda8c660e4_640_z54qoi.webp")
+placeholder = (
+    f"https://res.cloudinary.com/dif9bjzee/image/upload"
+    f"/ar_1:1,b_rgb:262c35,bo_5px_solid_rgb:2c3e50,c_fill,g_auto,"
+    f"r_max,w_200/v1689590568/profile-gda8c660e4_640_z54qoi.webp"
+)
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(
-        max_length=50, null=True, blank=True, 
+        max_length=50, null=True, blank=True,
     )
     surname = models.CharField(
-        max_length=50, null=True, blank=True, 
+        max_length=50, null=True, blank=True,
     )
-    about = models.TextField(null=True,
+    about = models.TextField(
+        null=True,
         blank=True,
         max_length=200,
         validators=[MaxLengthValidator(250)],
     )
-    
+
     profile_image = CloudinaryField(
         "image",
-        default = placeholder,
+        default=placeholder,
         eager=[{"width": 50, "height": 50, "crop": "crop"}],
         transformation={
             "width": 200,
             "height": 200,
             "crop": "fill",
         },
-        blank= True,
-        null= True,
+        blank=True,
+        null=True,
     )
     fav_food = models.CharField(
         max_length=50,
@@ -46,7 +52,6 @@ class Profile(models.Model):
     reviewed = models.ManyToManyField(
         Restaurant, related_name="reviewed", blank=True
     )
-    
 
     def __str__(self):
         return f'{self.user.username} Profile'
