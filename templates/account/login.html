@@ -15,7 +15,7 @@
                 <h1 class="text-center form-heading"><img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
                     class="auth-image" alt="message logo"> {% trans "Log In" %}</h1>
                 <p class="text-center ">{% blocktrans %}Need An Account? 
-                <a href="{{ signup_url }}" class="dublineat-links">Sign Up</a> first.{% endblocktrans %}</p>
+                <a href="{{ signup_url }}" class="dublineat-links" >Sign Up</a> first.{% endblocktrans %}</p>
                 <form class="login" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     {{ form|crispy }}

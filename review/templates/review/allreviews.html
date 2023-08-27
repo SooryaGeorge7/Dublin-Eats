@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="text-end position-absolute top-0 end-0 ">
                             {% if user.is_authenticated and user == review.user or user.is_superuser %}
-                            <a class="btn btn-primary main-button mt-3 mb-3"
+                            <a class="btn btn-primary main-button mt-3 mb-3" aria-label="Edit review"
                                 href="{% url 'edit_review'  review.restaurant.RestaurantId review.id %}">Edit
                                 <i class="bi bi-pencil"></i></a>
                             {% endif %}
@@ -90,7 +90,7 @@
             <div class="col-md-8 mx-auto position-fixed top-50 start-0">
             {% url restaurant.category as category_url %}
             {% if category_url %}
-            <a  href="{% url restaurant.category %}" class="btn btn-primary button-dbneats"
+            <a  href="{% url restaurant.category %}" aria-label="Go back to previous page" class="btn btn-primary button-dbneats"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>
             <!-- {% else %}
             <a type="button" href="{% url 'searchresults' restaurant.category %}" class="btn btn-primary button-dbneats"
@@ -100,7 +100,7 @@
             
         </div>
         <div class="col mx-auto position-fixed top-50 end-0 goup-btn">
-            <a  href="" class="btn btn-primary button-dbneats"
+            <a  href="" class="btn btn-primary button-dbneats" aria-label="Go up to the top"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Up"><i class="bi bi-chevron-double-up"></i></a>
         </div>
     </div>

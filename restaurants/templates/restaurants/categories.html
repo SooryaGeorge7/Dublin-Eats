@@ -66,14 +66,15 @@
                             {% endif %}
                             {% if restaurant.website_url %}
                                 <a href="{{ restaurant.website_url }}" class="btn btn-primary w-100 button-dbneats py-2"
-                                target="_blank">
+                                rel="noopener" aria-label="Visit website" target="_blank">
                                     Visit Website</a>
                             {% else %}
-                                <a href="{{ restaurant.website_url }}" class="btn btn-primary w-100 disabled-btn " >
+                                <a href="{{ restaurant.website_url }}" class="btn btn-primary w-100 disabled-btn " 
+                                rel="noopener" aria-label="Visit website">
                                     Website Unavailable</a>
                             {% endif %}
                             <a href="{% url 'allreviews' restaurant.place_id %}"
-                                class="btn btn-primary w-100 button-dbneats py-2">
+                                class="btn btn-primary w-100 button-dbneats py-2" aria-label="All restaurant reviews">
                                 All Reviews <i class="fa-solid fa-magnifying-glass"></i>
                             </a>
                         </div>
@@ -85,7 +86,7 @@
             {% endfor %}
         </div>
         <div class=" mx-auto position-fixed top-50 end-0">
-            <a  href="" class="btn btn-primary button-dbneats goup-btn"
+            <a  href="" class="btn btn-primary button-dbneats goup-btn" aria-label="Go up button"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Up"><i class="bi bi-chevron-double-up"></i></a>
         </div>
             

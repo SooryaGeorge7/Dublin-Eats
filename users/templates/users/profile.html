@@ -22,7 +22,8 @@
                         {% if user == profile.user or user.is_superuser %}
                         <a class="site-btn flex-grow-1 btn btn-primary main-button"
                             href="{% url 'editprofile' profile.user.username %}" data-bs-toggle="tooltip"
-                            data-bs-placement="top" title="Edit Profile">Update
+                            data-bs-placement="top" title="Edit Profile"
+                            aria-label="Update profile">Update
                             <i class="bi bi-pencil-square"></i></a>
                         {% endif %}
                     </div>

@@ -166,7 +166,8 @@
                     </div>
                     <div class="modal-footer">
                         <a  href="{% url 'allreviews' restaurant.RestaurantId  %}"
-                            class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
+                            class="btn btn-primary button-dbneats"
+                            aria-label="Exit review">Exit <i class="bi bi-escape"></i></a>
 
                     </div>
                     
@@ -198,7 +199,7 @@
                         {% url restaurant.category as category_url %}
                         {% if category_url %}
                         <a  href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit <i
-                                class="bi bi-escape"></i></a>
+                                class="bi bi-escape" aria-label="Exit review"></i></a>
                         <!-- {% else %}
                         <a type="button" href="{% url 'searchresults' restaurant.category %}"
                             class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
