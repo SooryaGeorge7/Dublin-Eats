@@ -1,5 +1,4 @@
 
-
 from .forms import RatingForm
 from .models import Review
 from restaurants.models import Restaurant
@@ -9,16 +8,17 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+
 @login_required()
 def review(request, restaurant_id):
-    restaurant = Restaurant.objects.get(RestaurantId= restaurant_id)
+    restaurant = Restaurant.objects.get(RestaurantId=restaurant_id)
     ratings = Review.objects.filter(restaurant=restaurant)
     user = request.user
-    profile = get_object_or_404(Profile, user= user)
-    
+    profile = get_object_or_404(Profile, user=user)
+
     if request.method == "POST":
         rating_form = RatingForm(request.POST)
-        if rating_form.is_valid() :
+        if rating_form.is_valid():
             restaurant_rating = rating_form.save(commit=False)
             restaurant_rating.restaurant = restaurant
             profile.reviewed.add(restaurant)
@@ -27,7 +27,11 @@ def review(request, restaurant_id):
             messages.success(
                 request, f"{user.username} you have reviewed {restaurant}"
             )
-            return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
+            return redirect(
+                reverse(
+                    "allreviews", kwargs={'restaurant_id': restaurant_id}
+                    )
+                )
         else:
             messages.error(
                 request,
@@ -35,25 +39,26 @@ def review(request, restaurant_id):
             )
     else:
         rating_form = RatingForm()
-    
+
     context = {
         'restaurant': restaurant,
         'ratings': ratings,
-        'user':user,
+        'user': user,
         'rating_form': rating_form,
     }
     return render(request, 'review/review_page.html', context)
+
 
 @login_required()
 def allreviews(request, restaurant_id):
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     reviews = Review.objects.filter(restaurant=restaurant)
     context = {
-        "restaurant":restaurant,
+        "restaurant": restaurant,
         "reviews": reviews,
     }
-
     return render(request, "review/allreviews.html", context)
+
 
 @login_required()
 def edit_review(request, restaurant_id, review_id):
@@ -62,7 +67,7 @@ def edit_review(request, restaurant_id, review_id):
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     review = get_object_or_404(Review, id=review_id)
     user_review = Review.objects.filter(restaurant=restaurant, user=user)
-    
+
     if user_review.exists() or user.is_superuser:
         user_reviewed = True
     else:
@@ -70,8 +75,11 @@ def edit_review(request, restaurant_id, review_id):
 
     if review.user != user and not user.is_superuser:
         messages.error(request, "You are not authorized to edit this review.")
-        return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
-
+        return redirect(
+            reverse(
+                "allreviews", kwargs={'restaurant_id': restaurant_id}
+                )
+            )
     if request.method == "POST":
         rating_form = RatingForm(request.POST, instance=review)
         if rating_form.is_valid():
@@ -81,7 +89,11 @@ def edit_review(request, restaurant_id, review_id):
                 request, f"{user.username} your review has been updated"
             )
 
-            return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
+            return redirect(
+                reverse(
+                    "allreviews", kwargs={'restaurant_id': restaurant_id}
+                    )
+                )
         else:
             messages.error(
                 request,
@@ -92,25 +104,29 @@ def edit_review(request, restaurant_id, review_id):
 
     context = {
         "rating_form": rating_form,
-        "review":review,
+        "review": review,
         "restaurant": restaurant,
         "user_reviewed": user_reviewed,
     }
 
     return render(request, "review/review_page.html", context)
 
-def profile_reviews(request, restaurant_id):
-    
-    #restaurant = Restaurant.objects.get(RestaurantId=restaurant_id)
-    restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
 
+def profile_reviews(request, restaurant_id):
+    # restaurant = Restaurant.objects.get(RestaurantId=restaurant_id)
+    restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     user = request.user
     # profile = Profile.objects.get(user=user)
     profile = get_object_or_404(Profile, user=user)
-    review = get_object_or_404(Review, user=user,restaurant=restaurant)
+    review = get_object_or_404(Review, user=user, restaurant=restaurant)
     if review:
         if restaurant in profile.reviewed.all():
-            return redirect(reverse("edit_review", args=[restaurant_id, review.id]))
+            return redirect(
+                reverse(
+                    "edit_review", args=[restaurant_id, review.id]
+                    )
+                )
+
 
 @login_required()
 def delete_review(request, restaurant_id, review_id):
@@ -122,16 +138,29 @@ def delete_review(request, restaurant_id, review_id):
         messages.error(
             request, "You are not authorized to delete this review."
         )
-        return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
+        return redirect(
+            reverse(
+                "allreviews", kwargs={'restaurant_id': restaurant_id}
+                )
+            )
 
     profile = Profile.objects.get(user=review.user)
     if review.restaurant in profile.reviewed.all():
         profile.reviewed.remove(review.restaurant)
 
     review.delete()
-    # messages.success(request, f"Your review has been deleted {user.username} ")
     if user.is_superuser:
-        messages.success(request, f"{review.user}'s review for {restaurant} has been deleted ")
+        messages.success(
+            request,
+            f"{review.user}'s review for {restaurant} has been deleted "
+        )
     else:
-        messages.success(request, f"Your review for {restaurant} has been deleted {user.username} ")
-    return redirect(reverse("allreviews", kwargs={'restaurant_id': restaurant_id}))
+        messages.success(
+            request,
+            f"Your review for {restaurant} has been deleted {user.username}"
+        )
+    return redirect(
+        reverse(
+            "allreviews", kwargs={'restaurant_id': restaurant_id}
+            )
+        )

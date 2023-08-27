@@ -11,12 +11,11 @@ class TestRatingForm(TestCase):
                 'customer_service': 3,
                 'value_for_money': 4,
                 'location': 4,
-                'comment_text':"Love this restaurant",
+                'comment_text': "Love this restaurant",
             }
         )
         self.assertTrue(form.is_valid())
 
-    
     def test_ratingform_rating_above_max(self):
         """Review form has rating above 5"""
         form = RatingForm(
@@ -26,7 +25,7 @@ class TestRatingForm(TestCase):
                 'customer_service': 7,
                 'value_for_money': 7,
                 'location': 8,
-                'comment_text':"Love this restaurant",
+                'comment_text': "Love this restaurant",
             }
         )
         self.assertIn("taste", form.errors.keys())

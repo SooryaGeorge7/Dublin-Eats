@@ -8,13 +8,13 @@ from users.models import Profile
 from restaurants.models import Restaurant
 
 
-
 class TestReviewViews(TestCase):
     def setUp(self):
-        
         self.client = Client()
         self.user = User.objects.create_user(
-            username="testuser", email="testuser@test.com", password="test123"
+            username="testuser",
+            email="testuser@test.com",
+            password="test123",
         )
         self.profile = Profile.objects.get(user=self.user)
         restaurant_id = "chye750"
@@ -29,18 +29,17 @@ class TestReviewViews(TestCase):
         self.review = Review.objects.create(
             user=self.user,
             restaurant=self.restaurant,
-            taste = 3,
-            ambience = 4,
-            customer_service = 3,
-            location = 4,
-            value_for_money = 4,
-            comment_text = "Love this restaurant",
+            taste=3,
+            ambience=4,
+            customer_service=3,
+            location=4,
+            value_for_money=4,
+            comment_text="Love this restaurant",
         )
 
         self.client.login(username="testuser", password="test123")
 
     def test_review_page_and_rating(self):
-        
         response = self.client.get(
             reverse("review", args={self.restaurant.RestaurantId})
         )
@@ -53,7 +52,7 @@ class TestReviewViews(TestCase):
             'customer_service': 3,
             'value_for_money': 4,
             'location': 4,
-            'comment_text':"Love this restaurant",
+            'comment_text': "Love this restaurant",
         }
 
         response = self.client.post(
@@ -62,7 +61,13 @@ class TestReviewViews(TestCase):
         )
 
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse("allreviews", kwargs={'restaurant_id': self.restaurant.RestaurantId}))
+        self.assertRedirects(
+            response
+            reverse(
+                "allreviews",
+                kwargs={'restaurant_id': self.restaurant.RestaurantId}
+                )
+        )
         new_review = Review.objects.get(id=2)
         self.assertEqual(new_review.taste, 3)
         self.assertEqual(new_review.ambience, 4)
@@ -70,6 +75,7 @@ class TestReviewViews(TestCase):
         self.assertEqual(new_review.location, 4)
         self.assertEqual(new_review.value_for_money, 4)
         self.assertEqual(new_review.comment_text, "Love this restaurant")
+
     def test_edit_review(self):
         response = self.client.get(
             reverse(
@@ -94,7 +100,7 @@ class TestReviewViews(TestCase):
             'customer_service': 3,
             'value_for_money': 4,
             'location': 4,
-            'comment_text':"Love this restaurant",
+            'comment_text': "Love this restaurant",
         }
 
         response = self.client.post(
@@ -108,10 +114,14 @@ class TestReviewViews(TestCase):
             data=review_data,
         )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse("allreviews", kwargs={"restaurant_id": self.restaurant.RestaurantId}))
-
+        self.assertRedirects(
+            response,
+            reverse(
+                "allreviews",
+                kwargs={"restaurant_id": self.restaurant.RestaurantId}
+                )
+            )
         updated_review = Review.objects.get(id=self.review.id)
-        
         self.assertEqual(updated_review.taste, 3)
         self.assertEqual(updated_review.ambience, 4)
         self.assertEqual(updated_review.customer_service, 3)
@@ -120,10 +130,8 @@ class TestReviewViews(TestCase):
         self.assertEqual(updated_review.comment_text, "Love this restaurant")
 
     def test_delete_review(self):
-       
         review_count = Review.objects.all().count()
         self.assertEqual(review_count, 1)
-
         response = self.client.post(
             reverse(
                 "delete_review",
@@ -134,9 +142,13 @@ class TestReviewViews(TestCase):
             )
         )
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse("allreviews", kwargs={"restaurant_id": self.restaurant.RestaurantId}))
+        self.assertRedirects(
+            response,
+            reverse(
+                "allreviews",
+                kwargs={"restaurant_id": self.restaurant.RestaurantId}
+                )
+            )
         self.assertFalse(Review.objects.filter(id=self.review.id).exists())
         new_review_count = Review.objects.all().count()
         self.assertEqual(new_review_count, 0)
-
-   
