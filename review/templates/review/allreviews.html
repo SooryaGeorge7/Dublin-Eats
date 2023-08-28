@@ -92,15 +92,12 @@
             {% if category_url %}
             <a  href="{% url restaurant.category %}" aria-label="Go back to previous page" class="btn btn-primary button-dbneats"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>
-            <!-- {% else %}
-            <a type="button" href="{% url 'searchresults' restaurant.category %}" class="btn btn-primary button-dbneats"
-            data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>-->
             {% endif %}
             </div>
             
         </div>
         <div class="col mx-auto position-fixed top-50 end-0 goup-btn">
-            <a  href="" class="btn btn-primary button-dbneats" aria-label="Go up to the top"
+            <a  href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary button-dbneats" aria-label="Go up to the top"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Up"><i class="bi bi-chevron-double-up"></i></a>
         </div>
     </div>
