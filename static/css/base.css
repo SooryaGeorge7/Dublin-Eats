@@ -273,7 +273,7 @@
 /*pinn css*/
 
 .pinned {
-    color: #E74c3c;
+    color: #C0392B;
 
 }
 
@@ -313,16 +313,16 @@
 
 .remove-button {
     color: var(--light-color);
-    background-color: #E74c3c;
+    background-color: #C0392B;
     border-color: var(--light-color);
     border-radius: 1rem;
 }
 
 .remove-button:hover {
-    color: #E74c3c !important;
+    color: #C0392B!important;
     background-color: var(--light-color);
-    outline-color: #E74c3c;
-    border-color: #E74c3c;
+    outline-color: #C0392B;
+    border-color: #C0392B;
     border-radius: 1rem;
 
 }

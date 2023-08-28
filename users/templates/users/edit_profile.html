@@ -6,12 +6,12 @@
         <div class="card-body">
             <div class="d-flex justify-content-center align-items-center">
                 <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img"
-                    alt="{{ profile.user.username }} Profile Image">
+                    alt="Image containing {{ profile.user.username }}'s profile image">
             </div>
         </div>
 
         <div class="text-center fw-bold">
-            <h2 class="form-heading fw-bold">Edit Profile</h2>
+            <h1 class="form-heading fw-bold">Edit Profile</h1>
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div>
@@ -33,7 +33,7 @@
             </form>
         </div>
     </div>
-    <div class="container">
+    <div class="container ">
         <div class="modal fade" id="deleteProfileModal" tabindex="-1" 
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container dbneats-background">
         <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
