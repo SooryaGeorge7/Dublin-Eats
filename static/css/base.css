@@ -304,7 +304,7 @@
 
 /* Active page link */
 .page-item.active .page-link {
-    color: var(--light-color);
+    color: var(--primary-color);
     background-color: var(--secondary-color);
     border-color: var(--light-color);
 }

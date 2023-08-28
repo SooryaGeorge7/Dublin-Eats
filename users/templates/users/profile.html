@@ -5,9 +5,9 @@
     <div class="container profile-container">
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex justify-content-center flex-column align-items-center bg-white">
-                <h2 class="text-center form-heading fw-bold ">Profile</h2>
+                <h1 class="text-center form-heading fw-bold ">Profile</h1>
                 <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img"
-                    alt="{{ profile.user.username }} Profile Image">
+                    alt="Image containing {{ profile.user.username }}'s profile pic">
             </div>
             <div class="col-lg-4 col-md-6 bg-white">
                 <div class="card-body position-relative">
@@ -34,9 +34,9 @@
             <div class=" card col-lg-4 col-md-6 text-center">
                 <div class="card-header">
                     {% if request.user == profile.user %}
-                    <h3 class="form-heading">My Pinned Restaurants</h3>
+                    <h2 class="form-heading">My Pinned Restaurants</h2>
                     {% else %}
-                    <h3 class="form-heading">Pinned Restaurants</h3>
+                    <h2 class="form-heading">Pinned Restaurants</h2>
                     {% endif %}
                 </div>
                 <div class="card-body">
@@ -71,9 +71,9 @@
             <div class="card col-lg-4 col-md-6 text-center">
                 <div class="card-header">
                     {% if request.user == profile.user %} 
-                        <h3 class="form-heading">My Reviews</h3>
+                        <h2 class="form-heading">My Reviews</h2>
                     {% else %}
-                        <h3 class="form-heading">Reviews</h3>
+                        <h2 class="form-heading">Reviews</h2>
                     {% endif %}
                 </div>
                 <div class="card-body">
