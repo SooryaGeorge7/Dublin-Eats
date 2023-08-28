@@ -381,6 +381,14 @@
 .profile-form {
     margin-top: 5rem;
 }
+
+/**images **/
+.restaurant-images {
+    object-fit: cover;
+    height:17.5rem;
+    width:100%;
+}
+
 @media screen and (min-width: 576px) {
 
     .navbar-dark .navbar-nav .nav-link {

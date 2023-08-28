@@ -25,8 +25,10 @@
                             <div class="carousel-inner">
                                 {% for image_url in restaurant.image_urls %}
                                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                    <img src="{{ image_url }}" height="280" class="d-block w-100"
-                                        alt="Image for {{ restaurant.name }}">
+                                    <div class="aspect-ratio aspect-ratio-16x9">
+                                        <img src="{{ image_url }}"  class="restaurant-images aspect-ratio-item img-fluid"
+                                                alt="Image for {{ restaurant.name }}">
+                                    </div>
                                 </div>
                                 {% endfor %}
                             </div>
