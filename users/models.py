@@ -35,7 +35,7 @@ class Profile(models.Model):
         transformation={
             "width": 200,
             "height": 200,
-            "crop": "crop",
+            "crop": "fill",
         },
         blank=True,
         null=True,
