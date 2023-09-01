@@ -275,7 +275,40 @@ Namely :
 
 ### **Wave Accessibility Tests**
 
+All pages were tested using [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension.
+The following errors were found and corrrected : 
 
+**homepage**
+
+![Home page wave](/documentation/validation/Wave%20Lighthouse/homepage-wave.png)
+
+**restaurants**
+
+![Restaurants page wave](/documentation/validation/Wave%20Lighthouse/restaurants-wave.png)
+
+**review page**
+
+![Review page wave](/documentation/validation/Wave%20Lighthouse/edit-reviews-wave.png)
+
+**allreviews**
+
+![Allreviews page wave](/documentation/validation/Wave%20Lighthouse/allreviews-wave.png)
+
+**login**
+
+![Login page wave](/documentation/validation/Wave%20Lighthouse/login-wave.png)
+
+**logout**
+
+![logout page wave](/documentation/validation/Wave%20Lighthouse/logout-wave.png)
+
+**profile**
+
+![Profile page wave](/documentation/validation/Wave%20Lighthouse/profile-wave.png)
+
+**signup**
+
+![signup page wave](/documentation/validation/Wave%20Lighthouse/signup-wave.png)
 
 ## **Responsiveness**
 
