@@ -198,10 +198,79 @@ The errors shown below were all corrected accordingly:
 
 ### **Lighthouse**
 
+A number of issues were found during lighthouse testing.
+Namely :
+- Incorrect image ratios
+- Not setting fixed width and height for images
+- Not having aria-labels for all links
+- Performance was more on the lower side for rseataurant page and search results but that is mostly due to images being loaded from google API
+- Profile pictures uploaded were taking in jpg which affected performance.
+
+#### **Home Page**
+
+***Mobile***
+
+![Home page mobile](/documentation/validation/Lighthouse/homepage-mobile.png)
+
+***Desktop***
+
+![Home page desktop](/documentation/validation/Lighthouse/homepage-desktop.png)
+
+#### **Results Page**
+
+***Mobile***
 
 
-### **Lighthouse Errors**
 
+***Desktop***
+
+#### **Categories Page**
+
+***Mobile***
+
+![Categories page mobile](/documentation/validation/Lighthouse/restaurants-mobile.png)
+
+***Desktop***
+
+![Categories page mobile](/documentation/validation/Lighthouse/restaurants-desktop.png)
+
+#### **Profile Page**
+
+***Mobile***
+
+***Desktop***
+
+![Profile page mobile](/documentation/validation/Lighthouse/profile-desktop.png)
+
+#### **Edit Profile Page**
+
+***Mobile***
+
+![Edit Profile mobile](/documentation/validation/Lighthouse/edit-profile-mobile.png)
+
+***Desktop***
+
+![Edit Profile desktop](/documentation/validation/Lighthouse/editprofile-desktop.png)
+
+#### **Review/Rating Page**
+
+***Mobile***
+
+![Review page mobile](/documentation/validation/Lighthouse/review-mobile.png)
+
+***Desktop***
+
+![Review page desktop](/documentation/validation/Lighthouse/review-desktop.png)
+
+#### **Allreviews Page**
+
+***Mobile***
+
+![Allreviews page mobile](/documentation/validation/Lighthouse/allreviews-mobile.png)
+
+***Desktop***
+
+![Allreviews page desktop](/documentation/validation/Lighthouse/allreviews-desktop.png)
 
 
 ### **Wave Accessibility Tests**
