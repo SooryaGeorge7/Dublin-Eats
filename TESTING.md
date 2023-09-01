@@ -79,23 +79,11 @@ Unit tests were created to test the functionality of the apps. These can be foun
 
 ### **User Story Testing**
 
+Manual testing for each userstory is documented in [Dublin Eats Userstory spreadsheet](https://docs.google.com/spreadsheets/d/11P1y7mkce_feJ34opPtlGRvyqhV4u9YRYWoxAketVkE/edit#gid=0)
 
-#### **Homepage**
+After all the bugs were resolved, all manual testing has resulted in a pass result. 
 
-
-#### **Navbar**
-
-
-
-#### **Profile**
-
-
-#### **Authentication**
-
-#### **Error Pages**
-
-
-
+In addition to manual testing, the site was continuously being tested throughout development of the website. 
 
 
 
@@ -277,6 +265,10 @@ Namely :
 
 All pages were tested using [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension.
 The following errors were found and corrrected : 
+
+1. Contrast error for home page. The text overlying the home page was resulting in contrast error even though the text could be clearly seen. I corrected this by adding contrasting background color to the white overlying text.
+2. Headings were not in sequential order, this was corrected on all pages
+3. Profile images and hero image had alerted suspicious alt test which were also corrected.
 
 **homepage**
 
