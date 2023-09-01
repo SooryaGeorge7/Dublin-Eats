@@ -170,11 +170,31 @@ JavaScript code in rate.js, blur.js, timeout.js for the project was passed throu
 
 ### **W3C CSS Validator**
 
+base.css was passed through [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) with no errors.
 
+![CSS](/documentation/validation/W3C%20css/no-css-errors.png)
 
 ### **W3C Markup Validator**
 
+All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially, there were some errors but all these issues were corrected and all pages passed validation.
 
+The errors shown below were all corrected accordingly:
+
+1. Error 1
+
+![Error 1](/documentation/validation/W3C%20html/home-onfocus-htmlerror.png)
+
+2. Error 2
+
+![Error 2](/documentation/validation/W3C%20html/review-duplicate-error.png)
+
+3. Error 3
+
+![Error 3](/documentation/validation/W3C%20html/profile-htmlerror.png)
+
+4. Error 4
+
+![Error 4](/documentation/validation/W3C%20html/profile-deletemodal-formerror.png)
 
 ### **Lighthouse**
 
