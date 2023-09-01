@@ -168,6 +168,9 @@ The must-have user stories were prioritized first. Certain other user stories we
 ### **Libraries Used**
 
 ## **Testing**
+Testing for the wesbite can be found here. [TESTING.md](TESTING.md)
+
+
 ## **Deployment**
 
 ### **GitHub**
