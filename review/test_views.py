@@ -62,7 +62,7 @@ class TestReviewViews(TestCase):
 
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(
-            response
+            response,
             reverse(
                 "allreviews",
                 kwargs={'restaurant_id': self.restaurant.RestaurantId}

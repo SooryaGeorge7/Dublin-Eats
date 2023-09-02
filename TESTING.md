@@ -33,45 +33,67 @@ Unit tests were created to test the functionality of the apps. These can be foun
 
 **Home Views Test**
 
-![Home test_views]()
+The unit test for home app is testing the functionality related to searching and viewing search results. It ensures that after performing a search, the user is redirected to the search results page, and that page is correctly rendered with the the template results.html. It also verifies the authentication and setup of the user, profile, restaurant, and review objects before testing the views.
+
+![Home test_views](/documentation/unit-tests/home-test.png)
 
 #### **Restaurants**
 
 **Restaurants Views Test**
 
-![Restaurant test_views]()
+The unit test for Restaurants app views.py is testing the functionality related to restaurant categorization, pinning, and removal are working as expected in the Django application. It checks various scenarios, including rendering template categories.html, handling redirects, and updating user profiles based on their interactions with restaurants.
+
+![Restaurant test_views](/documentation/unit-tests/restaurants-test_views.py.png)
 
 **Restaurants Models Test**
 
-![Restaurant test_models]()
+This unit test case is verifying that the "Restaurant" model behaves as expected by creating a test instance of the model and checking if the attributes of that instance match the expected values.
+
+![Restaurant test_models](/documentation/unit-tests/restaurants-test_models.py.png)
 
 #### **Review**
 
 **Review Views Test**
 
-![Review test_views]()
+These tests cover various scenarios related to creating, editing, and deleting restaurant reviews.When user clicks on the rate button, 
+ the site Ensures  GET request is sent to a URL named "review" with the restaurant ID as an argumentand checks if the response status code is 200 (OK) and if the "review_page.html" template is used. It then sends a POST request to the same URL with review data.
+It checks if the response status code  redirects to the "allreviews" page for the same restaurant.
+When user want to edit reviews site it sends a GET request to a URL named "edit_review" with the restaurant ID and review ID as arguments.
+It checks if the "review_page.html" template is used.It retrieves the existing review's attributes and checks if they match the initial review data.It sends a POST request to the same URL with updated review data.It checks if if it redirects to the "allreviews" page for the same restaurant.When user wants to delete a review, The site  first checks the initial count of reviews in the database. It sends a POST request to a URL named "delete_review" with the restaurant ID and review ID as arguments.It checks if the response status code is 302 (a redirect) and if it redirects to the "allreviews" page for the same restaurant.It checks if the review no longer exists in the database by verifying that it cannot be retrieved.It checks the new count of reviews in the database, which should be zero.
+
+![Review test_views](/documentation/unit-tests/review-test_views.py.png)
 
 **Review Models Test**
 
-![Review test_models]()
+The test case verifies that the "Review" model behaves as expected by creating a test instance of the model and checking if its attributes and string representation match the expected values. This is a basic unit test for the model's correctness and can help ensure that the model's fields and methods are defined and working correctly.
+
+![Review test_models](/documentation/unit-tests/review-test_models.py.png)
 
 **Review Forms Test**
 
-![Review test_forms]()
+This test cases ensure that the "RatingForm" form behaves correctly in terms of validation. The first test checks that the form is valid when provided with valid data, and the second test checks that the form correctly identifies and reports errors when ratings exceed the maximum allowed value of 5.
+
+![Review test_forms](/documentation/unit-tests/review-test_forms.py.png)
 
 #### **Users**
 
 **Users Views Test**
 
-![Review Views]()
+This test cases ensure that the views related to user profiles, including viewing, editing, and deleting profiles, work as expected in the Django application.It tests that site logs in the test user using the client, then It sends a GET request to a URL named "profile" with the test user's username as a parameter.It checks if the response status code is 200 (OK) and if the "profile.html" template is used.When user wants to edit a profile,the site sends a POST request to a URL named "editprofile" with the test user's username as an argument and data for updating the user's first and last name.It checks if the response status code is 200 (OK) and if the "edit_profile.html" template is used.When user wants to delete their profile, the site sends a POST request to a URL named "deleteprofile" with the test user's username as an argument.It checks if the response status code is 302 (a redirect) and if the redirected URL is the home page.
+
+![Review Views](/documentation/unit-tests/users-test_views.py.png)
 
 **Users Models Test**
 
-![Review Models]()
+This unit test cases ensure that the "Profile" model behaves as expected by verifying attributes and relationships. The first test checks the attributes of the user's profile, and the second test checks the relationships between the profile and pinned restaurants and reviews.
+
+![Review Models](/documentation/unit-tests/users-test_models.py.png)
 
 **Users Forms Test**
 
-![Review Forms]()
+The unit tests ensures that the UserUpdateForm and ProfileUpdateForm forms behave correctly in terms of validation. They cover scenarios involving valid data, invalid email formats, missing required fields, and fields exceeding character limits.
+
+![Review Forms](/documentation/unit-tests/users-test_forms.py.png)
 
 
 
