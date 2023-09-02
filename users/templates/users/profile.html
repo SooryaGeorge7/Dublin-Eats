@@ -56,7 +56,8 @@
                         {% if request.user == profile.user %} 
                         <a href="{% url 'remove_pin' restaurant.RestaurantId %}" 
                         aria-label="Remove {{ restaurant.name }} from pinned restaurants." 
-                        class="btn btn-sm btn-primary remove-button">Remove <i class="bi bi-eraser"></i></a>
+                        class="btn btn-sm btn-primary remove-button" data-bs-toggle="tooltip"
+                        data-bs-placement="top" title="Remove from profile"> <i class="bi bi-eraser"></i></a>
                         {% endif %}
                     
                     </div>
@@ -93,7 +94,8 @@
                             {% if request.user == profile.user %}
                             <a href="{% url 'profile_reviews' restaurant.RestaurantId %}"
                                 aria-label="Change {{ restaurant.name }} review"
-                                class="btn btn-sm btn-primary button-dbneats">Open <i class="bi bi-envelope-open"></i></a>
+                                class="btn btn-sm btn-primary button-dbneats" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="Open Review"> <i class="bi bi-envelope-open"></i></a>
                             {% else %}
                             <a href="{% url 'allreviews' restaurant.RestaurantId %}" aria-label="Allreviews of restaurant"
                              class="btn btn-sm btn-primary button-dbneats">See reviews</a>
