@@ -37,13 +37,14 @@
         <div class="modal fade" id="deleteProfileModal" tabindex="-1" 
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content ">
+                <div class="modal-content dbneats-background">
                     {% if user.is_authenticated and user == profile.user or user.is_superuser %}
                     <form method="POST" class="form-heading text-center" action="{% url 'deleteprofile' profile.user.username %}">
                         {% csrf_token %}
                         <div class="modal-header">
                             <h2 class="modal-title fw-bold form-heading text-center">
-                                <span>Delete</span> Profile
+                                <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                                class="auth-image" alt="message logo"> <span>Delete</span> Profile
                             </h2>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -77,12 +78,13 @@
         <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content dbneats-background">
 
 
                     <div class="modal-header">
-                        <h2 class="modal-title fw-bold form-heading text-center" id="exitProfileModalLabel">
-                            Exit
+                        <h2 class="modal-title fw-bold form-heading text-center " id="exitProfileModalLabel">
+                            <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                                class="auth-image" alt="message logo"> Exit
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>

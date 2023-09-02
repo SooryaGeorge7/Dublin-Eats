@@ -95,6 +95,8 @@ def restaurants(request, category):
 
         try:
             restaurant_details = Restaurant.objects.get(RestaurantId=place_id)
+            restaurant_details.category = category
+            restaurant_details.save()
         except Restaurant.DoesNotExist:
             restaurant_details = Restaurant(
                 name=result["name"],

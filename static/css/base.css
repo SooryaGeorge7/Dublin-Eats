@@ -399,6 +399,18 @@
     width:100%;
 }
 
+/**modals **/
+
+.modal-header, .modal-body, .modal-footer {
+    background-color: rgba(249, 191, 59);
+    border:none;
+}
+
+.modal-content {
+    border: 0.5rem solid var(--primary-color)!important;
+    border-radius: 1rem;
+}
+
 @media screen and (min-width: 576px) {
 
     .navbar-dark .navbar-nav .nav-link {

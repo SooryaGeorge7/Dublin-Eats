@@ -110,14 +110,15 @@
         <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content dbneats-background">
                     {% if review.user or user.is_superuser %}
                     <form method="POST" class=" text-center"
                         action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}">
                         {% csrf_token %}
                         <div class="modal-header">
                             <h2 class="modal-title fw-bold form-heading text-center" id="deleteProfileModalLabel">
-                                Delete Review
+                                <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                                class="auth-image" alt="message logo">  Delete Review
                             </h2>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -150,17 +151,18 @@
     </div>
 </section>
 {% endif %}
-<section class="d-flex justify-content-center align-items-center dbneats-background">
+<section class="d-flex justify-content-center align-items-center ">
     <div class="container">
         <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+                <div class="modal-content ">
 
 
                     <div class="modal-header">
                         <h2 class="modal-title fw-bold form-heading text-center" id="exitProfileModalLabel">
-                            Exit
+                            <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                                class="auth-image" alt="message logo"> Exit
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -181,16 +183,17 @@
     </div>
 </section>
 
-<section class="d-flex justify-content-center align-items-center dbneats-background">
+<section class="d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="modal fade" id="exitReviewModal" tabindex="-1" aria-labelledby="exitReviewModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
 
-                    <div class="modal-header">
+                    <div class="modal-header ">
                         <h2 class="modal-title fw-bold form-heading text-center" id="exitReviewModalLabel">
-                            Exit Review
+                            <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
+                                class="auth-image" alt="message logo"> Exit Review
                         </h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
