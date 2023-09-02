@@ -2,101 +2,102 @@
 {% load static %}
 {% block content %}
 <section class="d-flex justify-content-center align-items-center dbneats-background">
-    <form method="POST" class=" reviewform text-center" enctype="multipart/form-data">
-        {% csrf_token %}
+    <div class="container">
+        <div class="col-lg-4 col-md-8 mx-auto">
+            <form method="POST" class=" reviewform text-center" enctype="multipart/form-data">
+                {% csrf_token %}
 
-        <!-- Rating Form -->
-        <div class="card shadow p-1 bg-body-tertiary rounded mb-3">
-            <div class="card-body">
-                <h1 class="card-title  fw-bold">{{ restaurant.name }}</h1>
-                <p> Rate each criteria out of 5 stars!</p>
+                <!-- Rating Form -->
+                <div class="card shadow p-1 bg-body-tertiary rounded mb-3">
+                    <div class="card-body">
+                        <h1 class="card-title  fw-bold">{{ restaurant.name }}</h1>
+                        <p> Rate each criteria out of 5 stars!</p>
 
-                <div class="rating taste">{{rating_form.taste}}
-                    
-                    <h4 class="text-light">Taste</h4>
-                    <a  class="btn"><i class="bi bi-star-fill" id="taste-first"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="taste-second"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="taste-third"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="taste-fourth"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="taste-fifth"></i></a>
+                        <div class="rating taste">{{rating_form.taste}}
+
+                            <h4 class="text-light">Taste</h4>
+                            <a class="btn"><i class="bi bi-star-fill" id="taste-first"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="taste-second"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="taste-third"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="taste-fourth"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="taste-fifth"></i></a>
+                        </div>
+                        <div class="rating ambience">{{rating_form.ambience}}
+
+                            <h4 class="text-light">Ambience</h4>
+                            <a class="btn"><i class="bi bi-star-fill" id="ambience-first"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="ambience-second"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="ambience-third"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="ambience-fourth"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="ambience-fifth"></i></a>
+                        </div>
+                        <div class="rating customer_service">{{rating_form.customer_service}}
+
+                            <h4 class="text-light">Customer Service</h4>
+                            <a class="btn"><i class="bi bi-star-fill" id="customer_service-first"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="customer_service-second"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="customer_service-third"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="customer_service-fourth"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="customer_service-fifth"></i></a>
+                        </div>
+                        <div class="rating location">{{rating_form.location}}
+
+                            <h4 class="text-light">Location</h4>
+                            <a class="btn"><i class="bi bi-star-fill" id="location-first"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="location-second"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="location-third"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="location-fourth"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="location-fifth"></i></a>
+                        </div>
+                        <div class="rating value_for_money">{{rating_form.value_for_money}}
+
+                            <h4 class="text-light">Value for Money</h4>
+                            <a class="btn"><i class="bi bi-star-fill" id="value_for_money-first"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="value_for_money-second"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="value_for_money-third"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="value_for_money-fourth"></i></a>
+                            <a class="btn"><i class="bi bi-star-fill" id="value_for_money-fifth"></i></a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Comment Form -->
+
+                    <div class="card-body">
+                        <h5 class="card-title">Leave a Review!</h5>
+                        <div class="form-group">
+                            <label for="id_comment_text" class="visually-hidden">Review:</label>
+                            {{ rating_form.comment_text }}
+
+                        </div>
+                        <small class="form-text text-muted">{{ rating_form.comment_text.help_text }}</small>
+                    </div>
+                    <div>
+                        {% if user_reviewed == True %}
+                        {% if review.user == user %}
+                        <button type="submit" class="btn btn-primary main-button">Update <i
+                                class="bi bi-arrow-clockwise"></i></button>
+                        {% endif %}
+                        <button type="button" class="btn btn-outline-info remove-button" data-bs-toggle="modal"
+                            data-bs-target="#deleteProfileModal">
+                            Delete <i class="bi bi-trash3"></i>
+                        </button>
+                        <!-- <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a> -->
+                        <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                            data-bs-target="#exitProfileModal"> Exit <i class="bi bi-escape"></i></button>
+                        {% else %}
+                        <button type="submit" class="btn btn-primary button-dbneats">Submit</button>
+
+                        <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
+                            data-bs-target="#exitReviewModal"> Exit <i class="bi bi-escape"></i></button>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="rating ambience">{{rating_form.ambience}}
-                    
-                    <h4 class="text-light">Ambience</h4>
-                    <a  class="btn"><i class="bi bi-star-fill" id="ambience-first"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="ambience-second"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="ambience-third"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="ambience-fourth"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="ambience-fifth"></i></a>
-                </div>
-                <div class="rating customer_service">{{rating_form.customer_service}}
-                    
-                    <h4 class="text-light">Customer Service</h4>
-                    <a  class="btn"><i class="bi bi-star-fill" id="customer_service-first"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="customer_service-second"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="customer_service-third"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="customer_service-fourth"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="customer_service-fifth"></i></a>
-                </div>
-                <div class="rating location">{{rating_form.location}}
-                    
-                    <h4 class="text-light">Location</h4>
-                    <a  class="btn"><i class="bi bi-star-fill" id="location-first"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="location-second"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="location-third"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="location-fourth"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="location-fifth"></i></a>
-                </div>
-                <div class="rating value_for_money">{{rating_form.value_for_money}}
-                    
-                    <h4 class="text-light">Value for Money</h4>
-                    <a  class="btn"><i class="bi bi-star-fill" id="value_for_money-first"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="value_for_money-second"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="value_for_money-third"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="value_for_money-fourth"></i></a>
-                    <a  class="btn"><i class="bi bi-star-fill" id="value_for_money-fifth"></i></a>
 
-                </div>
-                
-            </div>
-
-            <!-- Comment Form -->
-
-            <div class="card-body">
-                <h5 class="card-title">Leave a Review!</h5>
-                <div class="form-group">
-                    <label for="id_comment_text" class="visually-hidden">Review:</label>
-                    {{ rating_form.comment_text }}
-
-                </div>
-                <small class="form-text text-muted">{{ rating_form.comment_text.help_text }}</small>
-            </div>
-            <div>
-                {% if user_reviewed == True %}
-                {% if review.user == user %}
-                <button type="submit" class="btn btn-primary main-button">Update <i
-                        class="bi bi-arrow-clockwise"></i></button>
-                {% endif %}
-                <button type="button" class="btn btn-outline-info remove-button" data-bs-toggle="modal"
-                    data-bs-target="#deleteProfileModal">
-                    Delete <i class="bi bi-trash3"></i>
-                </button>
-                <!-- <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a> -->
-                <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
-                    data-bs-target="#exitProfileModal"> Exit <i class="bi bi-escape"></i></button>
-                {% else %}
-                <button type="submit" class="btn btn-primary button-dbneats">Submit</button>
-
-                <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
-                    data-bs-target="#exitReviewModal"> Exit <i class="bi bi-escape"></i></button>
-                {% endif %}
-            </div>
+            </form>
         </div>
-
-        <!-- Submit Button -->
-
-
-    </form>
+    </div>
     {% block extra_js %}
     <!-- Customizible JS -->
     <script src="{% static 'js/rate.js' %}"></script>
@@ -112,7 +113,7 @@
                 <div class="modal-content">
                     {% if review.user or user.is_superuser %}
                     <form method="POST" class=" text-center"
-                        action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}" >
+                        action="{% url 'delete_review' review.restaurant.RestaurantId review.id %}">
                         {% csrf_token %}
                         <div class="modal-header">
                             <h2 class="modal-title fw-bold form-heading text-center" id="deleteProfileModalLabel">
@@ -122,12 +123,14 @@
                         </div>
                         <div class="modal-body">
                             <p class="fw-bold"><i>
-                                {% if user.is_superuser and user != review.user %}
-                                <span>{{ request.user }}</span> Are you sure you want to delete {{ review.user}}'s review and ratings?
-                                {% else %}
-                                <span>{{ review.user }}</span> Are you sure you want to delete your review and ratings?
-                                {% endif %}
-                            </i></p>
+                                    {% if user.is_superuser and user != review.user %}
+                                    <span>{{ request.user }}</span> Are you sure you want to delete {{ review.user}}'s
+                                    review and ratings?
+                                    {% else %}
+                                    <span>{{ review.user }}</span> Are you sure you want to delete your review and
+                                    ratings?
+                                    {% endif %}
+                                </i></p>
                             <p>Once deleted, you will not be able to recover your review.</p>
                         </div>
                         <div class="modal-footer">
@@ -166,12 +169,11 @@
                         <p>Any changes made will not be saved.</p>
                     </div>
                     <div class="modal-footer">
-                        <a  href="{% url 'allreviews' restaurant.RestaurantId  %}"
-                            class="btn btn-primary button-dbneats"
+                        <a href="{% url 'allreviews' restaurant.RestaurantId  %}" class="btn btn-primary button-dbneats"
                             aria-label="Exit review">Exit <i class="bi bi-escape"></i></a>
 
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -199,8 +201,8 @@
                     <div class="modal-footer">
                         {% url restaurant.category as category_url %}
                         {% if category_url %}
-                        <a  href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit <i
-                                class="bi bi-escape" aria-label="Exit review"></i></a>
+                        <a href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"
+                                aria-label="Exit review"></i></a>
                         <!-- {% else %}
                         <a type="button" href="{% url 'searchresults' restaurant.category %}"
                             class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
