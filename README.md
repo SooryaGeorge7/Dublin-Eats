@@ -340,9 +340,46 @@ Users will be able to move to next page by clicking the next arrow or 1, 2, 3 bu
 
 **Login page features**
 
+<details><summary>Login feature</summary>
+
+![log in form](/documentation/features/login-page/login-page.png)
+
+</details>
+
+<details><summary>Login Success message</summary>
+
+![login success](/documentation/features/login-page/loginpage-success.gif)
+
+</details>
+
 **Logout page features**
 
+<details><summary>logout page</summary>
+
+![Logout page](/documentation/features/logout-page/logout-feat.png)
+
+</details>
+
+<details><summary>logout message</summary>
+
+![logout message](/documentation/features/logout-page/logout-message.gif)
+
+</details>
+
+
 **Signup page features**
+
+<details><summary>Sign up page</summary>
+
+![Sign up page](/documentation/features/signin-page/signup-form.png)
+
+</details>
+
+<details><summary>Sign up success message</summary>
+
+![Sign up success](/documentation/features/signin-page/signup-success-message.gif)
+
+</details>
 
 **Superuser features**
 
