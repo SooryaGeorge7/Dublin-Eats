@@ -130,6 +130,47 @@ The must-have user stories were prioritized first. Certain other user stories we
 -	User should have a clear understanding of site from home page.
 -	Other functionalities available to user- pinning restaurants to their profile, clicking on each restaurant.
 
+## **The Structure Plane**
+
+### **Features**
+
+1. **REGISTERED USER FEATURES**
+
+**Across All Pages**
+
+***Navbar***
+***Footer***
+
+**Home Page & features**
+
+**Restaurants page & features**
+
+**Profile page & features**
+
+**Rate page & features**
+
+**Allreview page & features**
+
+**Edit review page features**
+
+**Edit profile page features**
+
+**Login page features**
+
+**Logout page features**
+
+**Signup page features**
+
+**Superuser features**
+
+2. **UNREGISTERED USER ACCESS**
+
+**Can Access**
+
+**Cant Access**
+
+### **Future Features**
+
 ## **The Surface Plane**
 
 ### **Design**
