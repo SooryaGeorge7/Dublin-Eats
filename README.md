@@ -643,6 +643,49 @@ Once user signs up for website, and accesses the edit profile page. They are abl
 
 **Superuser features**
 
+I have included front end superuser features which would allow superusers to delete other user's reviews or profiles. This is implemented to remove reviews with offensive language, or remove unwanted profiles if necessary.
+
+<details><summary>Superuser all reviews page</summary>
+
+Superusers would have access to edit button for all reviews found in allreviews page.
+
+![Superuser allreviews access](/documentation/features/superuser/superuser-allreviewspage.gif)
+
+</details>
+
+<details><summary>Superuser delete other's reviewes feature</summary>
+
+Superusers would be able to delete other user's reviews if they wanted to.
+
+![Superuser delete other's review](/documentation/features/superuser/superuser-deleteotherreview.gif)
+
+</details>
+
+<details><summary>Superuser edit other's reviews</summary>
+
+Superusers would be able to click on edit button for other's reviews. They will not have access to update button however.
+
+![Superuser edit other's review](/documentation/features/superuser/superuser-editotherreview.gif)
+
+</details>
+
+<details><summary>Superuser delete other's profile feature</summary>
+
+Superusers would be able to delete another person's profile for incase the particular user is not using their profile for the intended usage of the website.
+
+![Superuser delete other's review](/documentation/features/superuser/superuser-otheruser-profile-delete.gif)
+
+</details>
+
+<details><summary>Superuser edit other's profiles</summary>
+
+Super user's have access to edit profile button on other user's profile. The edit profile page will be accessible to the superuser without the update button.
+
+![Superuser edit other's profile](/documentation/features/superuser/superuser-otheruser-profile-edit.gif)
+
+</details>
+
+
 2. **UNREGISTERED USER ACCESS**
 
 **Can Access**
