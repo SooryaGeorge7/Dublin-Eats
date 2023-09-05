@@ -330,6 +330,60 @@ Users will be able to move to next page by clicking the next arrow or 1, 2, 3 bu
 
 **Profile page & features**
 
+Once users sign up for the website, they will have access to a profile page which they would be able to customize.
+
+<details><summary>Profile page desktop</summary>
+
+![Profile page desktop](/documentation/features/profile-page/profilepage-desktop.gif)
+
+</details>
+
+<details><summary>Profile page mobile</summary>
+
+![Profile page mobile](/documentation/features/profile-page/profilepage-mobile.gif)
+
+</details>
+
+<details><summary>Profile edit button</summary>
+
+When user clicks on edit button on profile page, they are redirected to edit profile page.
+
+![Profile page edit button](/documentation/features/profile-page/profile-editbutton.gif)
+
+</details>
+
+<details><summary>Profile my reviews</summary>
+
+In user's profile page , users will be able to access the reviews they have already submitted for various restaurants. They would also be able to access the specific restaurant's website.
+
+![Profile reviews feature](/documentation/features/profile-page/profile-myreviews-feat.gif)
+
+</details>
+
+<details><summary>Profile Open review button</summary>
+
+If user clicks on the icon to open review, the user will be redirected to edit review page.
+
+![Profile open review feature](/documentation/features/profile-page/profile-openreview-feat.gif)
+
+</details>
+
+<details><summary>Profile pinned restaurants feature</summary>
+
+Users would be able to see all restaurants that they have pinned from Restaurant pages or search results page. 
+
+![Profile pinned restaurants feature](/documentation/features/profile-page/profile-pinnedrestaurants-feat.gif)
+
+</details>
+
+<details><summary>Profile remove pinned restaurants feature</summary>
+
+Users would be able unpin these restaurants from profile page by click on the remove button.
+
+![Profile Remove restaurant feature](/documentation/features/profile-page/profile-remove-pinned-feat.gif)
+
+</details>
+
 **Rate page & features**
 
 **Allreview page & features**
@@ -337,6 +391,46 @@ Users will be able to move to next page by clicking the next arrow or 1, 2, 3 bu
 **Edit review page features**
 
 **Edit profile page features**
+
+Once user clicks on edit button on profile page, they will be redirected to edit profile page where they will able able to updates names, any information and profile images.
+
+<details><summary>Edit profile page</summary>
+
+![Edit profile page](/documentation/features/profile-page/profile-editbutton.gif)
+
+</details>
+
+<details><summary>Edit profile update success</summary>
+
+Once user clicks on update, then user is redirected back to profile page and is given an appropriate success message for updating profile.
+
+![Update profile success message](/documentation/features/profile-page/update-profile-success.gif)
+
+</details>
+
+<details><summary>Delete profile feature</summary>
+
+User would be able to delete their profile if they wanted to. In this case, their account will be deleted to. They will have to sign up again if they want access to all DublinEats features.
+
+![Delete profile feature](/documentation/features/profile-page/delete-profile-feat.png)
+
+</details>
+
+<details><summary>Exit from editing profile feature</summary>
+
+Users can exit the edit profile page if they dont want to change anything. Any changes made will not be saved and they will be redirected back to profile page.
+
+![Exit from editing profile](/documentation/features/profile-page/exit-editprofile-feat.png)
+
+</details>
+
+<details><summary>Edit profile placeholders.</summary>
+
+Once user signs up for website, and accesses the edit profile page. They are able to see placeholders which would help them in the information that they have to fill out for their profile.
+
+![edit profile placeholders](/documentation/features/profile-page/edit-profile-placeholders.png)
+
+</details>
 
 **Login page features**
 
