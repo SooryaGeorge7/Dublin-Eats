@@ -386,9 +386,97 @@ Users would be able unpin these restaurants from profile page by click on the re
 
 **Rate page & features**
 
+When user clicks on rate button in restaurant's page, user is redirected to page that contains the review or rating form. User would need to rate the restaurants 5 criterias before submiting a rating. Leaving a review or comment is optional.
+
+<details><summary>Rate page</summary>
+
+![Rate page](/documentation/features/rate-page/rate-restaurants-page.gif)
+
+</details>
+
+<details><summary>Rate stars feature</summary>
+
+User would be able to click stars and depending on location of click, javascript code handles the event and changes the value of the rating for that particular criteria and also changes the color of the stars accordingly
+
+![Rate stars feature](/documentation/features/rate-page/rate-stars-feature.gif)
+
+</details>
+
+<details><summary>Rate exit button</summary>
+
+User would be able to exit the review page if they dont want to review anymore. They will be warned that any changes made will not be saved.
+
+![Rate exit feature](/documentation/features/rate-page/rate-exitbutton.gif)
+
+</details>
+
+<details><summary>Rate submit success</summary>
+
+User is shown appropriate success message after submitting a review and is redirected to all reviews page where they can see their review.
+
+![Rate submit success](/documentation/features/rate-page/rate-submit-success.gif)
+
+</details>
+
+<details><summary>Rate all citeria validation</summary>
+
+User is shown an error message if they try to submit the form without choosing all criterias.
+
+![Rate all criteria validation](/documentation/features/rate-page/rate-allcriteria-feature.gif)
+
+</details>
+
 **Allreview page & features**
 
 **Edit review page features**
+
+Users would be able to edit their own reviews from all reviews page and also their profile page. The edit button and open review button will both be redirected to edit reviews page.
+
+<details><summary>Edit review feature</summary>
+
+![Edit review feature](/documentation/features/rate-page/exit-review-feat.png)
+
+</details>
+
+<details><summary>Delete review feature</summary>
+
+users can delete their review if they want to. The users are asked twice to be sure so that they dont delete review by mistake.
+
+![Delete review feature](/documentation/features/rate-page/delete-review-feat.png)
+
+</details>
+
+<details><summary> Exit review feature</summary>
+
+Users can exit out of this page if they want to incase they dont want to edit the review anymore.User will be asked twice and warned that any changes will not be saved.
+
+![Exit review feature](/documentation/features/rate-page/exit-review-feat.png)
+
+</details>
+
+<details><summary>Exit review redirect page</summary>
+
+Users are redirected to allreviews page after they exit the edit review page.
+
+![Exit review redirect](/documentation/features/rate-page/exit-review-redirect.gif)
+
+</details>
+
+<details><summary>Review delete success message</summary>
+
+Users will be shown appropriate message after deleting their review.
+
+![Review delete success message](/documentation/features/rate-page/review-delete-success.gif)
+
+</details>
+
+<details><summary>Review update success message</summary>
+
+Users will be shown appropriate message after updating their review.
+
+![Review update success message](/documentation/features/rate-page/review-update-success.gif)
+
+</details>
 
 **Edit profile page features**
 
