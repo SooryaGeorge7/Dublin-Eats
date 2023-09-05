@@ -641,6 +641,26 @@ Once user signs up for website, and accesses the edit profile page. They are abl
 
 </details>
 
+**Search page**
+
+Users can access search result page when entering a valid entry in search field.The search query will retrieve a maximum of 10 restaurants using google places API
+
+<details><summary>Search results page</summary>
+
+Search results page looks identical to restaurants category page. Users would be able to pin, review, view reviews of these restaurants just like they can in restaurants page featured on navbar.
+
+![Search results page](/documentation/features/searchresults-page/search-results.gif)
+
+</details>
+
+<details><summary>Search results pagination</summary>
+
+Search results will retrieve a maximum of 10 restaurant details, therefore pagination will allow for 2 pages only for each search query.
+
+![Search results pagination](/documentation/features/searchresults-page/search-results-pagination.gif)
+
+</details>
+
 **Superuser features**
 
 I have included front end superuser features which would allow superusers to delete other user's reviews or profiles. This is implemented to remove reviews with offensive language, or remove unwanted profiles if necessary.
@@ -686,11 +706,36 @@ Super user's have access to edit profile button on other user's profile. The edi
 </details>
 
 
+
+
 2. **UNREGISTERED USER ACCESS**
 
 **Can Access**
 
+Unregistered users can access restaurants pages according to categories. They are able to access websites of each restaurant too.
+
+Unregistered users have access to search feature. They can search for what they want but features such as rating, pinning and viewing reviews and profiles are restricted to registered users.
+
 **Cant Access**
+
+<details><summary>Unable to pin restaurants without loging in.</summary>
+
+![unable to pin](/documentation/features/unregistered-users/unregistered-pin.gif)
+
+
+</details>
+
+<details><summary>Unable to rate restaurants without loging in</summary>
+
+![Unable to rate](/documentation/features/unregistered-users/unregistered-rate-feature.gif)
+
+</details>
+
+<details><summary>Unable to access all reviews page</summary>
+
+![Unable to access allreviews page](/documentation/features/unregistered-users/unregistered-allreviews-feat.gif)
+
+</details>
 
 ### **Future Features**
 
