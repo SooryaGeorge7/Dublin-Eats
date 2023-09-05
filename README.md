@@ -222,6 +222,112 @@ Users who adds input and clicks search button would not be able to seach with nu
 
 **Restaurants page & features**
 
+When user clicks on a category from restaurants tab on navbar, a page is rendered which contains a few restaurants of the category you selected in Dublin. A maximum of 8 restaurants are rendered per page.
+
+<details><summary>Restaurants page desktop</summary>
+
+For desktop - User is shown 4 restaurants details displayed as cards in a row.
+
+![Restaurants page desktop](/documentation/features/restaurants-page/restaurantspage-desktop.gif)
+
+</details>
+
+<details><summary>Restaurants page mobile</summary>
+
+For mobile- User is shown 1 restaurant details displayed as a card in a row.
+
+![Restaurants page mobile](/documentation/features/restaurants-page/restaurantspage-mobile.gif)
+
+</details>
+
+<details><summary>Restaurants page pin restaurants</summary>
+
+Users are allowed to pin any restaurants to their profile. Once user pins a restaurant, the pin will change color to red. Users cant pin a restaurant twice unless they unpin the already pinned restaurant.A relevant success message is also shown.
+
+![Pin restaurants](/documentation/features/restaurants-page/restaurants-pin-feature.gif)
+
+</details>
+
+<details><summary>Restaurants page unpin restaurants</summary>
+
+Users may unpin restaurants from their profile. The pinned restaurants(red pin) will change their color back to its original color which would a shade of navy. A relevant message is shown to users when unpinning.
+
+![Unpin restaurants](/documentation/features/restaurants-page/restaurants-unpin-feature.gif)
+
+</details>
+
+<details><summary>Restaurants page rate button</summary>
+
+Users can click on rate button for a restaurant which will the redirect the user to another page which is the review/rate page
+
+![Rate button](/documentation/features/restaurants-page/restaurants-rate-feature.gif)
+
+</details>
+
+<details><summary>Restaurants page rated feature</summary>
+
+Once user has rated a restaurant already, the rate button will change color, and will loose ability to be clicked. This will prevent users from rating the same restaurant twice. Only once they have deleted their review, the button can change back to being original color and user will be able to review the restaurant again.
+
+![Rated feature](/documentation/features/restaurants-page/restaurants-rated-feature.gif)
+
+</details>
+
+<details><summary>Restaurants page carousal feature</summary>
+
+Users can have access to images of restaurants which are featured from google since we are using google places api to retrieve restaurant information.
+
+![Carousal feature](/documentation/features/restaurants-page/restaurants-carousal-feature.gif)
+
+</details>
+
+<details><summary>Restaurants page visit website feature</summary>
+
+Users would be able to visit restaurant websites when they click visit website button if a website is available to them.
+
+![Visit website](/documentation/features/restaurants-page/restaurant-website-feature.gif)
+
+</details>
+
+<details><summary>Restaurants page all reviews button</summary>
+
+Users will be able to access all reviews of a restaurant by clicking on all reviews button.
+
+![All reviews](/documentation/features/restaurants-page/restaurants-allreviews-button.gif)
+
+</details>
+
+<details><summary>Restaurants page mobile go up button</summary>
+
+When users access restaurants page on mobile or smaller devices, a go up button will appear which allow users to go to the top of the page by clicking on the button which will help user experience.
+
+![Go up button restaurants](/documentation/features/restaurants-page/restaurantspage-go-up-button.gif)
+
+</details>
+
+<details><summary>Restaurants page no website feature</summary>
+
+Users are shown when a website is not available for a restaurant, as the information are retrieved from googplaces api. Sometimes websites would not be able for some restaurants.
+
+![No website feature](/documentation/features/restaurants-page/website-unavailable-feature.png)
+
+</details>
+
+<details><summary>Restaurants page no images feature</summary>
+
+Users will be shown an appropriate image that matches with website theme incase there are no images to feature in a carousal from google places API.
+
+![No images feature](/documentation/features/restaurants-page/no-images-available-feature.png)
+
+</details>
+
+<details><summary>Restaurants page pagination feature</summary>
+
+Users will be able to move to next page by clicking the next arrow or 1, 2, 3 buttons. There is a limit of 20 restaurants all together for each category chosen as this is the limit with google places API. Each will have 8 restaurants or less.
+
+![Restaurant pagination](/documentation/features/restaurants-page/restaurants-pagination-feature.gif)
+
+</details>
+
 **Profile page & features**
 
 **Rate page & features**
