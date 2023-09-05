@@ -144,43 +144,81 @@ Registered users for DublinEats would be able to access all features available.
 
 Users would be able to naviagate the website so that they can find any information they are looking for.
 
--  Navbar in desktop 
+<details><summary>Navbar in desktop</summary>
 
 ![Desktop navbar](/documentation/features/home-page/navbar-desktop.png)
 
 ![Desktop open navbar](/documentation/features/home-page/navbar-open-desktop.png)
 
-- Navbar in mobile devices 
+</details>
+<details><summary>Navbar in Mobile devices</summary>
 
 ![Mobile Navbar](/documentation/features/home-page/navbar-mobile.png)
 
 ![Mobile open navbar](/documentation/features/home-page/navbar-open-mobile.png)
 
-- Navbar logged out
+</details>
+<details><summary>Navbar logged out</summary>
 
 Navbar will look different to users if they have logged out or havnt signed up for website yet. They will not have a profile lab and logout tab, instead they will have access to login tab and signup tab on navbar.
 
 ![LoggedOut navbar](/documentation/features/home-page/navbar-loggedout.png)
 
-- Dublin Eats logo
+</details>
+<details><summary>Dublin Eats logo</summary>
 
 User can click on logo at any point, and the user will be redirected to the home page
 
 ![Dublin Eats Logo](/documentation/features/home-page/logo-feat.gif)
 
+</details>
+
+
 ***Footer***
 
-- Footer on desktops
+<details><summary>Footer on desktop</summary>
 
 ![Footer desktop](/documentation/features/home-page/footer-desktop.png)
 
-- Footer on mobiles
+</details>
+
+<details><summary>Footer on mobiles</summary>
 
 ![Footer mobile](/documentation/features/home-page/footer-mobile.png)
 
+</details>
+
 **Home Page & features**
 
+<details><summary>Home page desktop</summary>
 
+![Home page desktop](/documentation/features/home-page/home-page-desktop.png)
+
+</details>
+
+<details><summary>Home page mobile</summary>
+
+![Home page mobile](/documentation/features/home-page/home-page-mobile.png)
+
+</details>
+
+<details><summary>Search feature</summary>
+
+Users who open the home page is immediately drawn to this text and search feature overlying the background image.
+
+![Search feature](/documentation/features/home-page/search-feature.png)
+
+</details>
+
+<details><summary>Search validation</summary>
+
+Users who adds input and clicks search button would not be able to seach with numbers, special charectors , no input or blank spaces. 
+
+![Search number validation](/documentation/features/home-page/search-feature-number-validation.gif)
+![Search blank validation](/documentation/features/home-page/search-feature-blank-validation.gif)
+![Search special charectors validation](/documentation/features/home-page/search-feature-specialchar-feature.gif)
+
+</details>
 
 **Restaurants page & features**
 
