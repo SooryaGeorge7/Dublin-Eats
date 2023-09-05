@@ -428,6 +428,84 @@ User is shown an error message if they try to submit the form without choosing a
 
 **Allreview page & features**
 
+Users are redirected to all reviews page when user clicks on allreviews button.
+
+<details><summary>All reviews page desktop</summary>
+
+![All reviews desktop](/documentation/features/allreviews-page/allreviews-desktop.png)
+
+</details>
+
+<details><summary>All reviews page mobile</summary>
+
+![All reviews mobile](/documentation/features/allreviews-page/allreviews-mobile.gif)
+
+</details>
+
+<details><summary>All reviews go back button</summary>
+
+User has access to a go back button which allows user to go back to restaurant page of that particular restaurant
+
+![All reviews go back button](/documentation/features/allreviews-page/allreviews-goback-button.gif)
+
+</details>
+
+<details><summary>All reviews go up button</summary>
+
+User has access to go up the all reviews page incase when there are too many reviews, It was implemented to enhance user experience.
+
+![All reviews go up button](/documentation/features/allreviews-page/allreviews-goup-button.gif)
+
+</details>
+
+<details><summary>All reviews edit button feature</summary>
+
+User has access to edit button for their review in the all reviews page.
+
+![All reviews edit button feature](/documentation/features/allreviews-page/allreviews-editbutton-feat.gif)
+
+</details>
+
+<details><summary>All reviews edit button redirect</summary>
+
+If user clicks on edit button , user will be redirected to edit review page where user can make changes to their review.
+
+![All reviews edit button redirect](/documentation/features/allreviews-page/allreviews-editbutton.gif)
+
+</details>
+
+<details><summary>All reviews profile link feature</summary>
+
+Users have access to other user's profile page or their own profile page in allreviews page. 
+
+![All reviews profile link feature](/documentation/features/allreviews-page/allreviews-profilelink.gif)
+
+</details>
+
+<details><summary>All reviews other user profile</summary>
+
+When user A clicks on User B profile link, user A is redirected to user B profile where user A will be able to see User B's details, pinned restaurants and reviews made by user B.
+
+![All reviews other user's profile](/documentation/features/allreviews-page/allreviews-otheruserprofile.gif)
+
+</details>
+
+<details><summary>All reviews other user's profile reviews</summary>
+
+User can see other users reviews when viewing their profiles.
+
+![All reviews other user's profile reviews](/documentation/features/allreviews-page/otheruser-profilereviews.gif)
+
+</details>
+
+<details><summary>All reviews other user's profile pinned restaurants</summary>
+
+User can see which restaurants other user's have pinned to their profile.
+
+![All reviews page other user's pinned restaurants features](/documentation/features/allreviews-page/otheruser-pinnedrestaurants.png)
+
+</details>
+
 **Edit review page features**
 
 Users would be able to edit their own reviews from all reviews page and also their profile page. The edit button and open review button will both be redirected to edit reviews page.
