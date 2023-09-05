@@ -136,12 +136,51 @@ The must-have user stories were prioritized first. Certain other user stories we
 
 1. **REGISTERED USER FEATURES**
 
+Registered users for DublinEats would be able to access all features available.
+
 **Across All Pages**
 
 ***Navbar***
+
+Users would be able to naviagate the website so that they can find any information they are looking for.
+
+-  Navbar in desktop 
+
+![Desktop navbar](/documentation/features/home-page/navbar-desktop.png)
+
+![Desktop open navbar](/documentation/features/home-page/navbar-open-desktop.png)
+
+- Navbar in mobile devices 
+
+![Mobile Navbar](/documentation/features/home-page/navbar-mobile.png)
+
+![Mobile open navbar](/documentation/features/home-page/navbar-open-mobile.png)
+
+- Navbar logged out
+
+Navbar will look different to users if they have logged out or havnt signed up for website yet. They will not have a profile lab and logout tab, instead they will have access to login tab and signup tab on navbar.
+
+![LoggedOut navbar](/documentation/features/home-page/navbar-loggedout.png)
+
+- Dublin Eats logo
+
+User can click on logo at any point, and the user will be redirected to the home page
+
+![Dublin Eats Logo](/documentation/features/home-page/logo-feat.gif)
+
 ***Footer***
 
+- Footer on desktops
+
+![Footer desktop](/documentation/features/home-page/footer-desktop.png)
+
+- Footer on mobiles
+
+![Footer mobile](/documentation/features/home-page/footer-mobile.png)
+
 **Home Page & features**
+
+
 
 **Restaurants page & features**
 
