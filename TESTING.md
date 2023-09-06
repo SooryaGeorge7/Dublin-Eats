@@ -362,6 +362,7 @@ The following errors were found and corrrected :
 | Seach query were returning results for numbers, special charectors and blank spaces. |I used patterning matching in search input field. [View Solution here](/documentation/bugs/pattern-matching.png) |
 | Some Restaurants ddnt have website urls, so it returned blank and would just refresh the page for instances with no website.| I handled this bug in html where it would be indicated to user when a restaurant has no website. |
 | When retrieving nandos as search query, it was resulting in this error [View bug here](/documentation/bugs/nandos-error.png)| The solution was to change the website url field as the url for this website was more than the maximum count for charfield which was 200, i just had to set maxlength to 500 instead of the default 200 that exists. |
+| The textarea for leave a review was overflowing in smaller screens [View bug](/documentation/bugs/textarea-overflow-bug.png) | I managed to add a class to Rating form in forms.py where i can style the class in stylesheet to make textarea responsive. |
 
 ## **Unresolved Bugs/Issues**
 
