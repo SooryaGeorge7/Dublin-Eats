@@ -36,10 +36,13 @@ def search(request):
 
 def searchresults(request, query):
 
+    
+    
     # query = request.GET.get("query")
     url = (
         f"https://maps.googleapis.com/maps/api/place/textsearch/json?"
-        f"query={query}&type=restaurant&location=53.350140,-6.266155"
+        f"query={query}%20restaurants%20in%20Dublin"
+        f"&type=restaurant&location=53.350140,-6.266155"
         f"&key={GOOGLE_PLACES_API_KEY}"
     )
     user = request.user
