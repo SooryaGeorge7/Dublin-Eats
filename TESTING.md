@@ -208,12 +208,12 @@ The errors shown below were all corrected accordingly:
 
 ### **Lighthouse**
 
-A number of issues were found during lighthouse testing.
+A number of issues were found during lighthouse testing which were all corrected.
 Namely :
-- Incorrect image ratios
-- Not setting fixed width and height for images
-- Not having aria-labels for all links
-- Performance was more on the lower side for rseataurant page and search results but that is mostly due to images being loaded from google API
+- Incorrect image ratios.
+- Not setting fixed width and height for images.
+- Not having aria-labels for all links.
+- Performance was more on the lower side for rseataurant page and search results but that is mostly due to images being loaded from google Places API.
 - Profile pictures uploaded were taking in jpg which affected performance.
 
 #### **Home Page**
@@ -327,27 +327,21 @@ The following errors were found and corrrected :
 ## **Responsiveness**
 
 
-| **Browser Tested** | **Actual Result** | **Pass/Fail** |
-|--------------------|-------------------|---------------|
-|                    |                   |               |
-|                    |                   |               |
-|                    |                   |               |
-|                    |                   |               |
+All pages were tested to ensure responsiveness from devices of 320px and upwards.
 
-| **Device Tested** | **Actual Result** | **Pass/Fail** |
-|-------------------|-------------------|---------------|
-|                   |                   |               |
-|                   |                   |               |
-|                   |                   |               |
-|                   |                   |               |
-|                   |                   |               |
-|       |        |          |
-|   |        |         |
-|  |       |           |
-|      |       |          |
-|   |      |         |
-|   |       |           |
-|  |        |           |
+| **Browser Tested**    | **Actual Result** | **Pass/Fail** |
+|-----------------------|-------------------|---------------|
+|    Microsoft Edge     |  As expected      |     Pass      | 
+|     Google Chrome     |  As expected      |     Pass      |
+|     Mozilla firefox   |  As expected      |     Pass      |
+|      Safari           |  As expected      |     Pass      |
+
+| **Device Tested**   | **Actual Result** | **Pass/Fail** |
+|---------------------|-------------------|---------------|
+|     S20 Ultra       |     As expected   |    Pass       |
+|     iPhone 12 Pro   |     As expected   |    Pass       |
+|Lenovo Thinkpad W541 |     As expected   |    Pass       |               
+|Dell inspiron 3593   |     As expected   |    Pass       |               
 
 
 ## **Bugs & Fixes**
