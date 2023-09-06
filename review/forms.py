@@ -21,7 +21,9 @@ class RatingForm(forms.ModelForm):
             'customer_service': HiddenInput(),
             'value_for_money': HiddenInput(),
             'comment_text': forms.Textarea(
-                attrs={'placeholder': 'Type in a review here...'}
+                attrs={'placeholder': 'Type in a review here...',
+                       'class': 'responsive-textarea',
+                       }
             ),
         }
         labels = {
