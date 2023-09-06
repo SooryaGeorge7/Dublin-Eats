@@ -35,6 +35,9 @@ class ProfileUpdateForm(forms.ModelForm):
             'fav_food': forms.Textarea(
                 attrs={'placeholder': 'What is your favourite cuizine?'}
             ),
+            'profile_image': forms.FileInput(
+                attrs={'class': 'profile-image-input',}
+            ),
         }
         help_texts = {
             'about': 'Maximum 250 characters',
