@@ -76,6 +76,59 @@ Project Kanan board was used to track progress with user stories moving between 
 
 The user stories for email confirmation and password reset is left as backlog as these were not able to be implemented due to time constraints and they were not part of MVP or must-have tags
 
+### **Epics**
+
+Each epic created had a few user stories linked to it. The acceptance criteria, with tasks associated with each user story can be found in project kanban board linked [Here]()
+
+#### **EPIC: Project Setup**
+
+***As a developer i can set up project so that i can start working on my project***
+
+This was done by installing the necessary framworks and libraries. Adding env.py to gitignore and deploying the site early to Heroku. Further development of the website could only be implemented after this step.
+
+#### **EPIC: Home**
+
+***As a developer i can implement home page so that users know exactly what to do and what the website is about when they enter the website***
+
+ The Base template which consistes of header and footer was created first so I could extend within further templates and then the homepage(index.html) was built using bootstrap and styled. The home page also has the search functionality which is progressed under seperate user stories.
+
+#### **EPIC: User authentication**
+
+***As a developer i can **implement user authentication** so that only signed up users can user restaurant features***
+
+This epic is associated with user stories of signup , login and logout functionality. These were implemented using django allauth. 
+
+#### **EPIC: Restaurant**
+
+***As a developer i can implement restaurant app in my project so that so that users may view, rate or pin restaurants.***
+
+The user stories associated were Restaurant categories, websites, pinning restaurants to Profile. Retrieving restaurants information were implemented with google Places API.
+
+#### **EPIC: Reviews & Ratings**
+
+***As a developer i can implement reviews app so that users can review , view reviews, rate, edit reviews or delete reviews***
+
+The user stories associated with this epic are the ones to review/rate restaurants, see all reviews, edit reviews and delete reviews. 
+
+#### **EPIC: Profile**
+
+***As a developer i can implement a profile for each user so that they can update profile , see reviewed restaurants, pinned restaurant or delete profile/account.***
+
+The user stories associated with this epic are the ones where user can have access their profile, update and delete their profile.
+
+
+#### **EPIC: Error pages**
+
+***As a developer i can implement the necessary error pages so that that users are redirected to these pages incases of errors.***
+
+The error pages to implement are 404, 403, 500 error pages
+
+#### **EPIC: Documentation**
+
+***As a developer i can implement a detailed readme so that other developers can see the process of how the website came to be as well as view all the necessary testings done***.
+
+The Readme and Testing documents are part of this epic.
+
 ### **Userstories**
 
 ## **The Skeleton Plane**
