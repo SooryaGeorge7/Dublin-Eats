@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-Dublin Eats is a website designed to allow a user to find and review Restaurants in Dublin. The site features a search function that allows users to search for any Restaurant in Dublin. The restaurants can be viewed according to cuizines. Users will be able to view Restaurant details such as location, price range, etc. Users will also be able to review Restaurants and pin some restaurants page onto their own customizable profile page. Each user needs to sign up to be able to review and search for restaurants. Each user will have a profile page that they would be able to edit once logged in.
+Dublin Eats is a website designed to allow users to find and review Restaurants in Dublin. The site features a search function that allows users to search for any Restaurant in Dublin. This is implemented with Google Places API. The user can also view restaurants according to categories or cuiznes such as african, american, european, asian, irish. Users will be able to view Restaurant details such as their address and has access to their websites etc. Users will also be able to review  Restaurants and pin some restaurants onto their own customizable profile page. Each user needs to sign up to be able to review and look at other reviews for restaurants.Each user will have a profile page that they would be able to edit once logged in.
 
 ## **Project Goals**
 
