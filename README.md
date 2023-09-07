@@ -868,6 +868,17 @@ Unregistered users have access to search feature. They can search for what they 
 
 ### **Future Features**
 
+- I would implement email confirmation to verify account when user initally signs up for website.
+- I would implement password reset functionality for the instances the user forgets their password.
+- I would add google maps directions for each restaurant being rendered from google places API , allowing user to access directions.
+- I would want to implement sorting of restaurants according to highly rated, cheapest, etc
+- I would want to implement even more categories in restaurants tabs as currently i only have 5 options for restaurants tab on navbar.
+- Implementation Automatic reduction of profile image size on upload as this affects performance on lighthouse testing.
+- Allowing of Automatic deletion of images from cloudinary storage when users change their profile images or delete their profile.
+- Ability to register and login with social media accounts.
+- Allow for users to report other users to the site admin incases of inappropraite comments or reviews.
+- Mechanism for users to easily contact the site admin.
+
 ## **The Surface Plane**
 
 ### **Design**
