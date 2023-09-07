@@ -1006,9 +1006,25 @@ The below steps were followed to deploy this project to Heroku:
 
 ### **Code Used**
 
+* The steps to connect to a Heroku Postgres database and deploy were adapted from the Code Institute 'I think therefore I blog' tutorial. This includes defining DATABASE_URL and SECRET_KEY environment variables in an env.py file in the local environment and adding corresponding config variables in the Heroku dashboard, using dj_database_url to create a URL from the database URL in settings.py, updating ALLOWED_HOSTS in settings.py with the deployed Heroku URL and adding the templates path to a TEMPLATES_DIR variable in settings.py
+* The Bootstrap 5 documentation was extensively referenced for guidance on implementing navbars and modal dialogs.
+* This repository was created using the template provided by Code Institute.
+* Thanks to the Django docs which were also used as a step-by-step while going through the project to ensure everything was set up correctly.
+* Corey Schafer for the tutorial to get automatic profile creation for my project.
+* [Learnt how to implement search functionality in django here.](https://www.makeuseof.com/add-search-functionality-to-django-apps/#:~:text=Create%20a%20View%20for%20the%20Search&text=%23%20Check%20if%20the%20request%20is%20a%20post%20request.&text=In%20request.,your%20search%20bar's%20input%20field.&text=Finally%2C%20the%20function%20renders%20a,and%20filtered%20model%20as%20context.)
+*[Learnt how to implement blurred background here](https://www.w3schools.com/howto/howto_css_blurred_background.asp)
+* [Learnt how to implement star rating using javascript here](https://www.codingnepalweb.com/star-rating-html-css-javascript-2/)
+* [Learnt how to retrieve images from google places API here](https://stackoverflow.com/questions/13524834/google-place-api-placedetails-photo-reference)
+* Google places api documentation and youtube videos were used extensively to implement google places API to retrieve restaurant details from Dublin.
+
+
 ### **Content**
 
-### **Media**
+* Default profile image was found in pixabay.com [See here](https://pixabay.com/illustrations/profile-icon-symbol-male-profile-728591/)
+* Background home page image was found in Pexels.come [See here](https://www.pexels.com/photo/cooked-food-in-white-and-brown-ceramic-bowl-close-up-photography-2741458/)
+* Backdrop image which is also used for default image in restaurant cards were found in freepik.com [See here](https://www.freepik.com/free-vector/hand-drawn-food-elements_1159027.htm#query=food&position=7&from_view=search&track=sph)
+* All icons used were from [Bootstrap icons](https://icons.getbootstrap.com/?q=globe)
+* The logo image was created Realfavicon generator to fit the theme of the website.
 
 ## **Acknowledgements**
 
