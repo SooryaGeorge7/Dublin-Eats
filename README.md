@@ -930,6 +930,16 @@ The hero image used in home page,the default profile pictures, the background im
 
 ### **Libraries Used**
 
+1. Cloudinary 
+2. dj-database-url
+3. dj3-cloudinary-storage
+4. Django
+5. django-allauth
+6. django-crispy-forms
+7. Psychopg 2
+8. Gunicorn
+9. Crispy bootstrap5
+
 ## **Testing**
 Testing for the wesbite can be found here. [TESTING.md](TESTING.md)
 
