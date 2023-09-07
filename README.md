@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-Dublin Eats is a website designed to allow users to find and review Restaurants in Dublin. The site features a search function that allows users to search for any Restaurant in Dublin. This is implemented with Google Places API. The user can also view restaurants according to categories or cuiznes such as african, american, european, asian, irish. Users will be able to view Restaurant details such as their address and has access to their websites etc. Users will also be able to review  Restaurants and pin some restaurants onto their own customizable profile page. Each user needs to sign up to be able to review and look at other reviews for restaurants.Each user will have a profile page that they would be able to edit once logged in.
+Dublin Eats is a website designed to allow users to find and review Restaurants in Dublin. The site features a search function that allows users to search for any Restaurant in Dublin. This is implemented with Google Places API. The user can also view restaurants according to categories or cuiznes such as african, american, european, asian, irish. Users will be able to view Restaurant details such as their address and has access to their websites etc. Users will also be able to review  Restaurants and pin some restaurants page onto their own customizable profile page. Each user needs to sign up to be able to review and look at other reviews for restaurants.Each user will have a profile page that they would be able to edit once logged in.
 
 ## **Project Goals**
 
@@ -65,12 +65,16 @@ Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover
 
 ### **Agile Planning**
 
-1.	User stories are implemented which identifies the necessary features and functions of the website.
-2.	Prioritzie User stories from high importance to least important. This is done using labels such as “must-haves”, “should-haves”, “could-haves”
-3.	Categorize user stories further my having labels such as documentations for README and TESTING user stories.
-4.	Break userstories into smaller tasks .
+1. Agile development or planning were implemented using Github issues, milstones and project.
+2.	Issue were created for User stories which are implemented to identify the necessary features and functions of the website.
+3.	Prioritzie User stories from high importance to least important. This is done using labels such as “must-haves”, “should-haves”, “could-haves”.They were assigned story points according to complexity and difficulty.
+4.	Categorize user stories further my having labels such as documentations for README and TESTING user stories.
+5.	Break userstories into smaller tasks .
 
-The must-have user stories were prioritized first. Certain other user stories were implemented based on time and complexity. Kanan board for the project can be viewed here
+The must-have user stories were prioritized first. Certain other user stories were implemented based on time and complexity. 
+Project Kanan board was used to track progress with user stories moving between Todo, In Progress and Done columns.The kanan board can be located [here](). All stories have acceptance critera and tasks are needs to be ticked off on the go as this will mark the story as complete.
+
+The user stories for email confirmation and password reset is left as backlog as these were not able to be implemented due to time constraints and they were not part of MVP or must-have tags
 
 ### **Userstories**
 
