@@ -989,6 +989,19 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 
 ### **Final Deployment with Heroku**
 
+The below steps were followed to deploy this project to Heroku:
+
+1. Go to Heroku and click "New" to create a new app.
+2. After choosing the app name and setting the region, press "Create app".
+3. Go to "Settings" and navigate to Config Vars, enter the below:
+        - SECRET_KEY: (Enter your secret key)
+        - DATABASE_URL: (Enter the database URL from ElephantSQL)
+        - CLOUNDINARY_URL: (Enter Cloudinary API URL)
+        - PORT: 8000
+        - API_KEY: (An API key will need to be retrieved from the google places API)
+4. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub. Once GitHub is chosen, find your repository and connect it to Heroku.
+5. Scroll down to Manual Deploy, make sure the "main" branch is selected, and click "Deploy Branch".
+
 ## **Credits**
 
 ### **Code Used**
