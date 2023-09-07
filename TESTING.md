@@ -214,7 +214,7 @@ Namely :
 - Not setting fixed width and height for images.
 - Not having aria-labels for all links.
 - Performance was more on the lower side for rseataurant page and search results but that is mostly due to images being loaded from google Places API.
-- Profile pictures uploaded were taking in jpg which affected performance.
+- Profile pictures uploaded were taking in to be large which affected performance, This is diffcult to control as it depends on each user.
 
 #### **Home Page**
 
@@ -291,6 +291,11 @@ The following errors were found and corrrected :
 1. Contrast error for home page. The text overlying the home page was resulting in contrast error even though the text could be clearly seen. I corrected this by adding contrasting background color to the white overlying text.
 2. Headings were not in sequential order, this was corrected on all pages
 3. Profile images and hero image had alerted suspicious alt test which were also corrected.
+4. First headings on each page were not starting with h1 tag.
+
+All the above alerts and errors were correted but there remained alerts for redundant link. This would be the case for pages that would have links to profile page, sign in pages, login pages on other areas other than just the navbar.
+
+All pages otherwise passed WAVE validation.
 
 **homepage**
 
