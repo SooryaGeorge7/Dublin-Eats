@@ -1011,3 +1011,12 @@ The below steps were followed to deploy this project to Heroku:
 ### **Media**
 
 ## **Acknowledgements**
+
+I would like to acknowledge the following people in helping with my project one way or another:
+
+* My husband for supporting me through my decision to do this course and through all the late nights and meltdowns so far especially knowing that 
+  this will only get worse through the course of the year. :D
+* My friends ,family and colleagues who have tested my site on their devices to make sure all looks and works well.
+* My Mentor Brian O'Hare for guiding me and giving constructive criticism in our 6 mentor sessions so far.
+* UCD academy november private group in slack for our almost weekly facilitator sessions that have helped me in getting some our doubts cleared with regards to the project.
+* Chris Quinn for delivering our facilitator and master classes so far which has helped me to not feel completely alone in this journey.
