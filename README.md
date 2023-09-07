@@ -131,6 +131,62 @@ The Readme and Testing documents are part of this epic.
 
 ### **Userstories**
 
+These userstories associated with each of these EPICs were implemented throughout development of the website.
+
+#### **EPIC: Project Setup** 
+
+* As a Developer I can set up Django and install the necessary libraries so that the necessities are there to start project development. 
+* As a Developer I can deploy site to Heroku early so that I can start testing site early on before further development of application. 
+* As a Developer I need to add env.py to .gitignore so that I can deploy the site without exposing sensitive information.
+
+#### **EPIC: Home**
+
+* As a developer I can implement search functionality, so that user can easily search for restaurants using key words.
+* As a User I can see home page of website so that so that i can immediately know what the website is about and can see how to navigate to other pages
+* As a User I can **use header with navigation bar and footer ** so that i can find all the necessary information i am looking for with ease in every page of the website
+
+#### **EPIC: User authentication** 
+
+* As a site admin i can review comments left for restaurant reviews so that i can filter out any offensive language. 
+* As a User I want to Login and Logout so that I can use the features available to registered users.
+* As a User I want to sign up / register once so that i can have access to all features available on site
+
+The userstories below were not implemented due to time constraints.They were not part of the MVP milestone.
+
+* As a user i can signup with email verification so that noone else would be able to signup using my email.
+* As a User i can reset password so that i can still have my account if i forget my password
+
+#### **EPIC: Restaurant**
+
+* As a User I want to pin a restaurant so that I can see the restaurants i want to visit in my profile.
+* As a User I can click the next page button so that that one page is not overflowing with results.
+* As a User I can can choose restaurants according to categories so that that i can view all the restaurants that is available in Dublin according to that category.
+* As a User I would like to to see the websites of each restaurant so that I can find menus and find other necessary about the restaurant .
+
+#### **EPIC: Reviews & Ratings**
+
+* As a User I can see all reviews so that users can find other user's reviews and and can find top rated restaurants.
+* As a User I want to rate and review restaurants so that I can share my experience after visiting restaurant
+* As a User i can edit the reviews so that i can change my mind about the restaurant if i want to.
+* As a user I can delete a review I made so that create a new one in the future.
+
+#### **EPIC: Profile**
+
+* As a User I can see my profile so that **i can update information about myself, see or delete reviews already made, and see all the pinned restaurants i want to go visit **
+* As a user i can delete profile so that remove my account from the website.
+
+#### **EPIC: Error pages**
+
+* As a developer, I can implement 403 error page so that users are redirected to these pages when there is insufficient permission to access the page. 
+* As a developer, I can implement 500 error pages so that users are redirected to these pages when there is an internal server error.
+* As a developer, I can implement 404 error page so that users are redirected to these pages when a page is not found.
+
+
+#### **EPIC: Documentation**
+
+* As a Developer I have to write extensive documentation on the development of my site so that other developers can have access to relevant information needed.
+* As a Developer I have to *test website extensively so that **there would be no code, logical, accessibility errors **
+
 ## **The Skeleton Plane**
 
 #### **Wireframes**
