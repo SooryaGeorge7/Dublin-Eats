@@ -883,13 +883,27 @@ Unregistered users have access to search feature. They can search for what they 
 
 ### **Design**
 
+Design of website was thought out through colorscheme, typography and imagery and was carried out through the entirety of the website.
+
 #### **Colour Scheme**
 
 - ![Dublin Eats color palette](/documentation/color-scheme/restaurant-color-palette.png)
 
+- #2C3E50 was chosen as the primary color to be fitted throughout website as this color brings a more modern look to a website. 
+- #F9BF3B was chosen as the secondary color which were mainly used for action buttons such as search, submit, updated, edit, or when user selected stars, the stars turn this color. This color works great with the primary color to enhance user experience.
+- #F2F2F2 and #FFFFF was used as the background colors as the other colors were quite bold and daunting, a more neutral color would compliment well against the primary and secondary colors
+
+The colors above were implemented via rgba format instead of hex formatting inorder to use the various colours with transparency.
+
+#C0392B was a color that was implemented for delete buttons or remove buttons.
+
 #### **Typography**
 
+The font family Poppins were imported from google fonts and was implemented throughout website.
+
 #### **Imagery**
+
+The hero image used in home page,the default profile pictures, the background image used throughout the website and the default images in restaurants were all downloaded from [Pexels](). Their format was also changed to webp to improve performance during lighthouse testing.
 
 ## **Technologies Used**
 
