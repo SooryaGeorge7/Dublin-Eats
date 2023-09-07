@@ -224,15 +224,31 @@ The userstories below were not implemented due to time constraints.They were not
 
 </details>
 
-#### *Flow Chart logic
+#### **Flow Chart logic**
+
+A basic flowchart was used to plan the logic of this website. The logic was altered during development of website to adapt to the project's needs.
 
 - ![Flow chart of logic](/documentation/flow-diagram/flow-chart-dublineats.jpg)
 
 #### **Database Scheme**
 
+The models for this project are Profile model, Review model and Restaurant model.
+
+The profile model is linked directly with Django Allauth UserModel with the profile being created as the user signs up for website.
+
+The review model is linked to restaurant model and user model via a foreign key. This allows for ratings/reviews to be linked to a specific user profile.
+
+The restaurant model is linked to the profile model via many to many relationship allowing the user to pin restaurants to their profile.
+
+You can see the entity relationship diagram that was created for each model and they are related.
 - ![Entity relationships](/documentation/entity-relationship/entity-relationship.png)
 
 #### **Security**
+
+Security for this website was implemented  the following ways :
+
+- Enivornmental variables were added to gitignore file as they contain API keys and sensitive information.
+- These variables were added to Heroku config vars for deployment. 
 
 ## **The Scope Plane**
 
