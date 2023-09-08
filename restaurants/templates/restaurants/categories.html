@@ -46,24 +46,24 @@
                         <p class="card-text"><span class="fw-bold">Address</span> :{{ restaurant.address }}</p>
                         {% if restaurant.pinned == False %}
                         <a href="{% url 'to_visit' restaurant.place_id %}"
-                            class="to-visit position-absolute top-0 end-0" rel="noopener"
+                            class="to-visit position-absolute top-0 end-0" 
                             aria-label="Pin this restaurant" data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Pin to profile"><i class="bi bi-pin-angle-fill fs-1"></i></a>
                         {% else %}
                         <a href="{% url 'to_visit' restaurant.place_id %}"
-                            class=" pinned  position-absolute top-0 end-0" rel="noopener"
+                            class=" pinned  position-absolute top-0 end-0"
                             aria-label="Pin this restaurant" data-bs-toggle="tooltip" data-bs-placement="top"
                             title="Unpin"><i class="bi bi-pin-angle-fill fs-1 "></i></a>
                         {% endif %}
                         <div class="mt-auto">
 
                             {% if restaurant.user_reviewed == True %}
-                            <button class="btn btn-secondary user-done w-100 fw-bold py-2" rel="noopener"
+                            <button class="btn btn-secondary user-done w-100 fw-bold py-2" 
                                 aria-label="Rate this restaurant">Rated <i class="bi bi-star-fill"></i></button>
                             {% else %}
                             <a href="{% url 'review' restaurant.place_id %}"
                                 class="btn btn-secondary button-dbneats w-100 fw-bold py-2" 
-                                rel="noopener" aria-label="Rate this restaurant">Rate <i
+                                 aria-label="Rate this restaurant">Rate <i
                                     class="bi bi-star-fill"></i></a>
                             {% endif %}
                             {% if restaurant.website_url %}
@@ -72,7 +72,7 @@
                                     Visit Website</a>
                             {% else %}
                                 <button  class="btn btn-primary w-100 disabled-btn " 
-                                rel="noopener" aria-label="Visit website">
+                                 aria-label="Visit website">
                                     Website Unavailable</button>
                             {% endif %}
                             <a href="{% url 'allreviews' restaurant.place_id %}"
