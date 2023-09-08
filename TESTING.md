@@ -230,9 +230,11 @@ Namely :
 
 ***Mobile***
 
-
+![Result page mobile](/documentation/validation/Lighthouse/results-mobile.png)
 
 ***Desktop***
+
+![ Results page desktop ](/documentation/validation/Lighthouse/results-desktop.png)
 
 #### **Categories Page**
 
