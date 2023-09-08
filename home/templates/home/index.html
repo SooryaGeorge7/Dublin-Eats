@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<!--Home Page-->
 <div class="home-page">
     <div class="container-fluid p-0">
         <div class="row ">
             <div class="col" >
                 <div>
+                <!--Background image for home page-->
                 <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691274239/food-logo_r68kim.webp"
                     class="img-fluid w-100 vh-100 hero-image"  alt="Background image containing bowl of food">
                 <div class="overlay"></div>
                 </div>
+                <!--Text overlaying background image-->
                 <div class=" start-50 translate-middle search-container" >
                     <h1>Discover Dublin's Culinary Options.</h1>
                     <h1>Start your search here!</h1>
+                    <!--Search field-->
                     <form class="d-flex" action="{% url 'search'   %}" method="GET">
                         <input class="form-control me-2" type="search" placeholder="What are you craving for?" aria-label="Search" name="query" id="query"
                         value="{{ request.GET.query }}"  pattern="^(?!\s*$)[a-zA-Z ]*$" 
@@ -25,7 +29,7 @@
         </div>
     </div>
     {% block extra_js %}
-    <!-- Customizible JS -->
+    <!-- Customizible js for background blurout effect-->
     <script src="{% static 'js/blur.js' %}"></script>
     {% endblock extra_js %}
 </div>

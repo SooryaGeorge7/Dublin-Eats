@@ -11,7 +11,13 @@ GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 
 class TestRestaurantViews(TestCase):
-
+    """
+    The test for Restaurants app views.py is testing the functionality 
+    related to restaurant categories, pinning, and unpinning are working 
+    as expected in the Django application. It checks various scenarios, 
+    including rendering template categories.html, handling redirects, and
+    updating user profiles based on their interactions with restaurants.
+    """
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(

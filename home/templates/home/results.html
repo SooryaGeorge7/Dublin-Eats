@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
 {% block content %}
+<!--Search Results page-->
 <section class="dbneats-background">
     <div class="container">
         <div class="row text-center">
@@ -9,8 +9,8 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 pb-5">
             {% if restaurant_results %}
             {% for restaurant in restaurant_results %}
-
             <div class="col">
+                <!--Each card contains information,links and buttons for that particular restaurant.-->
                 <div class="card h-100 shadow p-2  bg-body-tertiary rounded">
                     <div class="card-body d-flex flex-column">
                         <h4 class=" card-title card-heading fw-bold">{{ restaurant.name }}</h4>
@@ -43,7 +43,6 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-
                         <p class="card-text"><span class="fw-bold">Address</span> :{{ restaurant.address }}</p>
                         {% if restaurant.pinned == False %}
                         <a href="{% url 'to_visit' restaurant.place_id %}"
@@ -57,7 +56,6 @@
                             title="Unpin"><i class="bi bi-pin-angle-fill fs-1 "></i></a>
                         {% endif %}
                         <div class="mt-auto">
-
                             {% if restaurant.user_reviewed == True %}
                             <button class="btn btn-secondary user-done w-100 fw-bold py-2" 
                                 aria-label="Rate this restaurant">Rated <i class="bi bi-star-fill"></i></button>
@@ -81,19 +79,19 @@
                                 All Reviews <i class="fa-solid fa-magnifying-glass"></i>
                             </a>
                         </div>
-
                     </div>
                 </div>
             </div>
-
             {% endfor %}
             {% endif %}
         </div>
+        <!--Button overlying page which user can click on to go up in smaller screens-->
         <div class=" mx-auto position-fixed top-50 end-0">
             <a type="button" href="{% url 'searchresults' restaurant_details.category %}" class="btn btn-primary button-dbneats goup-btn" aria-label="Go Up button"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Up"><i class="bi bi-chevron-double-up"></i></a>
         </div>
     </div>
+    <!--Pagination container-->
     <div class="container">
         <div class="row">
             <div class="col text-center">
@@ -125,7 +123,5 @@
             </div>
         </div>
     </div>
-
-
 </section>
 {% endblock%}

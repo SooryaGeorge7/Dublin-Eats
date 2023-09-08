@@ -14,6 +14,11 @@ class TestRestaurantModel(TestCase):
         )
 
     def test_restaurant_model(self):
+        """
+        This unit test case is verifying that the "Restaurant" model
+        behaves as expected and checks if the attributes of that instance match 
+        the expected values.
+        """
         restaurant = Restaurant.objects.get(name="Test Restaurant")
         self.assertEqual(restaurant.name, "Test Restaurant")
         self.assertEqual(restaurant.website, "dublineatstest@info.com")

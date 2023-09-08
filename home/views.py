@@ -12,6 +12,10 @@ GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 
 def get_details(place_id):
+    """
+    This function retrieves details from google places API 
+    using place_id
+    """
     detail_url = "https://maps.googleapis.com/maps/api/place/details/json"
     params = {
         "place_id": place_id,
@@ -25,8 +29,7 @@ def get_details(place_id):
 
 def search(request):
     """
-    Takes the users query from the search bar and makes a call to the TMDB API
-    and renders the data in the search results page
+    Takes in search query from home page and redirect to searchresults url 
     """
     query = request.GET.get("query")
 
@@ -35,9 +38,12 @@ def search(request):
 
 
 def searchresults(request, query):
+    """
+    View function to retrieve and display restaurant search results.
+    It takes in query as parameter to retrieve restaurant information from 
+    google places API which is then displayed in results.html
 
-    
-    
+    """
     # query = request.GET.get("query")
     url = (
         f"https://maps.googleapis.com/maps/api/place/textsearch/json?"
@@ -129,6 +135,8 @@ def searchresults(request, query):
         })
 
 
-# Create your views here.
 def home(request):
+    """
+    View to render homepage.
+    """
     return render(request, 'home/index.html')

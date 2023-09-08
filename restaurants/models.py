@@ -1,8 +1,11 @@
 from django.db import models
 
 
-# Create your models here.
+
 class Restaurant(models.Model):
+    """
+    Model for creating a Restaurant
+    """
     name = models.CharField(max_length=100)
     website = models.URLField(blank=True,max_length=500)
     address = models.TextField()
@@ -15,4 +18,7 @@ class Restaurant(models.Model):
     )
 
     def __str__(self):
+        """
+        Returns the name of the movie as a string representation
+        """
         return self.name

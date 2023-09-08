@@ -36,7 +36,7 @@
 
     /* Adjust the width and height according to your image size */
     height: 3.5rem;
-    background-image:url("https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp");
+    background-image:url(https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp);
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -209,7 +209,7 @@
 
 .dbneats-background {
     /* background-color: var(--bg-color); */
-    background-image: url(https://res.cloudinary.com/dif9bjzee/image/upload/v1688163762/backgroud_hwsqzo.png);
+    background-image: url(https://res.cloudinary.com/dif9bjzee/image/upload/v1694170418/background-formatted_emqacn.webp);
     background-size: contain;
     /* Adjust the image sizing */
 
@@ -354,7 +354,7 @@
    height:3rem;
 }
 .disabled-btn {
-    opacity: 0.6;
+    /* opacity: 0.6; */
     pointer-events: none;
     background-color: var(--bg-color);
     color: var(--primary-color);

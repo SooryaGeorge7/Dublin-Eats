@@ -11,6 +11,12 @@ GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 
 class TestSearchResultsViews(TestCase):
+    """
+    This is the setup method that is executed before each test function within the test case.
+    The test environment is prepared, including creating a test user,
+    a test profile, a test restaurant, and a test review. The test user is logged in, 
+    and the test restaurant is added to the user's pinned restaurants and reviewed restaurants.
+    """
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(
@@ -31,6 +37,12 @@ class TestSearchResultsViews(TestCase):
         self.profile.reviewed.add(self.restaurant)
 
     def test_search_and_search_results_page(self):
+        """
+        This test checks if the search and search results
+        pages function correctly by logging in a test user, performing a 
+        search, and verifying the expected HTTP responses and page templates.
+        
+        """
         self.client.login(username="testuser", password="test123")
         query = "thai"
         response = self.client.get(reverse("search") + "?query=" + query)

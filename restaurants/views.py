@@ -16,6 +16,10 @@ GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 
 def get_place_details(place_id):
+    """
+    This function retrieves details from google places API 
+    using place_id
+    """
     details_url = "https://maps.googleapis.com/maps/api/place/details/json"
     params = {
         "place_id": place_id,
@@ -28,6 +32,12 @@ def get_place_details(place_id):
 
 
 def restaurants(request, category):
+    """
+    View function to retrieve and display restaurants results.
+    It takes in a cattegory  as parameter to retrieve restaurant information from 
+    google places API which is then displayed in categories.html
+
+    """
     if category == "asian":
 
         url = (
@@ -144,6 +154,12 @@ def restaurants(request, category):
 
 @login_required()
 def to_visit(request, restaurant_id):
+    """
+    This function allows authenticated users to add or remove 
+    restaurants from their list of pinned restaurants and then 
+    redirects them to the appropriate page. It also includes messages 
+    to inform the user of the action taken.
+    """
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     user = request.user
     profile = Profile.objects.get(user=user)
@@ -171,6 +187,11 @@ def to_visit(request, restaurant_id):
 
 @login_required()
 def remove_pin(request, restaurant_id):
+    """
+    This function allows authenticated users to remove a restaurant from 
+    their list of pinned restaurants and then redirects them to their
+     profile page with a success message indicating the removal.
+    """
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     user = request.user
     profile = Profile.objects.get(user=user)
