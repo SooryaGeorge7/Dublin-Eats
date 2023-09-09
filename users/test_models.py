@@ -5,7 +5,12 @@ from .models import Profile, placeholder
 
 
 class TestProfileModel(TestCase):
-
+    """
+    This unit test cases ensure that the "Profile" model behaves as expected
+     by verifying attributes and relationships. The first test checks the attributes
+      of the user's profile, and the second test checks the relationships
+       between the profile and pinned restaurants and reviews.
+    """
     def setUp(self):
 
         self.restaurant = Restaurant.objects.create(

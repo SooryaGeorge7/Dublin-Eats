@@ -6,6 +6,9 @@ from django.core.validators import MaxLengthValidator
 
 # Create your models here.
 class Review(models.Model):
+    """
+    Model for creating a User Review
+    """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(
         Restaurant, on_delete=models.CASCADE
@@ -38,7 +41,14 @@ class Review(models.Model):
     )
 
     class Meta:
+        """
+        Order by when review was created on
+        """
         ordering = ["-created_on"]
 
     def __str__(self):
+        """
+        Returns the username and the Restaurant name as a string
+        representation of the object.
+        """
         return f"{self.user.username}'s review of {self.restaurant.name}"

@@ -4,6 +4,12 @@ from .forms import UserUpdateForm, ProfileUpdateForm
 
 
 class UserUpdateFormTest(TestCase):
+    """
+    The unit tests ensures that the UserUpdateForm and ProfileUpdateForm 
+    forms behave correctly in terms of validation. They cover scenarios
+     involving valid data, invalid email formats, missing required fields,
+      and fields exceeding character limits.
+    """
     def test_userupdateform_valid(self):
         # Test when form data is valid
         form_data = {

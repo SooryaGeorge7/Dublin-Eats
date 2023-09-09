@@ -3,6 +3,13 @@ from .forms import RatingForm
 
 
 class TestRatingForm(TestCase):
+    """
+    This test cases ensure that the "RatingForm" form behaves correctly in 
+    terms of validation. The first test checks that the form is valid when 
+    provided with valid data, and the second test checks that the form correctly 
+    identifies and reports errors when ratings exceed 
+    the maximum allowed value of 5.
+    """
     def test_ratingform_valid(self):
         form = RatingForm(
             {

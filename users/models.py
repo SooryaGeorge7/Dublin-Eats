@@ -14,6 +14,9 @@ placeholder = (
 
 
 class Profile(models.Model):
+    """
+    Model for creating a profile
+    """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstname = models.CharField(
         max_length=50, null=True, blank=True,
@@ -54,4 +57,8 @@ class Profile(models.Model):
     )
 
     def __str__(self):
+        """
+        Returns the username of the profile as a string representation of
+        the object.
+        """
         return f'{self.user.username} Profile'

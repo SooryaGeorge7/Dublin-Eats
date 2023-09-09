@@ -9,6 +9,21 @@ from restaurants.models import Restaurant
 
 
 class TestReviewViews(TestCase):
+    """
+    These tests covers creating, editing, and deleting 
+    restaurant reviews.When user clicks on the rate button, the site Ensures GET 
+    request is sent to a URL named "review" with the restaurant ID as an argument
+    and checks if if the "review_page.html" template is used.When user want to edit 
+    reviews site it sends a GET request to a URL named "edit_review" with the restaurant ID 
+    and review ID as arguments. It checks if the "review_page.html" template is used.
+    It retrieves the existing review's attributes and checks if they match the 
+    initial review data.It sends a POST request to the same URL with updated review data.
+    It checks if if it redirects to the "allreviews" page for the same restaurant.
+    When user wants to delete a review, The site first checks the initial count of reviews
+    in the database. It sends a POST request to a URL named "delete_review" with the 
+    restaurant ID and review ID as arguments.It checks if it redirects to the "allreviews" page
+    for the same restaurant.
+    """
     def setUp(self):
         self.client = Client()
         self.user = User.objects.create_user(

@@ -25,6 +25,11 @@ def profile(request, username):
 
 @login_required
 def edit_profile(request, username):
+    """
+    Renders the edit profile page, checks that the user matches profile user
+    , the form is prepopulated with existing data and also checks whether the forms 
+    are valid before saving to database
+    """
     user = request.user
     # user = User.objects.get(username=username)
     profile_user = get_object_or_404(User, username=username)
@@ -71,6 +76,10 @@ def edit_profile(request, username):
 
 @login_required()
 def delete_profile(request, username):
+    """
+    Allows delete profile functionality that deletes a profile 
+    and its account
+    """
     user = request.user
     profile_user = get_object_or_404(User, username=username)
     profile = Profile.objects.get(user=profile_user)

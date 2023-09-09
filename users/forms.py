@@ -1,19 +1,31 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 
 
 class UserUpdateForm(forms.ModelForm):
+    """
+    Form to Edit User
+    """
     email = forms.EmailField
 
     class Meta:
+        """
+        Define model, fields
+        """
         model = User
         fields = ['username', 'email']
 
 
 class ProfileUpdateForm(forms.ModelForm):
+    """
+    Form to Edit/Delete Profile
+     and account
+    """
     class Meta:
+        """
+        Define model, form fields, help texts and widgets
+        """
         model = Profile
         fields = [
             "firstname",

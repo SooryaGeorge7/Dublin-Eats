@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<!--Review page that contains the review form -->
 <section class="d-flex justify-content-center align-items-center dbneats-background">
     <div class="container">
         <div class="col-lg-4 col-md-8 mx-auto">
@@ -62,7 +63,7 @@
 
                     </div>
 
-                    <!-- Comment Form -->
+                    <!-- Comment Box -->
 
                     <div class="card-body">
                         <h5 class="card-title">Leave a Review!</h5>
@@ -83,7 +84,7 @@
                             data-bs-target="#deleteProfileModal">
                             Delete <i class="bi bi-trash3"></i>
                         </button>
-                        <!-- <a type="button" href="{% url 'allreviews' restaurant.RestaurantId %}" class="btn btn-primary">Exit</a> -->
+                        
                         <button type="button" class="btn btn-outline-info button-dbneats" data-bs-toggle="modal"
                             data-bs-target="#exitProfileModal"> Exit <i class="bi bi-escape"></i></button>
                         {% else %}
@@ -99,12 +100,13 @@
         </div>
     </div>
     {% block extra_js %}
-    <!-- Customizible JS -->
+    <!-- Customizible JS that handles star ratings -->
     <script src="{% static 'js/rate.js' %}"></script>
     {% endblock extra_js %}
 
 </section>
 {% if user_reviewed == True %}
+<!--Delete popup modal-->
 <section class="d-flex justify-content-center align-items-center dbneats-background">
     <div class="container">
         <div class="modal fade" id="deleteProfileModal" tabindex="-1" aria-labelledby="deleteProfileModalLabel"
@@ -151,14 +153,13 @@
     </div>
 </section>
 {% endif %}
+<!--Exit popup modal when user wants to edit review-->
 <section class="d-flex justify-content-center align-items-center ">
     <div class="container">
         <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content ">
-
-
                     <div class="modal-header">
                         <h2 class="modal-title fw-bold form-heading text-center" id="exitProfileModalLabel">
                             <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
@@ -182,7 +183,7 @@
         </div>
     </div>
 </section>
-
+<!--Exit pop up modal of review form-->
 <section class="d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="modal fade" id="exitReviewModal" tabindex="-1" aria-labelledby="exitReviewModalLabel"
@@ -206,10 +207,8 @@
                         {% if category_url %}
                         <a href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"
                                 aria-label="Exit review"></i></a>
-                        <!-- {% else %}
-                        <a type="button" href="{% url 'searchresults' restaurant.category %}"
-                            class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"></i></a>
-                        {% endif %} -->
+                        
+                        {% endif %} 
                     </div>
 
 

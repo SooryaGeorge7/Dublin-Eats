@@ -11,6 +11,11 @@ from django.contrib import messages
 
 @login_required()
 def review(request, restaurant_id):
+    """
+    This is a function for submitting a restaurant review.
+    it takes in request and restaurant_id and renders 
+    review_page.html.
+    """
     restaurant = Restaurant.objects.get(RestaurantId=restaurant_id)
     ratings = Review.objects.filter(restaurant=restaurant)
     user = request.user
@@ -51,6 +56,11 @@ def review(request, restaurant_id):
 
 @login_required()
 def allreviews(request, restaurant_id):
+    """
+    This function is to show all reviews to user.
+    Takes in args request and restaurant_id and renders 
+    allreviews.html
+    """
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     reviews = Review.objects.filter(restaurant=restaurant)
     context = {
@@ -62,6 +72,11 @@ def allreviews(request, restaurant_id):
 
 @login_required()
 def edit_review(request, restaurant_id, review_id):
+    """
+    This function is for editing an review. The review already done is 
+    prepopulated when opening the review form when user wants to edit. 
+    Changes made is then saved.
+    """
     user = request.user
     # restaurant = Restaurant.objects.get(RestaurantId=restaurant_id)
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
@@ -113,6 +128,10 @@ def edit_review(request, restaurant_id, review_id):
 
 
 def profile_reviews(request, restaurant_id):
+
+    """
+    This function checks if user has previously reviewed the restaurant
+    """
     # restaurant = Restaurant.objects.get(RestaurantId=restaurant_id)
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     user = request.user
@@ -130,6 +149,9 @@ def profile_reviews(request, restaurant_id):
 
 @login_required()
 def delete_review(request, restaurant_id, review_id):
+    """
+    This function handles deleting of review for a particular restaurant.
+    """
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
     review = get_object_or_404(Review, id=review_id)
     user = request.user

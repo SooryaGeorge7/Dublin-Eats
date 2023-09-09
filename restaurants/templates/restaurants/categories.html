@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
 <section class="dbneats-background">
     <div class="container">
@@ -8,7 +7,7 @@
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 pb-5">
             {% for restaurant in restaurants %}
-
+            <!--Each card contains a restaurant's name, address, website link, images and review buttons-->
             <div class="col">
                 <div class="card h-100 shadow p-2  bg-body-tertiary rounded">
                     <div class="card-body d-flex flex-column">
@@ -87,12 +86,14 @@
 
             {% endfor %}
         </div>
+        <!--Button that allows user to go up on the page in smaller devices-->
         <div class=" mx-auto position-fixed top-50 end-0">
             <a  href="{% url restaurant_details.category %}" class="btn btn-primary button-dbneats goup-btn" aria-label="Go up button"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Up"><i class="bi bi-chevron-double-up"></i></a>
         </div>
             
     </div>
+    <!--Container for pagination-->
     <div class="container">
         <div class="row">
             <div class="col text-center">

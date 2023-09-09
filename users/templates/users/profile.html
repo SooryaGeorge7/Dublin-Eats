@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<!--Profile page-->
 <section class=" dbneats-background min-vh-100">
     <div class="container profile-container">
         <div class="row justify-content-center">
@@ -30,6 +31,7 @@
                 </div>
             </div>
         </div>
+        <!--Pinned restaurants div-->
         <div class="row justify-content-center">
             <div class=" card col-lg-4 col-md-6 text-center">
                 <div class="card-header">
@@ -59,16 +61,15 @@
                         class="btn btn-sm btn-primary remove-button" data-bs-toggle="tooltip"
                         data-bs-placement="top" title="Remove from profile"> <i class="bi bi-eraser"></i></a>
                         {% endif %}
-                    
                     </div>
                     {% endfor %}
                     </div>
-                
                 {% else %}
                 <p>No pinned restaurants</p>
                 {% endif %}
                 </div>
             </div>
+            <!--Reviews div-->
             <div class="card col-lg-4 col-md-6 text-center">
                 <div class="card-header">
                     {% if request.user == profile.user %} 
@@ -107,8 +108,6 @@
                     <p>No reviews yet</p>
                     {% endif %}
                 </div>
-
-
             </div>
         </div>
     </div>

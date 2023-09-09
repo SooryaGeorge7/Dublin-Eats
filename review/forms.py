@@ -4,7 +4,13 @@ from django.forms import HiddenInput
 
 
 class RatingForm(forms.ModelForm):
+    """
+    Form to edit and delete reviews
+    """
     class Meta:
+        """
+        Define model,  form fields, widgets, labels and help texts.
+        """
         model = Review
         fields = [
             'taste',

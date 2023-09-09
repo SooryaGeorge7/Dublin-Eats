@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<!--Edit profile form-->
 <section class=" dbneats-background min-vh-100 d-flex flex-column align-items-center justify-content-center">
     <div class="profile-form mx-2 card shadow p-4 bg-body-tertiary rounded mb-3">
         <div class="card-body">
@@ -33,6 +34,7 @@
             </form>
         </div>
     </div>
+    <!--This is delete modal for edit profile form-->
     <div class="container ">
         <div class="modal fade" id="deleteProfileModal" tabindex="-1" 
             aria-hidden="true">
@@ -73,14 +75,12 @@
             </div>
         </div>
     </div>
-
+    <!--This is the exit modal for edit_profile form-->
     <div class="container dbneats-background">
         <div class="modal fade" id="exitProfileModal" tabindex="-1" aria-labelledby="exitProfileModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content dbneats-background">
-
-
                     <div class="modal-header">
                         <h2 class="modal-title fw-bold form-heading text-center " id="exitProfileModalLabel">
                             <img src="https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp"
@@ -97,8 +97,6 @@
                     class="btn btn-outline-info button-dbneats" aria-label="Exit modal">Exit <i class="bi bi-escape"></i></a>
 
                     </div>
-                    
-
                 </div>
             </div>
         </div>

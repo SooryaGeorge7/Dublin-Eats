@@ -5,6 +5,11 @@ from restaurants.models import Restaurant
 
 
 class TestReviewModel(TestCase):
+    """The test case verifies that the "Review" model behaves as expected by
+     creating a test instance of the model and checking if its attributes and
+      string representation match the expected values. This is a basic unit test
+       for the model's correctness and can help ensure that the model's fields
+        and methods are defined and working correctly."""
 
     def setUp(self):
         self.restaurant = Restaurant.objects.create(
