@@ -190,6 +190,8 @@ The userstories below were not implemented due to time constraints.They were not
 
 #### **Wireframes**
 
+Although care was taken to implement as much of the features as the wireframes created, some features had to be changed or adjusted due to complexity and time constraints.
+
 <details><summary>Desktop</summary>
 
 - ![Desktop page 1](/documentation/wireframes/desktop/desktop-homepage.png)
@@ -226,6 +228,7 @@ The userstories below were not implemented due to time constraints.They were not
 #### **Flow Chart logic**
 
 A basic flowchart was used to plan the logic of this website. The logic was altered during development of website to adapt to the project's needs.
+The website allows unregistered users to use the search field and view restaurant categories but they are unable to pin,rate or see any reviews of any restaurants until they have signed up for the website.
 
 - ![Flow chart of logic](/documentation/flow-diagram/flow-chart-dublineats.jpg)
 
@@ -234,12 +237,9 @@ A basic flowchart was used to plan the logic of this website. The logic was alte
 The models for this project are Profile model, Review model and Restaurant model.
 
 The profile model is linked directly with Django Allauth UserModel with the profile being created as the user signs up for website.
+The review model is linked to restaurant model and user model via a foreign key. This allows for ratings/reviews to be linked to a specific user profile.The restaurant model is linked to the profile model via many to many relationship allowing the user to pin restaurants to their profile as well as to review as many restaurants as they want.
 
-The review model is linked to restaurant model and user model via a foreign key. This allows for ratings/reviews to be linked to a specific user profile.
-
-The restaurant model is linked to the profile model via many to many relationship allowing the user to pin restaurants to their profile.
-
-You can see the entity relationship diagram that was created for each model and they are related.
+You can see the entity relationship diagram that was created for each model and how they are related.
 - ![Entity relationships](/documentation/entity-relationship/entity-relationship.png)
 
 #### **Security**
@@ -247,7 +247,7 @@ You can see the entity relationship diagram that was created for each model and 
 Security for this website was implemented  the following ways :
 
 - Enivornmental variables were added to gitignore file as they contain API keys and sensitive information.
-- These variables were added to Heroku config vars for deployment. 
+- These variables were added to Heroku config vars for production and deployment. 
 
 ## **The Scope Plane**
 
