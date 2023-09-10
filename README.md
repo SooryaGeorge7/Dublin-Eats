@@ -256,7 +256,7 @@ Security for this website was implemented  the following ways :
 -	Navbar menu should be shown in a hamburger toggler in smaller devices.
 -	The user should be able to access the websites features once they are logged in.
 -	User should have a clear understanding of site from home page.
--	Other functionalities available to user- pinning restaurants to their profile, clicking on each restaurant.
+-	Other functionalities available to user- pinning restaurants to their profile, clicking on each restaurant websites, having access to google images and address for each restaurant..
 
 ## **The Structure Plane**
 
