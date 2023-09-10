@@ -65,16 +65,15 @@ Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover
 
 ### **Agile Planning**
 
-1. Agile development or planning were implemented using Github issues, milstones and project.
-2.	Issue were created for User stories which are implemented to identify the necessary features and functions of the website.
-3.	Prioritzie User stories from high importance to least important. This is done using labels such as “must-haves”, “should-haves”, “could-haves”.They were assigned story points according to complexity and difficulty.
-4.	Categorize user stories further my having labels such as documentations for README and TESTING user stories.
-5.	Break userstories into smaller tasks .
+Agile development or planning were implemented using Github issues, milestones and project.Issue weres created for User stories which are implemented to identify the necessary features and functions of the website.
 
+Since this was the first time using story points and it was not really explained in the walk-through videos, it was challenging to identify which userstories to allocate more story points and how much story points to provide for each user story.Story points were allocated according to complexity or how time consuming the user story was.
 The must-have user stories were prioritized first. Certain other user stories were implemented based on time and complexity. 
-Project Kanan board was used to track progress with user stories moving between Todo, In Progress and Done columns.The kanan board can be located [here](). All stories have acceptance critera and tasks are needs to be ticked off on the go as this will mark the story as complete.
+Project Kanan board was used to track progress with user stories moving between Todo, In Progress and Done columns.The kanan board can be located [here](https://github.com/users/SooryaGeorge7/projects/3/views/1). All user stories have acceptance critera and tasks that needs to be ticked off on the go as this will mark the story as complete.
 
-The user stories for email confirmation and password reset is left as backlog as these were not able to be implemented due to time constraints and they were not part of MVP or must-have tags
+The user stories for email confirmation and password reset is left as backlog as these were not able to be implemented due to time constraints and they were not part of MVP or must-have tags.
+
+![Project kanban screenshot](/documentation/agile.png)
 
 ### **Epics**
 
@@ -1022,7 +1021,7 @@ The below steps were followed to deploy this project to Heroku:
 
 * Default profile image was found in pixabay.com [See here](https://pixabay.com/illustrations/profile-icon-symbol-male-profile-728591/)
 * Background home page image was found in Pexels.come [See here](https://www.pexels.com/photo/cooked-food-in-white-and-brown-ceramic-bowl-close-up-photography-2741458/)
-* Backdrop image which is also used for default image in restaurant cards were found in freepik.com [See here](https://www.freepik.com/free-vector/hand-drawn-food-elements_1159027.htm#query=food&position=7&from_view=search&track=sph)
+* Backdrop image which is also used for default image in restaurant cards were found in freepik.com [See here](https://toppng.com/free-image/attern-for-italian-restaurant-la-casata-in-prague-PNG-free-PNG-Images_179428)
 * All icons used were from [Bootstrap icons](https://icons.getbootstrap.com/?q=globe)
 * The logo image was created Realfavicon generator to fit the theme of the website.
 
