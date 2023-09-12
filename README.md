@@ -834,7 +834,33 @@ Super user's have access to edit profile button on other user's profile. The edi
 </details>
 
 
+**Error pages**
 
+I have included 403,404 and 500 error pages
+
+<details><summary>403 error page</summary>
+
+This page appears when an action is forbidden.
+
+![Superuser allreviews access](/documentation/features/error-pages/403.png)
+
+</details>
+
+<details><summary>404 error page</summary>
+
+This page appears when a page is not found.
+
+![Superuser allreviews access](/documentation/features/error-pages/404.png)
+
+</details>
+
+<details><summary>500 error page</summary>
+
+This page appears when there is an error with the internal server.
+
+![Superuser allreviews access](/documentation/features/error-pages/500.png)
+
+</details>
 
 2. **UNREGISTERED USER ACCESS**
 
