@@ -280,6 +280,8 @@ Users would be able to naviagate the website so that they can find any informati
 </details>
 <details><summary>Navbar in Mobile devices</summary>
 
+In smaller devices a hamburger toggle button appears, where user can click on to show the navigation links.
+
 ![Mobile Navbar](/documentation/features/home-page/navbar-mobile.png)
 
 ![Mobile open navbar](/documentation/features/home-page/navbar-open-mobile.png)
@@ -287,9 +289,9 @@ Users would be able to naviagate the website so that they can find any informati
 </details>
 <details><summary>Navbar logged out</summary>
 
-Navbar will look different to users if they have logged out or havnt signed up for website yet. They will not have a profile lab and logout tab, instead they will have access to login tab and signup tab on navbar.
+Navbar will look different to users if they have logged out or havnt signed up for website yet. They will not have a profile tab and a logout tab, instead they will have access to login tab and signup tab on navbar.
 
-![LoggedOut navbar](/documentation/features/home-page/navbar-loggedout.png)
+![Loggedout navbar](/documentation/features/home-page/navbar-loggedout.png)
 
 </details>
 <details><summary>Dublin Eats logo</summary>
@@ -302,6 +304,8 @@ User can click on logo at any point, and the user will be redirected to the home
 
 
 ***Footer***
+
+Footer contains copyright statement and link to my(Soorya George's) github profile.
 
 <details><summary>Footer on desktop</summary>
 
@@ -339,7 +343,7 @@ Users who open the home page is immediately drawn to this text and search featur
 
 <details><summary>Search validation</summary>
 
-Users who adds input and clicks search button would not be able to seach with numbers, special charectors , no input or blank spaces. 
+Users who inserts an input and clicks search button would not be able to search with numbers, special charectors , zero input or blank spaces. 
 
 ![Search number validation](/documentation/features/home-page/search-feature-number-validation.gif)
 ![Search blank validation](/documentation/features/home-page/search-feature-blank-validation.gif)
@@ -349,11 +353,11 @@ Users who adds input and clicks search button would not be able to seach with nu
 
 **Restaurants page & features**
 
-When user clicks on a category from restaurants tab on navbar, a page is rendered which contains a few restaurants of the category you selected in Dublin. A maximum of 8 restaurants are rendered per page.
+When user clicks on a category from restaurants tab on navbar, a page is rendered which contains a few restaurants of the category you selected in Dublin. A maximum of 8 restaurants are rendered per page. Google places API returns a maximum of 20 restaurants for each request. Using the paginator, Only 8 restaurants are shown in the first page.
 
 <details><summary>Restaurants page desktop</summary>
 
-For desktop - User is shown 4 restaurants details displayed as cards in a row.
+For desktop - User is shown 4 restaurant cards displayed in a row.Each card contains more information about the particular restaurant.
 
 ![Restaurants page desktop](/documentation/features/restaurants-page/restaurantspage-desktop.gif)
 
@@ -361,7 +365,7 @@ For desktop - User is shown 4 restaurants details displayed as cards in a row.
 
 <details><summary>Restaurants page mobile</summary>
 
-For mobile- User is shown 1 restaurant details displayed as a card in a row.
+For mobile- User is shown 1 restaurant displayed as a card in a row.As you can see a go up button is available to user to allow user to go up the page if they wanted to at any point.
 
 ![Restaurants page mobile](/documentation/features/restaurants-page/restaurantspage-mobile.gif)
 
@@ -385,7 +389,7 @@ Users may unpin restaurants from their profile. The pinned restaurants(red pin) 
 
 <details><summary>Restaurants page rate button</summary>
 
-Users can click on rate button for a restaurant which will the redirect the user to another page which is the review/rate page
+Users can click on rate button for a restaurant which will the redirect the user to another page which is the review/rate page.
 
 ![Rate button](/documentation/features/restaurants-page/restaurants-rate-feature.gif)
 
@@ -393,7 +397,7 @@ Users can click on rate button for a restaurant which will the redirect the user
 
 <details><summary>Restaurants page rated feature</summary>
 
-Once user has rated a restaurant already, the rate button will change color, and will loose ability to be clicked. This will prevent users from rating the same restaurant twice. Only once they have deleted their review, the button can change back to being original color and user will be able to review the restaurant again.
+Once user has rated a restaurant already, the rate button will change color to a yellow shade, and will loose ability to be clicked. This will prevent users from rating the same restaurant twice. Only once they have deleted their review, the button can change back to being original color and user will be able to review the restaurant again.
 
 ![Rated feature](/documentation/features/restaurants-page/restaurants-rated-feature.gif)
 
@@ -401,7 +405,7 @@ Once user has rated a restaurant already, the rate button will change color, and
 
 <details><summary>Restaurants page carousal feature</summary>
 
-Users can have access to images of restaurants which are featured from google since we are using google places api to retrieve restaurant information.
+Users can have access to images of restaurants which are featured from google since we are using google places api to retrieve restaurant information.The carousal only shows the next image when user clicks the next button.
 
 ![Carousal feature](/documentation/features/restaurants-page/restaurants-carousal-feature.gif)
 
@@ -409,7 +413,7 @@ Users can have access to images of restaurants which are featured from google si
 
 <details><summary>Restaurants page visit website feature</summary>
 
-Users would be able to visit restaurant websites when they click visit website button if a website is available to them.
+Users would be able to visit restaurant websites when they click visit website button if a website of the restaurant is available.
 
 ![Visit website](/documentation/features/restaurants-page/restaurant-website-feature.gif)
 
@@ -433,7 +437,7 @@ When users access restaurants page on mobile or smaller devices, a go up button 
 
 <details><summary>Restaurants page no website feature</summary>
 
-Users are shown when a website is not available for a restaurant, as the information are retrieved from googplaces api. Sometimes websites would not be able for some restaurants.
+Users are shown this when a website is not available for a restaurant. Sometimes websites would not be able for some restaurants as the information is being retrieved from google places API.
 
 ![No website feature](/documentation/features/restaurants-page/website-unavailable-feature.png)
 
@@ -449,7 +453,7 @@ Users will be shown an appropriate image that matches with website theme incase 
 
 <details><summary>Restaurants page pagination feature</summary>
 
-Users will be able to move to next page by clicking the next arrow or 1, 2, 3 buttons. There is a limit of 20 restaurants all together for each category chosen as this is the limit with google places API. Each will have 8 restaurants or less.
+Users will be able to move to next page by clicking the next arrow or 1, 2, 3 buttons. There is a limit of 20 restaurants all together for each category chosen as this is the limit with google places API. Each page will have 8 restaurants or less.
 
 ![Restaurant pagination](/documentation/features/restaurants-page/restaurants-pagination-feature.gif)
 
@@ -523,7 +527,7 @@ When user clicks on rate button in restaurant's page, user is redirected to page
 
 <details><summary>Rate stars feature</summary>
 
-User would be able to click stars and depending on location of click, javascript code handles the event and changes the value of the rating for that particular criteria and also changes the color of the stars accordingly
+User would be able to click stars and depending on location of click, javascript code handles the event and changes the value of the rating for that particular criteria and also changes the color of the stars accordingly.
 
 ![Rate stars feature](/documentation/features/rate-page/rate-stars-feature.gif)
 
@@ -800,7 +804,7 @@ Superusers would have access to edit button for all reviews found in allreviews 
 
 </details>
 
-<details><summary>Superuser delete other's reviewes feature</summary>
+<details><summary>Superuser delete other's reviews feature</summary>
 
 Superusers would be able to delete other user's reviews if they wanted to.
 
@@ -867,7 +871,7 @@ This page appears when there is an error with the internal server.
 
 Unregistered users can access restaurants pages according to categories. They are able to access websites of each restaurant too.
 
-Unregistered users have access to search feature. They can search for what they want but features such as rating, pinning and viewing reviews and profiles are restricted to registered users.
+Unregistered users have access to search feature. They can search for whatever restaurant they want but features such as rating, pinning and viewing reviews and profiles are restricted to registered users.
 
 **Cant Access**
 
@@ -902,12 +906,13 @@ Unregistered users have access to search feature. They can search for what they 
 - Ability to register and login with social media accounts.
 - Allow for users to report other users to the site admin incases of inappropraite comments or reviews.
 - Mechanism for users to easily contact the site admin.
+- Implement a refresh button for review page- i thought of this at last second. This could have been implemented easily but i just ran out of time. 
 
 ## **The Surface Plane**
 
 ### **Design**
 
-Design of website was thought out through colorscheme, typography and imagery and was carried out through the entirety of the website.
+Design of website was thoughtout through color scheme, typography and imagery.It was carried out through the entirety of the website.
 
 #### **Colour Scheme**
 
@@ -919,15 +924,15 @@ Design of website was thought out through colorscheme, typography and imagery an
 
 The colors above were implemented via rgba format instead of hex formatting inorder to use the various colours with transparency.
 
-#C0392B was a color that was implemented for delete buttons or remove buttons.
+#C0392B![red color](/documentation/color-scheme/red-color.png)    was a color that was implemented for delete buttons or remove buttons.
 
 #### **Typography**
 
-The font family Poppins were imported from google fonts and was implemented throughout website.
+The font family Poppins were imported from google fonts and was implemented throughout website.This font was chosen for its modern look.
 
 #### **Imagery**
 
-The hero image used in home page,the default profile pictures, the background image used throughout the website and the default images in restaurants were all downloaded from [Pexels](). Their format was also changed to webp to improve performance during lighthouse testing.
+The hero image used in home page,the default profile pictures, the background image used throughout the website and the default images in restaurants were all downloaded and credited in the [acknowledgements](#acknowledgements) section.All the images format were changed to webp to improve performance during lighthouse testing.
 
 ## **Technologies Used**
 
