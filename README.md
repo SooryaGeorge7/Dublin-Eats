@@ -2,11 +2,11 @@
 
 ## **Overview**
 
-Dublin Eats is a website designed to allow users to find and review Restaurants in Dublin. The site features a search function that allows users to search for any Restaurant in Dublin. This is implemented with Google Places API. The user can also view restaurants according to categories or cuiznes such as african, american, european, asian, irish. Users will be able to view Restaurant details such as their address and has access to their websites etc. Users will also be able to review  Restaurants and pin some restaurants page onto their own customizable profile page. Each user needs to sign up to be able to review and look at other reviews for restaurants.Each user will have a profile page that they would be able to edit once logged in.
+Dublin Eats is a website designed to allow users to find and review Restaurants in Dublin. The site features a search feature that allows users to search for any Restaurant in Dublin. This is implemented with Google Places API. The user can also view restaurants according to categories or cuiznes such as african, american, european, asian or irish. Users will be able to view Restaurant details such as their address and has access to their websites etc. Users will also be able to review  Restaurants and pin some restaurants page onto their own customizable profile page. Each user needs to sign up to be able to review and look at other reviews for restaurants.Each user will have a profile page that they would be able to edit once they have logged in.
 
 ## **Project Goals**
 
-This is my fourth portfolio project for [Code Institute](https://codeinstitute.net/). In this project i aim to demonstrate my goal of showcasing my skills in django , bootstrap etc.
+This is my fourth portfolio project for [Code Institute](https://codeinstitute.net/). In this project i aim to demonstrate my goal of showcasing my skills in django , bootstrap, html, javascript, python & css.
 
 ## **Contents**
 
@@ -45,13 +45,13 @@ This is my fourth portfolio project for [Code Institute](https://codeinstitute.n
 
 ## **The Strategy Plane**
 
-Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover new restaurants in Dublin which are top rated. Users will be able to search restaurants according to categories and rate/review the ones they have been to. They should be able to create their own profile page where they can also pin the restaurants they would like to visit in the future.
+Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover new restaurants in Dublin according to what they are feeling for /craving for in the moment. Users will be able to search restaurants according to categories or cravings and rate/review the ones they have been to. Each Registered user has a profile page where they can also pin the restaurants they would like to visit in the future.
 
 ### **The Ideal User**
 
 - User who enjoys food and would like to discover new restaurants or cuizines.
 - User resides in Dublin and would share the app to their socials to generate traffic.
-- User who will create a list of restaurants that they still want to visit(pin the restaurants)
+- User who will create a list of restaurants that they still want to visit(pin the restaurants).
 - User who would rate and review restaurants that they have been to.
 - User who has customized their page to showcase their interests in any aspects of food.
 
@@ -59,7 +59,6 @@ Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover
 
 - To provide users with all the restaurants and discover new ones.
 - To provide users with the ability to review/rate restaurants.
-- To provide users with the ability to create their own Profile.
 - To provide users with the ability to view other users reviews/ratings.
 - To provide users with the ability to pin / favourite the restaurants they want to go to.
 
@@ -67,7 +66,7 @@ Dublin Eats websites intends to allow  foodies of Dublin or tourists to discover
 
 Agile development or planning were implemented using Github issues, milestones and project.Issue weres created for User stories which are implemented to identify the necessary features and functions of the website.
 
-Since this was the first time using story points and it was not really explained in the walk-through videos, it was challenging to identify which userstories to allocate more story points and how much story points to provide for each user story.Story points were allocated according to complexity or how time consuming the user story was.
+Since this was the first time using story points and it was not really explained in the walk-through videos, it was challenging to identify which userstories to allocate more story points and how much story points to provide for each user story.Story points were allocated according to complexity or how time consuming the user story was.The should-have user story points did not exceed 60% of user story points total.
 The must-have user stories were prioritized first. Certain other user stories were implemented based on time and complexity. 
 Project Kanan board was used to track progress with user stories moving between Todo, In Progress and Done columns.The kanan board can be located [here](https://github.com/users/SooryaGeorge7/projects/3/views/1). All user stories have acceptance critera and tasks that needs to be ticked off on the go as this will mark the story as complete.
 
@@ -77,7 +76,7 @@ The user stories for email confirmation and password reset is left as backlog as
 
 ### **Epics**
 
-Each epic created had a few user stories linked to it. The acceptance criteria, with tasks associated with each user story can be found in project kanban board linked [Here]()
+Each epic created had a few user stories linked to it. The acceptance criteria, with tasks associated with each user story can be found in project kanban board linked [Here](https://github.com/users/SooryaGeorge7/projects/3/views/1)
 
 #### **EPIC: Project Setup**
 
@@ -93,9 +92,9 @@ This was done by installing the necessary framworks and libraries. Adding env.py
 
 #### **EPIC: User authentication**
 
-***As a developer i can **implement user authentication** so that only signed up users can user restaurant features***
+***As a developer i can **implement user authentication** so that only signed up users can use restaurant features***
 
-This epic is associated with user stories of signup , login and logout functionality. These were implemented using django allauth. 
+This epic is associated with user stories of signup , login and logout functionality. These were implemented using django allauth.At first this was not implemented using django allauth because i had learnt how to implement signup, login, logout functionality with a [youtube video taught by Corey](https://www.youtube.com/watch?v=3aVqWaLjqS4&t=1324s), but i later realized that it would be django allauth for user registration and login because this was taught in the walk through video.
 
 #### **EPIC: Restaurant**
 
