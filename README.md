@@ -988,8 +988,6 @@ This project was developed by forking a specialized [Code Institute template](ht
 
 For version control the following steps were made:
 
-For version control the following steps were made:
-
 1. Changes made to files in Gitpod
 2. Files made ready for commit with command - git add "filename", or git add . to add all files
 3. For the commits the following command was run along with commit description - git commit -m "This is my commit etc"
@@ -1001,9 +999,9 @@ For version control the following steps were made:
 
 Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
 
-1. Navigating to
+1. Navigating to [Dublin Eats](https://github.com/SooryaGeorge7/Dublin-Eats)
 2. Clicking on the arrow on the green code button at the top of the list of files
-3. Select Local then HTTPS copy the URL it provides to the clipboard
+3. Select Local then HTTPS copy the URL it provides to the clipboard.
 4. Navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
 5. Type 'git clone' and paste the HTTPS link you copied from GitHub
 6. Press enter and git will clone the repository to your local machine

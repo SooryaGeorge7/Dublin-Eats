@@ -1,4 +1,4 @@
-# **Dublin EatsTesting**
+# **Dublin Eats Testing**
 
 ## **Testing Overview**
 
@@ -106,7 +106,6 @@ Manual testing for each userstory is documented in [Dublin Eats Userstory spread
 After all the bugs were resolved, all manual testing has resulted in a pass result. 
 
 In addition to manual testing, the site was continuously being tested throughout development of the website. 
-
 
 
 ## **Validators**
@@ -250,9 +249,11 @@ Namely :
 
 ***Mobile***
 
+![Profile page mobile](/documentation/validation/Lighthouse/profile-mobile.png)
+
 ***Desktop***
 
-![Profile page mobile](/documentation/validation/Lighthouse/profile-desktop.png)
+![Profile page desktop](/documentation/validation/Lighthouse/profile-desktop.png)
 
 #### **Edit Profile Page**
 
@@ -290,12 +291,12 @@ Namely :
 All pages were tested using [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension.
 The following errors were found and corrrected : 
 
-1. Contrast error for home page. The text overlying the home page was resulting in contrast error even though the text could be clearly seen. I corrected this by adding contrasting background color to the white overlying text.
-2. Headings were not in sequential order, this was corrected on all pages
+1. There was a Contrast error for home page. The text overlying the home page was resulting in contrast error even though the text could be clearly seen. I corrected this by adding contrasting background color to the white overlying text.
+2. Headings were not in sequential order, this was corrected on all pages.
 3. Profile images and hero image had alerted suspicious alt test which were also corrected.
 4. First headings on each page were not starting with h1 tag.
 
-All the above alerts and errors were correted but there remained alerts for redundant link. This would be the case for pages that would have links to profile page, sign in pages, login pages on other areas other than just the navbar.
+All the above alerts and errors were corrected but there remained alerts for redundant link. This would be the case for pages that would have links to profile page, sign in pages, login pages on other areas other than just the navbar.
 
 All pages otherwise passed WAVE validation.
 
@@ -331,6 +332,7 @@ All pages otherwise passed WAVE validation.
 
 ![signup page wave](/documentation/validation/Wave%20Lighthouse/signup-wave.png)
 
+
 ## **Responsiveness**
 
 
@@ -355,11 +357,11 @@ All pages were tested to ensure responsiveness from devices of 320px and upwards
 
 | **Bug** | **Resolution** |
 |---------|----------------|
-| Images in carousal were changing automatically and not when user clicks next button.  [View bug here](/documentation/bugs/bug-%20automatic%20carousal.gif) | By adding "data-bs-interval="false" to carousal, the automatic changing of images is disabled. The solution for this was found here. View solution [View solution here](https://stackoverflow.com/questions/14977392/bootstrap-carousel-remove-auto-slide) |
+| Images in carousal were changing automatically and not when user clicks next button.  [View bug here](/documentation/bugs/bug-%20automatic%20carousal.gif) | By adding "data-bs-interval="false" to carousal, the automatic changing of images is disabled. The solution for this was found here.  [View solution here](https://stackoverflow.com/questions/14977392/bootstrap-carousel-remove-auto-slide) |
 | Images that were being uploaded by user were getting cropped when displaying in profile page. [View bug here](/documentation/bugs/error-upload-image.png) | The images being uploaded were undergoing transformation through profile modal where i set the setting crop:crop, i just needed to change that to crop:fill. I learnt the differences and found the solution for this here. [View solution here](https://buildmedia.readthedocs.org/media/pdf/django-daguerre/2.3.1/django-daguerre.pdf) |
 | Certain search query's were returning results from UK instead of Dublin. These were the case when search query was a very rare cuizine that would not be available in Dublin. [View bug here](/documentation/bugs/query-bringing-uk-restaurant.png) | The solution found for this was to set the longitude and latitude for the google places API to be that of Dublin, Ireland and also to limit the number of results being retrieved from API. I also specified the query in The API url to be restaurants in Dublin. [View suggestion here](https://towardsdatascience.com/how-to-use-the-google-places-api-for-location-analysis-and-more-17e48f8f25b1) [View my solution here](/documentation/bugs/search-uk-solution.png) |
 | For search results page, when user moves to next page using paginator, the results would not be from the search query anymore. The query became "None" | I solved this by indicating the query in the pagination code in the html. [View solution here](/documentation/bugs/query-pagination-solution.png) I found the solution among some suggestions here . [View suggestions](https://docs.guidewire.com/cloud/pc/202302/cloudapibf/cloudAPI/topics/101-Fund/03-query-parameters/c_the-pagination-query-parameters.html) |
-| I had category field saved in Restaurant model for Restaurants app. When user chooses a category from the "Restaurants" tab on the navbar, the specific category was saved in the Restaurant Model.For search functionality the query submitted in search field were also being saved as category  for restaurant model, but since one restaurant can be retrieved from google places API using different queries, i could not just save each query as category. When user wanted to move from allreviews page back to the results page, the user is redirected to a page with a different query because that particular restaurant from this query was already saved as a different category. | The solution i could implement was to update Restaurant.category  for each time whenever query is given whether the restaurant model is being retrieved from the database or new instance is being created, In this way that  particular restaurant category is updated to the most recent query that retrieved the results of that particular restaurant |
+| I had category field saved in Restaurant model for Restaurants app. When user chooses a category from the "Restaurants" tab on the navbar, the specific category was saved in the Restaurant Model.For search functionality the query submitted in search field were also being saved as category  for restaurant model, but since one restaurant can be retrieved from google places API using different queries, i could not just save each query as category. When user wanted to move from allreviews page back to the results page, the user is redirected to a page with a different query because that particular restaurant from this query was already saved as a different category. | The solution i could implement was to update Restaurant.category  for each time whenever query is given whether the restaurant model is being retrieved from the database or new instance is being created, In this way that  particular restaurant category is updated to the most recent query that retrieved the results of that particular restaurant. |
 | Seach query were returning results for numbers, special charectors and blank spaces. |I used patterning matching in search input field. [View Solution here](/documentation/bugs/pattern-matching.png) |
 | Some Restaurants ddnt have website urls, so it returned blank and would just refresh the page for instances with no website.| I handled this bug in html where it would be indicated to user when a restaurant has no website. |
 | When retrieving nandos as search query, it was resulting in this error [View bug here](/documentation/bugs/nandos-error.png)| The solution was to change the website url field as the url for this website was more than the maximum count for charfield which was 200, i just had to set maxlength to 500 instead of the default 200 that exists. |
@@ -367,4 +369,5 @@ All pages were tested to ensure responsiveness from devices of 320px and upwards
 
 ## **Unresolved Bugs/Issues**
 
-Search query doesn’t have to make sense to return a result. If user types in “uherge” this will return some restaurants regardless of there is result for that exact query. This is due to the fact that restaurants names could have vary in terms of  languages.
+* Search query doesn’t have to make sense to return a result. If user types in “uherge” this will return some restaurants regardless of there is result for that exact query. This is due to the fact that restaurants names could have vary in terms of  languages.
+* When user visits another user's profile and clicks on see review- it redirects user to all reviews page of the particular restaurant. If user presses the go back button, they are redirected to restaurants page instead of the user's profile page. I could not resolve this issue as i found out this problem the day before submission.
