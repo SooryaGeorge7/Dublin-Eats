@@ -8,12 +8,13 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+
 GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 
 def get_details(place_id):
     """
-    This function retrieves details from google places API 
+    This function retrieves details from google places API
     using place_id
     """
     detail_url = "https://maps.googleapis.com/maps/api/place/details/json"
@@ -29,7 +30,7 @@ def get_details(place_id):
 
 def search(request):
     """
-    Takes in search query from home page and redirect to searchresults url 
+    Takes in search query from home page and redirect to searchresults url
     """
     query = request.GET.get("query")
 
@@ -40,11 +41,13 @@ def search(request):
 def searchresults(request, query):
     """
     View function to retrieve and display restaurant search results.
-    It takes in query as parameter to retrieve restaurant information from 
+    It takes in query as parameter to retrieve restaurant information from
     google places API which is then displayed in results.html
 
     """
-    # query = request.GET.get("query")
+
+    query = query
+
     url = (
         f"https://maps.googleapis.com/maps/api/place/textsearch/json?"
         f"query={query}%20restaurants%20in%20Dublin"
@@ -56,7 +59,6 @@ def searchresults(request, query):
     response = requests.get(url)
     restaurant_data = response.json()
     results = restaurant_data.get("results", [])
-    # print(results)
     paginator = Paginator(results[:10], 8)
     page_number = request.GET.get("page")
     page_object = paginator.get_page(page_number)
@@ -84,10 +86,13 @@ def searchresults(request, query):
                                   f"default-image_kyuezj.webp")
 
         try:
+            # Try to retrieve the restaurant from the database
             restaurant_details = Restaurant.objects.get(RestaurantId=place_id)
+            # Category is updated even if restaurant exists in database.
             restaurant_details.category = query
             restaurant_details.save()
         except Restaurant.DoesNotExist:
+            # If the restaurant does not exist,Restaurant object is created
             restaurant_details = Restaurant(
                 name=result["name"],
                 website=website_url,
@@ -98,12 +103,8 @@ def searchresults(request, query):
             print(restaurant_details)
             restaurant_details.save()
 
-            # if user_review.exists():
-            #     user_reviewed = True
-            # else:
-            #     user_reviewed = False
         pinned = False
-        user_reviewed = False  # Initialize the user_reviewed variable to False
+        user_reviewed = False
         if request.user.is_authenticated:
             user_review = Review.objects.filter(restaurant=restaurant_details,
                                                 user=user)
@@ -120,6 +121,7 @@ def searchresults(request, query):
         restaurant_results.append({
             "name": result["name"],
             "address": result["formatted_address"],
+            "category": query,
             "image_urls": image_urls,
             "pinned": pinned,
             "user_reviewed": user_reviewed,

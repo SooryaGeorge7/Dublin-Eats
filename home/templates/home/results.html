@@ -7,7 +7,7 @@
             <h3 class="results-heading fw-bold">Results:"{{ query }}" restaurants in Dublin. </h3>
         </div>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4 pb-5">
-            {% if restaurant_results %}
+            
             {% for restaurant in restaurant_results %}
             <div class="col">
                 <!--Each card contains information,links and buttons for that particular restaurant.-->
@@ -83,7 +83,7 @@
                 </div>
             </div>
             {% endfor %}
-            {% endif %}
+            
         </div>
         <!--Button overlying page which user can click on to go up in smaller screens-->
         <div class=" mx-auto position-fixed top-50 end-0">

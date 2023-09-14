@@ -17,6 +17,7 @@
                     <h1>Discover Dublin's Culinary Options.</h1>
                     <h1>Start your search here!</h1>
                     <!--Search field-->
+                    <!--Learnt to implement search here (https://www.makeuseof.com/add-search-functionality-to-django-apps/#:~:text=Create%20a%20View%20for%20the%20Search&text=%23%20Check%20if%20the%20request%20is%20a%20post%20request.&text=In%20request.,your%20search%20bar's%20input%20field.&text=Finally%2C%20the%20function%20renders%20a,and%20filtered%20model%20as%20context.)-->
                     <form class="d-flex" action="{% url 'search'   %}" method="GET">
                         <input class="form-control me-2" type="search" placeholder="What are you craving for?" aria-label="Search" name="query" id="query"
                         value="{{ request.GET.query }}"  pattern="^(?!\s*$)[a-zA-Z ]*$" 
