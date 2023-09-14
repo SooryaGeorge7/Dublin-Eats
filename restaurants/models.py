@@ -1,13 +1,12 @@
 from django.db import models
 
 
-
 class Restaurant(models.Model):
     """
     Model for creating a Restaurant
     """
     name = models.CharField(max_length=100)
-    website = models.URLField(blank=True,max_length=500)
+    website = models.URLField(blank=True, max_length=500)
     address = models.TextField()
     category = models.TextField(default="")
     RestaurantId = models.CharField(

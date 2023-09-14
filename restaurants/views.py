@@ -17,7 +17,7 @@ GOOGLE_PLACES_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY")
 
 def get_place_details(place_id):
     """
-    This function retrieves details from google places API 
+    This function retrieves details from google places API
     using place_id
     """
     details_url = "https://maps.googleapis.com/maps/api/place/details/json"
@@ -34,8 +34,8 @@ def get_place_details(place_id):
 def restaurants(request, category):
     """
     View function to retrieve and display restaurants results.
-    It takes in a cattegory  as parameter to retrieve restaurant information from 
-    google places API which is then displayed in categories.html
+    It takes in a cattegory  as parameter to retrieve restaurant information
+    from google places API which is then displayed in categories.html
 
     """
     if category == "asian":
@@ -104,10 +104,13 @@ def restaurants(request, category):
                                   "default-image_kyuezj.webp")
 
         try:
+            # Try to retrieve the restaurant from the database
             restaurant_details = Restaurant.objects.get(RestaurantId=place_id)
+            # Category is updated even if restaurant exists in database.
             restaurant_details.category = category
             restaurant_details.save()
         except Restaurant.DoesNotExist:
+            # If the restaurant does not exist,Restaurant object is created
             restaurant_details = Restaurant(
                 name=result["name"],
                 website=website_url,
@@ -155,9 +158,9 @@ def restaurants(request, category):
 @login_required()
 def to_visit(request, restaurant_id):
     """
-    This function allows authenticated users to add or remove 
-    restaurants from their list of pinned restaurants and then 
-    redirects them to the appropriate page. It also includes messages 
+    This function allows authenticated users to add or remove
+    restaurants from their list of pinned restaurants and then
+    redirects them to the appropriate page. It also includes messages
     to inform the user of the action taken.
     """
     restaurant = get_object_or_404(Restaurant, RestaurantId=restaurant_id)
@@ -188,7 +191,7 @@ def to_visit(request, restaurant_id):
 @login_required()
 def remove_pin(request, restaurant_id):
     """
-    This function allows authenticated users to remove a restaurant from 
+    This function allows authenticated users to remove a restaurant from
     their list of pinned restaurants and then redirects them to their
      profile page with a success message indicating the removal.
     """
