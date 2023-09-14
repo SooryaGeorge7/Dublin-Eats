@@ -15,6 +15,7 @@
     --bg-color: #F2F2F2;
 }
 
+/** Navigation bar css**/
 .nav-colour {
     background-color: rgba(44, 62, 80, 0.7);
 }
@@ -24,7 +25,6 @@
     z-index: 4;
 }
 
-
 .navbar-brand {
     color: var(--light-color);
     display: flex;
@@ -33,25 +33,19 @@
     font-size: 1.75rem;
     padding-bottom: 0rem;
     padding-left: 4rem;
-
-    /* Adjust the width and height according to your image size */
     height: 3rem;
     background-image:url(https://res.cloudinary.com/dif9bjzee/image/upload/v1691932128/logoimage_sriezb.webp);
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-
-
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255,255,255,.55);
-    /* background-color: rgba(44, 62, 80, 0.6); */
     font-weight: bold;
 }
 
 .nav-link.active {
     border-bottom: 0.125rem solid var(--secondary-color);
-    
     
 }
 
@@ -59,7 +53,6 @@
     background-color: rgba(242, 242, 242, 0.9);
     border-left: 0.25rem solid var(--secondary-color);
 }
-
 
 .dropdown-item{
     color: var(--primary-color);
@@ -74,7 +67,7 @@
     
 }
 
-/**Footer**/
+/**Footer Css**/
 .footer {
     background-color: var(--bg-color);
     width: 100%;
@@ -100,12 +93,26 @@
     color: rgba(44, 62, 80, 0.8);
 }
 
-/**Home page**/
+/**Home page/ index.html css**/
 .home-page {
     min-height: 85vh;
     overflow-x: hidden;
     background-color: #2C3E50;
 
+}
+
+.search-container {
+    z-index: 3;
+    background-color: transparent;
+    min-width: 70%;
+    position:fixed;
+    top:45%;
+}
+.search-container h1 {
+    font-weight:bold;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgb(44, 62, 80);
+    margin-bottom: 0rem;
+    color: var(--light-color);
 }
 
 /**hero image**/
@@ -130,11 +137,11 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
 }
-/** for buttons **/
+
+/** Website buttons **/
 .button-dbneats {
     color: var(--light-color);
     background-color: var(--primary-color);
-
     border-color: var(--light-color);
     border-radius: 1rem;
 }
@@ -150,12 +157,10 @@
 .button-dbneats:focus {
     color: var(--light-color);
     background-color: var(--primary-color);
-    
     border-radius: 1rem;
     
 }
 
-/**buttons**/
 .main-button {
     margin-left: 0.5rem !important;
     color: var(--primary-color) !important;
@@ -172,14 +177,44 @@
     border-color: var(--primary-color) !important;
 }
 
+.remove-button {
+    color: var(--light-color);
+    background-color: #C0392B;
+    border-color: var(--light-color);
+    border-radius: 1rem;
+}
 
-/** star rates **/
+.remove-button:hover {
+    color: #C0392B!important;
+    background-color: var(--light-color);
+    outline-color: #C0392B;
+    border-color: #C0392B;
+    border-radius: 1rem;
+
+}
+
+/** rated button color change **/
+.user-done {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    pointer-events: none;
+    border-radius: 1rem;
+}
+
+.disabled-btn {
+    pointer-events: none;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border-radius: 1rem;
+    border-color: var(--primary-color);
+}
+
+/** Star ratings **/
 .checked {
     color: var(--secondary-color);
 }
 
 .rated {
-    
     pointer-events: none;
 }
 
@@ -192,39 +227,23 @@
     border-color: #2C3E50;
 }
 
-/**Carousal controls **/
-/* .carousel-control-prev,
-.carousel-control-next {
-    height: 80%;
-    top:20%;
-} */
 
-/** rated color change **/
-.user-done {
-    color: var(--primary-color);
-    background-color: var(--secondary-color);
-    pointer-events: none;
-    border-radius: 1rem;
-}
 
+/**Backdrop for website**/
 .dbneats-background {
-    /* background-color: var(--bg-color); */
     background-image: url(https://res.cloudinary.com/dif9bjzee/image/upload/v1694557152/dublineats-backdrop_qzpqsx.webp);
     background-size: contain;
-    /* Adjust the image sizing */
 
 }
 
-/**rating **/
+/**Rating form**/
 .rating {
     background-color: var(--primary-color);
     border-radius: 0.5rem;
     margin: 0.5rem;
-
 }
 
 .rating a {
-
     color: var(--light-color)
 }
 
@@ -232,11 +251,8 @@
     color: var(--light-color)
 }
 
-/* .allreviews h1 {
-    font-size: 1.5rem;
-    background-color: rgba(242, 242, 242, 0.7);
-} */
-/**Forms**/
+
+/**Forms Css**/
 
 .form-heading {
     color: var(--primary-color);
@@ -254,14 +270,6 @@
     background-color: rgba(242, 242, 242, 0.7);
 }
 
-
-.dublineat-links {
-    color: var(--primary-color);
-}
-
-.dublineat-links:hover {
-    color: var(--secondary-color);
-}
 .forms {
     padding: 0.5rem;
 }
@@ -270,7 +278,17 @@
     margin: 5rem;
 }
 
-/*pinn css*/
+/** Links Css**/
+.dublineat-links {
+    color: var(--primary-color);
+}
+
+.dublineat-links:hover {
+    color: var(--secondary-color);
+}
+
+
+/**Pin css**/
 
 .pinned {
     color: #C0392B;
@@ -295,7 +313,6 @@
 }
 
 /**Pagination buttons **/
-
 .page-item:not(.active) .page-link {
     color: var(--primary-color);
     background-color: var(--light-color);
@@ -309,74 +326,31 @@
     border-color: var(--light-color);
 }
 
-/** Remove button **/
-
-.remove-button {
-    color: var(--light-color);
-    background-color: #C0392B;
-    border-color: var(--light-color);
-    border-radius: 1rem;
-}
-
-.remove-button:hover {
-    color: #C0392B!important;
-    background-color: var(--light-color);
-    outline-color: #C0392B;
-    border-color: #C0392B;
-    border-radius: 1rem;
-
-}
-
+/**Popup messages css**/
 .message-alert {
     z-index: 5;
     position: absolute;
     top: 15%;
     width: 80%;
-    
-    
     border: 2px solid var(--light-color);
     left: 50%; 
     transform: translateX(-50%); 
     color:var(--primary-color);
     font-weight: bold;
-    
-
 }
 
+/**Logo css**/
 .logo-image {
    width:1.5rem;
    height:1.5rem;
-    
-    
 }
 .auth-image {
    width:3rem;
    height:3rem;
 }
-.disabled-btn {
-    /* opacity: 0.6; */
-    pointer-events: none;
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-    border-radius: 1rem;
-    border-color: var(--primary-color);
-}
 
-.search-container {
-    z-index: 3;
-    background-color: transparent;
-    min-width: 70%;
-    position:fixed;
-    top:45%;
-}
-.search-container h1 {
-    /* font-size: 1.75rem; */
-    font-weight:bold;
-    text-shadow: 0.1rem 0.1rem 0.2rem rgb(44, 62, 80);
-    margin-bottom: 0rem;
-    color: var(--light-color);
-}
 
+/**Profile css**/
 .profile-container {
     padding:5rem;
     padding-left: 1rem;
@@ -392,15 +366,14 @@
     margin-top: 5rem;
 }
 
-/**images **/
+/**Restaurant images **/
 .restaurant-images {
     object-fit: cover;
     height:17.5rem;
     width:100%;
 }
 
-/**modals **/
-
+/** Popup modals Css**/
 .modal-header, .modal-body, .modal-footer {
     background-color: rgba(249, 191, 59);
     border:none;
@@ -411,8 +384,7 @@
     border-radius: 1rem;
 }
 
-/** text area **/
-
+/**Leave a review text area **/
 .responsive-textarea {
     width: 100%; 
     max-width: 100%; 
@@ -422,13 +394,13 @@
 .profile-image-input {
     border: 0.125rem solid var(--primary-color); 
     padding: 1rem; 
-    
 }
 
+/**Media Queries**/
+/**Tablets**/
 @media screen and (min-width: 576px) {
 
     .navbar-dark .navbar-nav .nav-link {
-        
         background-color:transparent;
         font-weight: normal;
     }
@@ -440,7 +412,6 @@
 
     .form-control {
         font-size: 1rem;
-    
     }
 
     .navbar-brand {
@@ -448,7 +419,7 @@
         height:3.5rem;
     }
 }
-
+/**Desktops/laptops**/
 @media screen and (min-width: 768px) {
 
     .allreviews h1 {
@@ -461,12 +432,11 @@
 
     .navbar-dark .navbar-nav .nav-link {
         color: rgba(255,255,255,.55);
-        /* background-color: rgba(44, 62, 80, 0.6); */
         font-weight: bold;
     }
 
 }
-
+/**Larger screens**/
 @media screen and (min-width: 1024px) {
     .goup-btn {
         display:none;

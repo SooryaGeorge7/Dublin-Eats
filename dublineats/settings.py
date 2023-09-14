@@ -31,7 +31,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = False
-
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com',
@@ -42,7 +41,6 @@ ALLOWED_HOSTS = ['dublineats-f1f59ebc3584.herokuapp.com',
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'users.apps.UsersConfig',
