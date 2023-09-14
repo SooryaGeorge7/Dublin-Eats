@@ -207,7 +207,9 @@
                         {% if category_url %}
                         <a href="{{ category_url }}" class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"
                                 aria-label="Exit review"></i></a>
-                        
+                        {% else %}
+                        <a href="{% url 'searchresults' restaurant.category %}" class="btn btn-primary button-dbneats">Exit <i class="bi bi-escape"
+                            aria-label="Exit review"></i></a>
                         {% endif %} 
                     </div>
 

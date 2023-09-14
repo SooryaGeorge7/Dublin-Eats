@@ -90,11 +90,14 @@
             {% endif %}
             <div class="col-md-8 mx-auto position-fixed top-50 start-0">
             <!--Button users can use to go back to previous page-->
-            
-            
-            <a  href="{% url restaurant.category %}" aria-label="Go back to previous page" class="btn btn-primary button-dbneats"
+            {% url restaurant.category as category_url %}
+            {% if category_url %}  
+            <a  href="{{ category_url }}" aria-label="Go back to previous page" class="btn btn-primary button-dbneats"
             data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>
-            
+            {% else %}
+            <a href="{% url 'searchresults' restaurant.category %}" aria-label="Go back to previous page" class="btn btn-primary button-dbneats"
+            data-bs-toggle="tooltip" data-bs-placement="top" title="Go Back"><i class="bi bi-chevron-double-left"></i></a>
+            {% endif %}
             </div>
             
         </div>
