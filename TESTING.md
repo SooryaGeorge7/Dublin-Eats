@@ -370,4 +370,5 @@ All pages were tested to ensure responsiveness from devices of 320px and upwards
 ## **Unresolved Bugs/Issues**
 
 * Search query doesn’t have to make sense to return a result. If user types in “uherge” this will return some restaurants regardless of there is result for that exact query. This is due to the fact that restaurants names could vary in terms  languages and results rendered are not strict to query but rather "could be related" to query.
+* I realized this too late but instead of go back button in allreviews page, i should rather add clearly marked buttons for restaurants page, profile page etc.. because right now if user go to see reviews from another user's profile page. The go back button in 'allreviews page' redirects user to results page instead of profile page (go back button should redirect user to where they came from). It was honestly too late to change anything at this point but this will be changed in the future.
 
