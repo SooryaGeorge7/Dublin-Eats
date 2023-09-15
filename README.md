@@ -931,7 +931,7 @@ Design of website was thoughtout through color scheme, typography and imagery.It
 
 The colors above were implemented via rgba format instead of hex formatting inorder to use the various colours with transparency.
 
-#C0392B![red color](/documentation/color-scheme/red-color.png)    was a color that was implemented for delete buttons or remove buttons.
+#C0392B![red color](/documentation/color-scheme/red-color.png)   was a color that was implemented for pinning restaurants, delete buttons or remove buttons.
 
 #### **Typography**
 
@@ -939,7 +939,7 @@ The font family Poppins were imported from google fonts and was implemented thro
 
 #### **Imagery**
 
-The hero image used in home page,the default profile pictures, the background image used throughout the website and the default images in restaurants were all downloaded and credited in the [acknowledgements](#acknowledgements) section.All the images format were changed to webp to improve performance during lighthouse testing.
+The hero image used in home page,the default profile pictures, the background image used throughout the website and the default images in restaurants were all downloaded and credited in the [acknowledgements](#acknowledgements) section. All restaurant images were retrieved using google places API.All the images(except the ones retrieved from API and uploaded by user) format were changed to webp to improve performance during lighthouse testing.
 
 ## **Technologies Used**
 
@@ -999,8 +999,7 @@ For version control the following steps were made:
 2. Files made ready for commit with command - git add "filename", or git add . to add all files
 3. For the commits the following command was run along with commit description - git commit -m "This is my commit etc"
 4. To move the changes to Github the following command was run - git push
-5. Alternatively files can be made ready for commit using the Source Control staging area in Gitpod
-6. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
+5. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
 
 ### **Cloning the GitHub Repository**
 
@@ -1046,10 +1045,12 @@ The below steps were followed to deploy this project to Heroku:
 * Thanks to the Django docs which were also used as a step-by-step while going through the project to ensure everything was set up correctly.
 * Corey Schafer for the tutorial to get automatic profile creation for my project.
 * [Learnt how to implement search functionality in django here.](https://www.makeuseof.com/add-search-functionality-to-django-apps/#:~:text=Create%20a%20View%20for%20the%20Search&text=%23%20Check%20if%20the%20request%20is%20a%20post%20request.&text=In%20request.,your%20search%20bar's%20input%20field.&text=Finally%2C%20the%20function%20renders%20a,and%20filtered%20model%20as%20context.)
-*[Learnt how to implement blurred background here](https://www.w3schools.com/howto/howto_css_blurred_background.asp)
+* [Learnt how to implement blurred background here](https://www.w3schools.com/howto/howto_css_blurred_background.asp)
 * [Learnt how to implement star rating using javascript here](https://www.codingnepalweb.com/star-rating-html-css-javascript-2/)
 * [Learnt how to retrieve images from google places API here](https://stackoverflow.com/questions/13524834/google-place-api-placedetails-photo-reference)
 * Google places api documentation and youtube videos were used extensively to implement google places API to retrieve restaurant details from Dublin.
+* [Learnt condition to use local database here](https://stackoverflow.com/questions/4650509/different-db-for-testing-in-django)
+* [Learnt to use css on active nav links here](https://stackoverflow.com/questions/32931436/active-tag-on-bootstrap-with-django/47530688#47530688)
 
 
 ### **Content**
