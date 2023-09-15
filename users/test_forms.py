@@ -11,7 +11,6 @@ class UserUpdateFormTest(TestCase):
       and fields exceeding character limits.
     """
     def test_userupdateform_valid(self):
-        # Test when form data is valid
         form_data = {
             "username": "testuser",
             "email": "test@example.com",
@@ -21,7 +20,6 @@ class UserUpdateFormTest(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_userupdateform_invalid_email(self):
-        # Test when email is invalid
         form_data = {
             "username": "testuser",
             "email": "incorrectemail",
@@ -34,7 +32,6 @@ class UserUpdateFormTest(TestCase):
         )
 
     def test_userupdateform_missing_fields(self):
-        # Test when required fields are missing
         form_data = {
             "username": "",
             "email": "test@example.com",

@@ -48,7 +48,7 @@ class ProfileUpdateForm(forms.ModelForm):
                 attrs={'placeholder': 'What is your favourite cuizine?'}
             ),
             'profile_image': forms.FileInput(
-                attrs={'class': 'profile-image-input',}
+                attrs={'class': 'profile-image-input', }
             ),
         }
         help_texts = {

@@ -6,15 +6,17 @@ from .models import Profile
 
 class TestViews(TestCase):
     """
-    This test cases ensure that the views related to user profiles, including viewing, 
-    editing, and deleting profile.It tests that site logs in the test user using the client,
-     then It sends a GET request to a URL named "profile" with the test user's username as
-    a parameter.It checks  if the "profile.html" template is used.When user wants to edit
-    a profile,the site sends a POST request to a URL named "editprofile" with the test user's
-    username as an argument and data for updating the user's first and last name.It checks if
-     the "edit_profile.html" template is used.When user wants to delete their profile, 
-     the site sends a POST request to a URL named "deleteprofile" with the test user's 
-     username as an argument.It checks if redirected URL is the home page.
+    This test cases ensure that the views related to user profiles,
+    including viewing, editing, and deleting profile.It tests that site
+    logs in the test user using the client,then It sends a GET request to 
+    a URL named "profile" with the test user's username as a parameter.It
+     checks  if the "profile.html" template is used.When user wants to edit
+    a profile,the site sends a POST request to a URL named "editprofile" 
+    with the test user's username as an argument and data for updating 
+    the user's first and last name.It checks if the "edit_profile.html" 
+    template is used.When user wants to delete their profile, the site 
+    sends a POST request to a URL named "deleteprofile" with the test user's 
+    username as an argument.It checks if redirected URL is the home page.
     """
     def setUp(self):
         self.client = Client()
