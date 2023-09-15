@@ -54,11 +54,11 @@
                                 Restaurants
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="{% url 'asian' %}">Asian</a></li>
-                                <li><a class="dropdown-item" href="{% url 'european' %}">European</a></li>
-                                <li><a class="dropdown-item" href="{% url 'african' %}">African</a></li>
-                                <li><a class="dropdown-item" href="{% url 'irish' %}">Irish</a></li>
-                                <li><a class="dropdown-item" href="{% url 'american' %}">American</a></li>
+                                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'asian' %}active{% endif %}" href="{% url 'asian' %}">Asian</a></li>
+                                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'european' %}active{% endif %}" href="{% url 'european' %}">European</a></li>
+                                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'african' %}active{% endif %}" href="{% url 'african' %}">African</a></li>
+                                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'irish' %}active{% endif %}" href="{% url 'irish' %}">Irish</a></li>
+                                <li><a class="dropdown-item {% if request.resolver_match.url_name == 'american' %}active{% endif %}" href="{% url 'american' %}">American</a></li>
                             </ul>
                         </li>
                         
