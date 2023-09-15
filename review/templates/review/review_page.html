@@ -98,7 +98,10 @@
             </form>
         </div>
     </div>
-    
+    {% block extra_js %}
+            <!-- Customizible JS for star ratings-->
+        <script src="{% static 'js/rate.js' %}"></script>
+    {% endblock extra_js %}
 
 </section>
 {% if user_reviewed == True %}

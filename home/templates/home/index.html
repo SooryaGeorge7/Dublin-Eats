@@ -29,6 +29,9 @@
             </div>
         </div>
     </div>
-    
+    {% block extra_js %}
+            <!-- Customizible JS for blur effect-->
+        <script src="{% static 'js/blur.js' %}"></script>
+    {% endblock extra_js %}
 </div>
 {% endblock content %}
