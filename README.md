@@ -229,7 +229,7 @@ Although care was taken to implement as many of the features as the wireframes c
 #### **Flow Chart logic**
 
 A basic flowchart was used to plan the logic of this website. The logic was altered slightly during development of website to adapt to the project's needs.
-The website now allows unregistered users to use the search field and view restaurant categories but they are unable to pin,rate or see any reviews of any restaurants until they have signed up for the website.
+The website now allows unregistered users to use the search field and view restaurant categories but they are unable to pin,rate or see any reviews of any restaurants until they have signed up for the website.registered users have access to all features. superusers or admin has additional special access such as being able to delete other users reviews or profiles.
 
 - ![Flow chart of logic](/documentation/flow-diagram/flow-chart-dublineats.jpg)
 
@@ -249,6 +249,8 @@ Security for this website was implemented  the following ways :
 
 - Enivornmental variables were added to gitignore file as they contain API keys and sensitive information.
 - These variables were added to Heroku config vars for production and deployment. 
+- Debug was turned off for production.
+- Some Views were secured where needed using  @login_required.
 
 ## **The Scope Plane**
 
@@ -323,6 +325,8 @@ Footer contains copyright statement and link to my(Soorya George's) github profi
 
 **Home Page & features**
 
+Home page contains background image with helpful text overlying image that should indicate to user the purpose of website.
+
 <details><summary>Home page desktop</summary>
 
 ![Home page desktop](/documentation/features/home-page/home-page-desktop.png)
@@ -355,7 +359,8 @@ Users who inserts an input and clicks search button would not be able to search 
 
 **Restaurants page & features**
 
-When user clicks on a category from restaurants tab on navbar, a page is rendered which contains a few restaurants of the category you selected in Dublin. A maximum of 8 restaurants are rendered per page. Google places API returns a maximum of 20 restaurants for each request. Using the paginator, Only 8 restaurants are shown in the first page.
+When user clicks on a category from restaurants tab on navbar, a page is rendered which contains a few restaurants of the category you selected in restaurants tab. A maximum of 8 restaurants are rendered per page. Google places API returns a maximum of 20 restaurants for each request. Due 
+ to paginator, Only 8 restaurants are shown in the first page.
 
 <details><summary>Restaurants page desktop</summary>
 
@@ -367,7 +372,7 @@ For desktop - User is shown 4 restaurant cards displayed in a row.Each card cont
 
 <details><summary>Restaurants page mobile</summary>
 
-For mobile- User is shown 1 restaurant displayed as a card in a row.As you can see a go up button is available to user to allow user to go up the page if they wanted to at any point.
+For mobile- User is shown 1 restaurant displayed as a card in a row.As you can see, a go up button is available to user to allow user to go up the page if they wanted to at any point.
 
 ![Restaurants page mobile](/documentation/features/restaurants-page/restaurantspage-mobile.gif)
 
@@ -399,7 +404,7 @@ Users can click on rate button for a restaurant which will the redirect the user
 
 <details><summary>Restaurants page rated feature</summary>
 
-Once user has rated a restaurant already, the rate button will change color to a yellow shade, and will loose ability to be clicked. This will prevent users from rating the same restaurant twice. Only once they have deleted their review, the button can change back to being original color and user will be able to review the restaurant again.
+Once user has rated a restaurant already, the rate button will change color to a yellow shade, and will loose the ability to be clicked. This will prevent users from rating the same restaurant twice. Only once they have deleted their review, the button can change back to being original color and user will be able to review the restaurant again.
 
 ![Rated feature](/documentation/features/restaurants-page/restaurants-rated-feature.gif)
 
@@ -407,7 +412,7 @@ Once user has rated a restaurant already, the rate button will change color to a
 
 <details><summary>Restaurants page carousal feature</summary>
 
-Users can have access to images of restaurants which are featured from google since we are using google places api to retrieve restaurant information.The carousal only shows the next image when user clicks the next button.
+Users can have access to images of restaurants which are featured from google since we are using google places API to retrieve restaurant information.The carousal only shows the next image when user clicks the next button.
 
 ![Carousal feature](/documentation/features/restaurants-page/restaurants-carousal-feature.gif)
 
@@ -641,7 +646,7 @@ User can see which restaurants other user's have pinned to their profile.
 
 **Edit review page features**
 
-Users would be able to edit their own reviews from all reviews page and also their profile page. The edit button and open review button will both be redirected to edit reviews page.
+Users would be able to edit their own reviews from allreviews page and also their profile page. The edit button and open review button will both be redirected to edit reviews page.
 
 <details><summary>Edit review feature</summary>
 
@@ -651,7 +656,7 @@ Users would be able to edit their own reviews from all reviews page and also the
 
 <details><summary>Delete review feature</summary>
 
-users can delete their review if they want to. The users are asked twice to be sure so that they dont delete review by mistake.
+Users can delete their review if they want to. The users are asked twice to be sure so that they dont delete review by mistake.
 
 ![Delete review feature](/documentation/features/rate-page/delete-review-feat.png)
 
