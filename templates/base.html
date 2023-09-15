@@ -28,7 +28,6 @@
             <div class="container-fluid nav-container">
                 <a class="navbar-brand" href="{% url 'dublineats-home' %}">
                     Dublin Eats
-                    
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -58,7 +57,7 @@
                                 <li><a class="dropdown-item" href="{% url 'asian' %}">Asian</a></li>
                                 <li><a class="dropdown-item" href="{% url 'european' %}">European</a></li>
                                 <li><a class="dropdown-item" href="{% url 'african' %}">African</a></li>
-                                <li><a class="dropdown-item" href="{% url 'irish' %}">Irish/English</a></li>
+                                <li><a class="dropdown-item" href="{% url 'irish' %}">Irish</a></li>
                                 <li><a class="dropdown-item" href="{% url 'american' %}">American</a></li>
                             </ul>
                         </li>
@@ -86,7 +85,6 @@
 
     <main>
         {% if messages %}
-        
             <div class="container">
                 <div class="row">
                     {% for message in messages %}
@@ -97,7 +95,6 @@
                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     </div>
-        
                     {% endfor %}
                 </div>
             </div>
@@ -105,7 +102,6 @@
         {% endif %}
         {% block content %}{% endblock %}
         
-
     </main>
 
     <footer class="footer fixed-bottom">

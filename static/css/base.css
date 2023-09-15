@@ -57,6 +57,7 @@
 .dropdown-item{
     color: var(--primary-color);
 }
+
 .dropdown-item:hover{
     background-color: rgba(249, 191, 59, 0.8) ;
     color: var(--light-color);
